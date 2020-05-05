@@ -1,0 +1,127 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "user1@mail.com",
+      "password": "pass1",
+      "name": "Name 1",
+      "surname": "Surname 1",
+      "phone": "123456789",
+      "user": "User 1"
+    },
+    {
+      "id": 2,
+      "email": "meh@meh.com",
+      "password": "meh",
+      "name": "MehName",
+      "surname": "MehSurname",
+      "phone": "123456789",
+      "user": "meh"
+    }
+  ],
+  "photos": [
+    {
+      "id": 1,
+      "url": "https://images.unsplash.com/photo-1559628129-67cf63b72248?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "title": "Gallo al natural",
+      "description": "Una foto simple de un gallo con el fondo medio desenfocado",
+      "date": "2012-04-23T18:25:43.511Z",
+      "upvotes": 312,
+      "downvotes": 77,
+      "tags": [
+        "naturaleza",
+        "gallo",
+        "animales"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "url": "https://www.timetravelturtle.com/wp-content/uploads/2019/11/Mont-St-Michel-2019-356_new.jpg",
+      "title": "Monte San Miguel",
+      "description": "Foto del monte San Miguel",
+      "date": "2013-04-23T18:21:43.511Z",
+      "upvotes": 912,
+      "downvotes": 123,
+      "tags": [
+        "monte",
+        "paisaje"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "url": "https://clipartart.com/images/worst-clipart-ever-1.jpg",
+      "title": "Clipart del güeno",
+      "description": "Por si quieres acompañar las diapositivas con un poco de arte abstracto",
+      "date": "1024-04-23T18:21:43.511Z",
+      "upvotes": 1,
+      "downvotes": 73647,
+      "tags": [
+        "clipart",
+        "arte",
+        "dibujo"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "url": "https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/R/Receta-de-paella-1.jpg",
+      "title": "Paella normalita",
+      "description": "Primera paella que hago, creo que no ha salido muy bien",
+      "date": "2016-04-23T18:21:43.511Z",
+      "upvotes": 75,
+      "downvotes": 5,
+      "tags": [
+        "comida",
+        "paella"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 5,
+      "url": "https://i.pinimg.com/originals/04/b2/ed/04b2ed94021d06fbec19b3a29372e7e1.jpg",
+      "title": "Tortuga comiendo fresa",
+      "description": "Mi tortuga",
+      "date": "2016-04-23T18:20:43.511Z",
+      "upvotes": 61,
+      "downvotes": 42,
+      "tags": [
+        "comida",
+        "animales",
+        "tortuga"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 6,
+      "url": "https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg",
+      "title": "Paisaje sevillano típico",
+      "description": "Foto tomada en uno de los campos de las afueras de Sevilla",
+      "date": "2015-04-23T18:20:43.511Z",
+      "upvotes": 39844,
+      "downvotes": 217,
+      "tags": [
+        "paisaje",
+        "naturaleza",
+        "sevilla"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 7,
+      "url": "https://i2.wp.com/webdelmaestro.com/wp-content/uploads/2019/07/Paisaje-dibujo-n%C2%BA-5.jpg?ssl=1",
+      "title": "Casa junto al río",
+      "description": "Dibujo hecho por mi sobrino",
+      "date": "2019-04-23T18:20:43.511Z",
+      "upvotes": 8,
+      "downvotes": 0,
+      "tags": [
+        "paisaje",
+        "dibujo",
+        "río"
+      ],
+      "userId": 1
+    }
+  ]
+}
