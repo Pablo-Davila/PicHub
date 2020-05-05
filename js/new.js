@@ -1,16 +1,17 @@
 "use strict";
 
-$(main);
+$(loadPhotos);
 
 function displayPhotos(data) {
     let row = $("div.container > div.row").last();
 
+    let autores = [];
     let count = 0;
     for (let photo of data) {
 	count++;
-
+	
 	// HTML de la tarjeta
-	let card_str = /*PROBLEMA*/`
+	let card_str = `
     	<div class="col-md text-center max-w-33">
           <div class="card border-dark mb-4">
             <a href="image_detail.php?id=${photo.id}.php">
@@ -22,7 +23,7 @@ function displayPhotos(data) {
 
             <div class="card-body bg-dark">
               <h5 class="card-title">${photo.title}</h5>
-              <a href="profile.php?id=${photo.userId}.php" class="card-text">#${photo.userId}#</a>
+              <a name="auth-${photo.userId}" href="profile.php?id=${photo.userId}.php" class="card-text">x</a>
               <hr>
               <p class="card-text">
 		Etiquetas:
@@ -33,6 +34,7 @@ function displayPhotos(data) {
 
 	let card_html = $.parseHTML(card_str);
 	row.append(card_html);
+	updateAuthorName(photo.userId);
 	    
 	// Etiquetas
 	let tagList = $("p.card-text").last();
@@ -54,20 +56,6 @@ function displayPhotos(data) {
 	    row = new_row;
 	}
     }
-}
-
-function main() {
-    
-    console.log("Cargando las fotos de \"Nuevo\"...");
-
-    $.ajax({
-        url: "http://localhost:3000/photos?_sort=id&_order=desc",
-        success: displayPhotos,
-        error: function (error) {
-            console.log("Error al acceder a las fotos: " + error.toString());
-        }
-    });
-    
 }
 
 

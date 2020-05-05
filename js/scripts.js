@@ -2,6 +2,39 @@
 
 $(main);
 
+function puntuacion(photo) {
+    return photo.upvotes - photo.downvotes;
+}
+
+function loadPhotos() {
+    console.log("Cargando fotos...");
+
+    $.ajax({
+        url: "http://localhost:3000/photos?_sort=id&_order=desc",
+        success: displayPhotos,
+        error: function (error) {
+            console.log("Error al acceder a las fotos: " + error.toString());
+        }
+    });
+}
+
+function updateAuthorName(authorId) {
+    $.ajax({
+	url: `http://localhost:3000/users?id=${authorId}`,
+	success: function(authors) {
+	    //console.log($('[name="auth-1"]'));
+	    //console.log("----");
+	    $(`[name="auth-${authorId}"]`).each(function(i, elemento) {
+		//console.log("meh");
+		$(elemento).text(authors[0].user);
+	    });
+	},
+	error: function(error) {
+	    console.log(`Error al acceder al autor de una imagen: ${error}`);
+	}
+    });
+}
+
 function main() {
 
     let date = new Date();
