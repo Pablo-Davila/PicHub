@@ -1,2 +1,3 @@
 # Ignore all Emacs auto-save files
 *~
+.#*
