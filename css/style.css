@@ -93,6 +93,14 @@ a.dropdown-item:hover {
     min-width: 23em;
 }
 
+.max-w-33 {
+    max-width: 33.33%;
+}
+
+.max-w-50 {
+    max-width: 50%;
+}
+
 .right-0 {
     right: 2em;
 }
