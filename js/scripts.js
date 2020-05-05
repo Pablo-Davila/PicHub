@@ -2,7 +2,7 @@
 
 $(main);
 
-function puntuacion(photo) {
+function score(photo) {
     return photo.upvotes - photo.downvotes;
 }
 
