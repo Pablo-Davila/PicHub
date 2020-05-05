@@ -36,6 +36,14 @@
   17. [ ] Fotos trending
   18. [ ] Usuarios trending
 
-* [1/2] Otros
-  - [X] Validación de formulario en register.php
-  - [ ] Obtener imágenes desde backend.
+* [1/10] Pasos específicos
+  - [X] Registro: Validación de formulario.
+  - [ ] Editar/Nueva imagen: Validación de formulario.
+  - [ ] Nuevo: Cargar desde backend.
+  - [ ] Usuarios trending: Cargar desde backend.
+  - [ ] Imágenes trending: Cargar desde backend.
+  - [ ] Siguiendo: Cargar desde backend.
+  - [ ] Etiquetas: Cargar desde backend.
+  - [ ] Mi perfil: Cargar desde backend.
+  - [ ] Usuarios siguiendo/seguidos: Cargar desde backend.
+  - [ ] Detale de foto: Cargar desde backend.
