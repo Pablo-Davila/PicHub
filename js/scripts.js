@@ -18,10 +18,10 @@ seconds = seconds.toString().padStart(2, "0");
    and a message to report that we're finished
 */
 
-console.log("Loading finished.")
+console.log("Loading finished.");
 console.log(`The current time is: ${day}/${month}/${year} ${hour}:${minutes}:${seconds}`);
 
-$(main)
+$(main);
 function main() {
 
     // FLECHAS
