@@ -36,10 +36,10 @@
   17. [ ] Fotos trending
   18. [ ] Usuarios trending
 
-* [1/10] Pasos específicos
+* [2/10] Pasos específicos
   - [X] Registro: Validación de formulario.
   - [ ] Editar/Nueva imagen: Validación de formulario.
-  - [ ] Nuevo: Cargar desde backend.
+  - [X] Nuevo: Cargar desde backend.
   - [ ] Usuarios trending: Cargar desde backend.
   - [ ] Imágenes trending: Cargar desde backend.
   - [ ] Siguiendo: Cargar desde backend.
