@@ -1,4 +1,8 @@
 #+STARTUP: showall
+#+TITLE: Listado de tareas
+#+AUTHOR: Pablo Dávila Herrero
+#+OPTIONS: toc:0
+#+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto; } </style>
 
 * [1/2] Diseño
   - [X] Hasta el entregable 2
@@ -31,3 +35,7 @@
   16. [ ] Ver fotos de usuarios seguidos
   17. [ ] Fotos trending
   18. [ ] Usuarios trending
+
+* [1/2] Otros
+  - [X] Validación de formulario en register.php
+  - [ ] Obtener imágenes desde backend.
