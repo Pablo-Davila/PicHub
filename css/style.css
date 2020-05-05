@@ -72,6 +72,10 @@ a.dropdown-item:hover {
     width: 90% !important;
 }
 
+.w-60 {
+    width: 60% !important;
+}
+
 .w-99 {
     width: 99%;
     margin: auto;
@@ -158,6 +162,11 @@ div.embed-responsive img {
     padding: 30px;
     box-shadow: 0px 0px 10px 0px black;
     position: relative;
+}
+
+/* ========== < ATRIBUTES > ========== */
+[onclick] {
+    cursor: pointer;
 }
 
 /* ========== < ID > ========== */
