@@ -1,0 +1,33 @@
+#+STARTUP: showall
+
+* [1/2] Diseño
+  - [X] Hasta el entregable 2
+  - [ ] Sistema de etiquetas
+
+* [0/6] Reglas de negocio
+  1. [ ] Limitación en el número de fotos
+  2. [ ] Uso de lenguaje adecuado
+  3. [ ] Unicidad de cuentas
+  4. [ ] Unicidad de etiquetas
+  5. [ ] Eliminación de fotos
+  6. [ ] Auto-Seguimiento
+
+* [0/18] Requisitos funcionales
+  1. [ ] Fotos recientes
+  2. [ ] Registro de usuario
+  3. [ ] Autenticación de usuario
+  4. [ ] Añadir foto
+  5. [ ] Votar foto
+  6. [ ] Modificar foto
+  7. [ ] Eliminar foto
+  8. [ ] Perfiles de usuairos
+  9. [ ] Asociar etiqueta a foto
+  10. [ ] Eliminar etiqueta de foto
+  11. [ ] Crear etiqueta
+  12. [ ] Buscar por etiqueta
+  13. [ ] Comentar foto
+  14. [ ] Seguir a otro usuario
+  15. [ ] Dejar de seguir
+  16. [ ] Ver fotos de usuarios seguidos
+  17. [ ] Fotos trending
+  18. [ ] Usuarios trending
