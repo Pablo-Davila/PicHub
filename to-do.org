@@ -9,6 +9,7 @@
   - [ ] Cambiar sistema de etiquetas.
   - [ ] Introducir URL sin pop-up.
   - [ ] Hacer más intuitivo el cartel siguiendo-seguidos.
+  - [ ] Limitar el tamaño de la imagen en Detalles y Editar.
 
 * [0/6] Reglas de negocio
   1. [ ] Limitación en el número de fotos.
@@ -38,7 +39,7 @@
   17. [ ] Fotos trending.
   18. [ ] Usuarios trending.
 
-* [3/13] Pasos específicos
+* [5/14] Pasos específicos
   - [X] Registro: Validación de formulario.
   - [ ] Editar/Nueva imagen: Validación de formulario.
   - [X] Nuevo: Cargar desde backend.
@@ -48,7 +49,9 @@
   - [ ] Etiquetas: Cargar desde backend.
   - [ ] Mi perfil: Cargar desde backend.
   - [ ] Usuarios siguiendo/seguidos: Cargar desde backend.
-  - [ ] Detale de foto: Cargar desde backend.
+  - [X] Detale de foto: Cargar desde backend.
+  - [X] Editar foto: Cargar desde backend.
   - [ ] Crear tabla de votos.
   - [ ] Crear tabla de comentarios.
   - [ ] Crear tabla de usuarios seguidos.
+  - [ ] Errores de query incorrecta.
