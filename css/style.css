@@ -77,8 +77,8 @@ a.dropdown-item:hover {
 }
 
 .w-99 {
-    width: 99%;
-    margin: auto;
+    width: 99% !important;
+    margin: auto !important;
 }
 
 .h-min {
@@ -86,19 +86,23 @@ a.dropdown-item:hover {
 }
 
 .min-w-16m {
-    min-width: 16em;
+    min-width: 16em !important;
 }
 
 .min-w-23m {
-    min-width: 23em;
+    min-width: 23em !important;
 }
 
 .max-w-33 {
-    max-width: 33.33%;
+    max-width: 33.33% !important;
 }
 
 .max-w-50 {
-    max-width: 50%;
+    max-width: 50% !important;
+}
+
+.max-h-500px {
+    max-height: 500px !important;
 }
 
 .right-0 {
