@@ -2,14 +2,14 @@
 #+TITLE: Listado de tareas
 #+AUTHOR: Pablo Dávila Herrero
 #+OPTIONS: toc:0
-#+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto; } </style>
+#+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#696969; color:#D3D3D3;}</style>
 
-* [1/4] Diseño
+* [2/5] Diseño
   - [X] Hasta el entregable 2.
   - [ ] Cambiar sistema de etiquetas.
   - [ ] Introducir URL sin pop-up.
   - [ ] Hacer más intuitivo el cartel siguiendo-seguidos.
-  - [ ] Limitar el tamaño de la imagen en Detalles y Editar.
+  - [X] Limitar el tamaño de la imagen en Detalles y Editar.
 
 * [0/6] Reglas de negocio
   1. [ ] Limitación en el número de fotos.
