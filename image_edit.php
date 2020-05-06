@@ -3,8 +3,8 @@
 
   <head>
     <?php include 'imports.php' ?>
-    <script type="text/javascript" src="js/photo_edit.js"></script>
     <title>PicHub - Editar imagen</title>
+    <script type="text/javascript" src="js/image_edit.js"></script>
   </head>
 
   <body>
@@ -26,31 +26,30 @@
 
 	<!-- Imagen -->
 	<div class="col-md text-center mb-2">
-          <img src="http://via.placeholder.com/500.png"
+          <img  src="http://via.placeholder.com/500.png"
 	       id="imagen" class="img-fluid rounded">
 	</div>
 
 	<!-- Formulario-Datos -->
 	<div class="col-md text-center">
-	  <form id="edit-image-form">
+	  <form id="edit-image-form" onsubmit="return validateForm();">
 	    <label for="title">Título</label>
-	    <input id="title" type="text"
+	    <input id="title" type="text" required
 		   class="form-control bg-sdark focus-dark"
 		   placeholder="Añade un título a tu imagen">
 
 	    </br>
 	    
 	    <label for="description">Descripción</label>
-	    <!--<input id="description" type="textarea" class="form-control"
-		       placeholder="Añade una descripción a tu imagen">-->
-	    <textarea id="description" rows="1"
+	    <textarea id="description" rows="1" required
 		      class="form-control bg-sdark focus-dark"
-		      placeholder="Añade una descripción a tu imagen"></textarea>
+		      placeholder="Añade una descripción a tu imagen">
+	    </textarea>
 
             </br>
 
-	    <label for="tags">Etiquetas</label>
-	    <div id="tags">
+	    <label for="add-tags">Etiquetas</label>
+	    <div id="add-tags">
 	      <input type="text"
 		     class="form-inline form-control bg-sdark focus-dark"
 		     placeholder="Añade una etiqueta">
@@ -59,23 +58,14 @@
 		Add
 	      </a>
 	    </div>
-	    <div class="mt-3">
-              <span class="badge badge-primary">
-		Paisaje<span class="txt-sdark"> x</span>
-	      </span>
-              <span class="badge badge-primary">
-		Naturaleza<span class="txt-sdark"> x</span>
-	      </span>
-	    </div>
+	    <div id="tags" class="mt-3"></div>
 
             </br>
 
             <label for="actions">Acciones</label>
 	    <div id="actions">
-	      <a href="index.php"
-		 class="btn btn-danger">Borrar foto</a>
-	      <a href="image_detail.php"
-		 class="btn btn-success">Guardar</a>
+	      <a href="index.php" class="btn btn-danger">Borrar foto</a>
+	      <button type="submit" class="btn btn-success">Guardar</button>
 	    </div>
 	  </form>
 	</div>
@@ -84,9 +74,10 @@
 
       <hr>
 
+      <!-- Volver -->
       <div class="row">
 	<div class="col-md text-center">
-          <a href="image_detail.php" class="btn btn-info">Volver</a>
+          <a id="back" href="" class="btn btn-info">Volver</a>
 	</div>
       </div>
 

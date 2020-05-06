@@ -4,6 +4,7 @@
   <head>
     <?php include 'imports.php' ?>
     <title>PicHub - Detalles de imagen</title>
+    <script type="text/javascript" src="js/image_detail.js"></script>
   </head>
 
   <body>
@@ -15,7 +16,7 @@
       <div class="row">
 	<div class="col-md text-center">
 	</br></br>
-        <h3>Título de la imagen - Detalles</h3>
+        <h3 id="title">Detalles</h3>
 	</div>
       </div>
 
@@ -25,11 +26,13 @@
 
 	<!-- Imagen -->
 	<div class="col-md text-center mb-2">
-          <img src="http://via.placeholder.com/500.png"
-	       class="img-fluid rounded">
+          <img id="imagen"
+	       src="http://via.placeholder.com/500.png"
+	       class="img-fluid rounded max-h-500px">
 	  <p class="mb-1 mt-1">
-	    <a href="profile.php?UserNameX">UserNameX</a>
-	    - 02/03/2020</p>
+	    <a id="author" name="auth-" href=""></a>
+	    <span id="date"></span>
+	  </p>
 	</div>
 
 	<!-- Detalles -->
@@ -37,16 +40,14 @@
 	  </br>
 	  <div>
 	    <h4>Descripción</h4>
-	    <p class="text-left">
-	      Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem
-	      Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet Lorem Ipsum Dolor Sit Amet
+	    <p id="description" class="text-left">
 	    </p>
 	  </div>
 
 	  </br>
 	  
 	  <div>
-	    <h4>Puntuación: +30</h4>
+	    <h4 id="score">Puntuación: </h4>
 	    <button type="button" class="btn btn-success">Me gusta</button>
 	    <button type="button" class="btn btn-danger">No me gusta</button>
 	  </div>
@@ -55,16 +56,15 @@
 
 	  <div>
 	    <h4>Etiquetas</h4>
-	    <span class="badge badge-primary">Paisaje</span>
-	    <span class="badge badge-primary">Naturaleza</span>
+	    <div id="tags"></div>
 	  </div>
 
 	  </br>
 	  
 	  <div>
 	    <h4>Acciones</h4>
-	    <a href="image_edit.php" class="btn btn-info">Editar foto</a> 
-	    <a href="index.php" class="btn btn-danger">Borrar foto</a>
+	    <a id="edit" href="" class="btn btn-info">Editar foto</a> 
+	    <a id="delete" href="index.php" class="btn btn-danger">Borrar foto</a>
 	  </div>
 	</div>
 
