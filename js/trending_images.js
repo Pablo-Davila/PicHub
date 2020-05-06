@@ -18,7 +18,7 @@ function displayPhotos(data) {
 	let card_str = `
     	<div class="col-md text-center max-w-50">
           <div class="card border-dark mb-4">
-            <a href="image_detail.php?id=${photo.id}.php">
+            <a href="image_detail.php?id=${photo.id}">
 	      <div class="embed-responsive embed-responsive-4by3">
 		<img class="card-img-top embed-responsive-item"
 		     src=${photo.url}>
