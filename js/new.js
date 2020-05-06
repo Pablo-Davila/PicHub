@@ -23,7 +23,7 @@ function displayPhotos(data) {
 
             <div class="card-body bg-dark">
               <h5 class="card-title">${photo.title}</h5>
-              <a name="auth-${photo.userId}" href="profile.php?id=${photo.userId}.php" class="card-text">x</a>
+              <a name="auth-${photo.userId}" href="profile.php?id=${photo.userId}" class="card-text">x</a>
               <hr>
               <p class="card-text">
 		Etiquetas:
