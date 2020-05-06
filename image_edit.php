@@ -26,8 +26,9 @@
 
 	<!-- Imagen -->
 	<div class="col-md text-center mb-2">
-          <img  src="http://via.placeholder.com/500.png"
-	       id="imagen" class="img-fluid rounded">
+          <img id="imagen"
+	       src="http://via.placeholder.com/500.png"
+	       class="img-fluid rounded max-h-500px">
 	</div>
 
 	<!-- Formulario-Datos -->

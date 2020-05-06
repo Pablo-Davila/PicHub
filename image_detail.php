@@ -27,7 +27,6 @@
 	<!-- Imagen -->
 	<div class="col-md text-center mb-2">
           <img id="imagen"
-	       src="http://via.placeholder.com/500.png"
 	       class="img-fluid rounded max-h-500px">
 	  <p class="mb-1 mt-1">
 	    <a id="author" name="auth-" href=""></a>
