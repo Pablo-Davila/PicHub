@@ -87,7 +87,8 @@
 		   placeholder="Repita su contraseña">
           </div>
 	</div>
-	
+
+	<!-- Submit button -->
 	<div id="submitdiv" class="row">
 	  <button id="submitbtn" type="submit"
 		  class="btn btn-info d-block mx-auto w-auto">
