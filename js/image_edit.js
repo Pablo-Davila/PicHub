@@ -3,7 +3,7 @@
 // Información a partir de la URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
+const id = urlParams.get('imageId');
 
 $(main);
 
@@ -13,7 +13,8 @@ function main() {
     $("#imagen").click(function(){
 	let url = prompt("Inserte la URL de la imagen");
     });
-    
+
+    // Cargar imagen
     loadSinglePhoto(id, true);
 }
 

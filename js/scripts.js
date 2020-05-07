@@ -21,7 +21,7 @@ function loadPhotos() {
     console.log("Cargando fotos...");
 
     $.ajax({
-        url: "http://localhost:3000/photos?_sort=id&_order=desc",
+        url: "http://localhost:3000/images?_sort=imageId&_order=desc",
         success: displayPhotos,
         error: function (error) {
             console.log("Error al acceder a las fotos: " + error.toString());
@@ -33,7 +33,7 @@ function loadSinglePhoto(id, edit) {
 
     // Mostrar imagen
     $.ajax({
-	url: `http://localhost:3000/photos?id=${id}`,
+	url: `http://localhost:3000/images?imageId=${id}`,
 	success: function(images) {
 	    let data = images[0];
 	    $("#imagen").attr("src", data.url);
@@ -54,7 +54,7 @@ function loadSinglePhoto(id, edit) {
 		let tag_html = $.parseHTML(tag_str);
 		$("#tags").append(tag_html);
 	    }
-	    $("#back").attr("href", `image_detail.php?id=${id}`);
+	    $("#back").attr("href", `image_detail.php?imageId=${id}`);
 	},
 	error: function(error) {
 	    alert(`Error: La imagen de id ${id} no existe: ${error}`);
@@ -64,21 +64,21 @@ function loadSinglePhoto(id, edit) {
     // En image_detail.php
     if(!edit) {
 	// Actualizar link de edición
-	$("#edit").attr("href", `image_edit.php?id=${id}`);
+	$("#edit").attr("href", `image_edit.php?imageId=${id}`);
     }
     
 }
 
 function updateAuthorName(authorId) {
     $.ajax({
-	url: `http://localhost:3000/users?id=${authorId}`,
+	url: `http://localhost:3000/users?userId=${authorId}`,
 	success: function(authors) {
 	    //console.log($('[name="auth-1"]'));
 	    //console.log("----");
 	    $(`[name="auth-${authorId}"]`).each(function(i, elemento) {
 		//console.log("meh");
 		$(elemento).text(authors[0].user);
-		$(elemento).attr("href",`profile.php?id=${authorId}`);
+		$(elemento).attr("href",`profile.php?userId=${authorId}`);
 	    });
 	},
 	error: function(error) {
