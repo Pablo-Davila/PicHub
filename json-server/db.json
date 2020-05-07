@@ -123,5 +123,33 @@
       ],
       "userId": 1
     }
+  ],
+  "votes": [
+    {
+      "userId": 1,
+      "positive": true
+    },
+    {
+      "userId": 2,
+      "positive": false
+    }
+  ],
+  "comments": [
+    {
+      "imageId": 1,
+      "userId": 1,
+      "text": "Sinceramente, no sé ni qué foto estoy comentando."
+    },
+    {
+      "imageId": 2,
+      "userId": 1,
+      "text": "Esta foto me salió genial."
+    }
+  ],
+  "follows": [
+    {
+      "followerId": 1,
+      "targetId": 2
+    }
   ]
 }
