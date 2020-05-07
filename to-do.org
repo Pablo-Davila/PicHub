@@ -39,7 +39,7 @@
   17. [ ] Fotos trending.
   18. [ ] Usuarios trending.
 
-* [5/14] Pasos específicos
+* [8/15] Pasos específicos
   - [X] Registro: Validación de formulario.
   - [ ] Editar/Nueva imagen: Validación de formulario.
   - [X] Nuevo: Cargar desde backend.
@@ -51,7 +51,7 @@
   - [ ] Usuarios siguiendo/seguidos: Cargar desde backend.
   - [X] Detale de foto: Cargar desde backend.
   - [X] Editar foto: Cargar desde backend.
-  - [ ] Crear tabla de votos.
-  - [ ] Crear tabla de comentarios.
-  - [ ] Crear tabla de usuarios seguidos.
+  - [X] Crear tabla de votos.
+  - [X] Crear tabla de comentarios.
+  - [X] Crear tabla de usuarios seguidos.
   - [ ] Errores de query incorrecta.
