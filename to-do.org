@@ -10,6 +10,7 @@
   - [ ] Introducir URL sin pop-up.
   - [ ] Hacer más intuitivo el cartel siguiendo-seguidos.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
+  - [ ] Introducir visibilidad
 
 * [0/6] Reglas de negocio
   1. [ ] Limitación en el número de fotos.
@@ -54,4 +55,5 @@
   - [X] Crear tabla de votos.
   - [X] Crear tabla de comentarios.
   - [X] Crear tabla de usuarios seguidos.
+  - [X] Crear tabla de etiquetas.
   - [ ] Errores de query incorrecta.
