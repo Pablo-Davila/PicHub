@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "userId": 1,
       "email": "user1@mail.com",
       "password": "pass1",
       "name": "Name 1",
@@ -10,7 +10,7 @@
       "user": "User 1"
     },
     {
-      "id": 2,
+      "userId": 2,
       "email": "meh@meh.com",
       "password": "meh",
       "name": "MehName",
@@ -19,9 +19,9 @@
       "user": "meh"
     }
   ],
-  "photos": [
+  "images": [
     {
-      "id": 1,
+      "imageId": 1,
       "url": "https://images.unsplash.com/photo-1559628129-67cf63b72248?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
       "title": "Gallo al natural",
       "description": "Una foto simple de un gallo con el fondo medio desenfocado",
@@ -36,7 +36,7 @@
       "userId": 1
     },
     {
-      "id": 2,
+      "imageId": 2,
       "url": "https://www.timetravelturtle.com/wp-content/uploads/2019/11/Mont-St-Michel-2019-356_new.jpg",
       "title": "Monte San Miguel",
       "description": "Foto del monte San Miguel",
@@ -50,7 +50,7 @@
       "userId": 1
     },
     {
-      "id": 3,
+      "imageId": 3,
       "url": "https://clipartart.com/images/worst-clipart-ever-1.jpg",
       "title": "Clipart del güeno",
       "description": "Por si quieres acompañar las diapositivas con un poco de arte abstracto",
@@ -65,7 +65,7 @@
       "userId": 1
     },
     {
-      "id": 4,
+      "imageId": 4,
       "url": "https://img.vixdata.io/pd/jpg-large/es/sites/default/files/imj/elgranchef/R/Receta-de-paella-1.jpg",
       "title": "Paella normalita",
       "description": "Primera paella que hago, creo que no ha salido muy bien",
@@ -79,7 +79,7 @@
       "userId": 1
     },
     {
-      "id": 5,
+      "imageId": 5,
       "url": "https://i.pinimg.com/originals/04/b2/ed/04b2ed94021d06fbec19b3a29372e7e1.jpg",
       "title": "Tortuga comiendo fresa",
       "description": "Mi tortuga",
@@ -94,7 +94,7 @@
       "userId": 1
     },
     {
-      "id": 6,
+      "imageId": 6,
       "url": "https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg",
       "title": "Paisaje sevillano típico",
       "description": "Foto tomada en uno de los campos de las afueras de Sevilla",
@@ -109,7 +109,7 @@
       "userId": 1
     },
     {
-      "id": 7,
+      "imageId": 7,
       "url": "https://i2.wp.com/webdelmaestro.com/wp-content/uploads/2019/07/Paisaje-dibujo-n%C2%BA-5.jpg?ssl=1",
       "title": "Casa junto al río",
       "description": "Dibujo hecho por mi sobrino",
@@ -126,21 +126,25 @@
   ],
   "votes": [
     {
+      "voteId": 1,
       "userId": 1,
       "positive": true
     },
     {
+      "voteId": 2,
       "userId": 2,
       "positive": false
     }
   ],
   "comments": [
     {
+      "commentId": 1,
       "imageId": 1,
       "userId": 1,
       "text": "Sinceramente, no sé ni qué foto estoy comentando."
     },
     {
+      "commentId": 2,
       "imageId": 2,
       "userId": 1,
       "text": "Esta foto me salió genial."
@@ -148,8 +152,23 @@
   ],
   "follows": [
     {
+      "follwoId": 1,
       "followerId": 1,
       "targetId": 2
+    }
+  ],
+  "tags": [
+    {
+      "tagId": 1,
+      "name": "paisaje"
+    },
+    {
+      "tagId": 2,
+      "name": "sevilla"
+    },
+    {
+      "tagId": 1,
+      "name": "comida"
     }
   ]
 }
