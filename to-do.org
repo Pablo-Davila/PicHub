@@ -4,13 +4,14 @@
 #+OPTIONS: toc:0
 #+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#696969; color:#D3D3D3;}</style>
 
-* [2/5] Diseño
+* [2/7] Diseño
   - [X] Hasta el entregable 2.
   - [ ] Cambiar sistema de etiquetas.
   - [ ] Introducir URL sin pop-up.
   - [ ] Hacer más intuitivo el cartel siguiendo-seguidos.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
   - [ ] Introducir visibilidad
+  - [ ] Cambiar posición '+'
 
 * [0/6] Reglas de negocio
   1. [ ] Limitación en el número de fotos.
@@ -40,20 +41,26 @@
   17. [ ] Fotos trending.
   18. [ ] Usuarios trending.
 
-* [8/15] Pasos específicos
+* [2/8] Pasos específicos
   - [X] Registro: Validación de formulario.
-  - [ ] Editar/Nueva imagen: Validación de formulario.
-  - [X] Nuevo: Cargar desde backend.
-  - [ ] Usuarios trending: Cargar desde backend.
-  - [X] Imágenes trending: Cargar desde backend.
-  - [ ] Siguiendo: Cargar desde backend.
-  - [ ] Etiquetas: Cargar desde backend.
-  - [ ] Mi perfil: Cargar desde backend.
-  - [ ] Usuarios siguiendo/seguidos: Cargar desde backend.
-  - [X] Detale de foto: Cargar desde backend.
-  - [X] Editar foto: Cargar desde backend.
-  - [X] Crear tabla de votos.
-  - [X] Crear tabla de comentarios.
-  - [X] Crear tabla de usuarios seguidos.
-  - [X] Crear tabla de etiquetas.
+  - [4/9] Cargar desde backend
+    - [X] Nuevo: Cargar desde backend.
+    - [ ] Usuarios trending: Cargar desde backend.
+    - [X] Imágenes trending: Cargar desde backend.
+    - [ ] Siguiendo: Cargar desde backend.
+    - [ ] Etiquetas: Cargar desde backend.
+    - [ ] Mi perfil: Cargar desde backend.
+    - [ ] Usuarios siguiendo/seguidos: Cargar desde backend.
+    - [X] Detale de foto: Cargar desde backend.
+    - [X] Editar foto: Cargar desde backend.
+  - [X] Crear tablas
+    - [X] Crear tabla de votos.
+    - [X] Crear tabla de comentarios.
+    - [X] Crear tabla de usuarios seguidos.
+    - [X] Crear tabla de etiquetas.
+  - [ ] Editar/Nueva imagen: Comprobar palabras prohibidas
   - [ ] Errores de query incorrecta.
+  - [ ] Añadir nueva imagen.
+  - [ ] Eliminar imagen.
+  - [ ] Crear nuevo usuario.
+  - [ ] Inicio de sesión.
