@@ -96,6 +96,11 @@
           <a id="back" href="" class="btn btn-info">Volver</a>
 	</div>
       </div>
+      
+      <!-- Errores -->
+      <div class="row w-60 mx-auto mt-3">
+	<div class="col-md" id="errors-container"></div>
+      </div>
 
     </div>
 

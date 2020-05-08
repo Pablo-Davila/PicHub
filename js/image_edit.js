@@ -22,6 +22,14 @@ function main() {
     // Cargar imagen
     if(id == undefined) isNew = true;
     else loadSinglePhoto(id, true);
+
+    // Actualizar imagen al cambiar la URL
+    let url_input = $("#url");
+    url_input.change(function() {
+	if(/\.jpg$/i.test(url_input.val()) || /\.png$/i.test(url_input.val())) {
+	    $("#imagen").attr("src", $("#url").val());
+	}
+    });
 }
 
 function deleteImage() {
@@ -59,19 +67,37 @@ function validateForm(event) {
     };
     
     // TO-DO Validación
+    
     if(!errores){
 	if(isNew) {
 	    $.ajax({
 	    	method: "POST",
 	    	url: "http://localhost:3000/images",
 	    	data: data,
-	    	dataType: "json"
+	    	dataType: "json",
+		success: function() {
+		    window.location.href = `image_detail.php?id=${id}`;
+		},
+		error: function() {
+		    console.log("Error al crear la imagen.");
+		    $("#errors-container").append(getError("Error al crear la imagen"));
+		}
 	    });
-	    // $.post(
-	    // 	"http://localhost:3000/images/",
-	    // 	JSON.stringify(data),
-	    // 	null
-	    // );
+	}
+	else{
+	    $.ajax({
+		method: "PATCH",
+		url: "http://localhost:3000/images",
+		data: data,
+		dataType: "json",
+		success: function() {
+		    window.location.href = "index.php";
+		},
+		error: function() {
+		    console.log("Error al editar la imagen.");
+		    $("#errors-container").append(getError("Error al crear la imagen"));
+		}
+	    });
 	}
     }
     
