@@ -2,10 +2,24 @@
 
 $(main);
 
+// Errores
+function getError(message) {
+    return `<div onclick='removeError(this);' class='alert alert-danger' role='alert'>
+             <strong class="text-danger"><i class='fa fa-times text-danger' aria-hidden= 'true'>
+               </i > Error!
+             </strong>${message}
+           </div>`;
+}
+
+function removeError(error) {
+    $(error).fadeOut();
+}
+
 function removeTag(tag) {
     $(tag).parent().fadeOut();
 }
 
+// Otras utilidades
 function formatDate(date) {
     let year = date.substr(0,4);
     let month = date.substr(5,2);
@@ -17,6 +31,7 @@ function score(photo) {
     return photo.upvotes - photo.downvotes;
 }
 
+// Cargar imágenes
 function loadPhotos() {
     console.log("Cargando imágenes...");
 
@@ -34,6 +49,7 @@ function loadSinglePhoto(id, edit) {
 
     // Mostrar imagen
     $.ajax({
+	method: "GET",
 	url: `http://localhost:3000/images?id=${id}`,
 	success: function(images) {
 	    let data = images[0];
@@ -74,11 +90,15 @@ function updateAuthorName(authorId) {
 	    });
 	},
 	error: function(error) {
-	    console.log(`Error al acceder al autor de una imagen: ${error}`);
+	    console.log(`Error al acceder al autor ${authorId}: ${error}`);
+	    $(`[name="auth-${authorId}"]`).each(function(i, elemento) {
+		$(elemento).text("Desconocido");
+	    });
 	}
     });
 }
 
+// Main
 function main() {
 
     let date = new Date();
@@ -97,7 +117,6 @@ function main() {
     seconds = seconds.toString().padStart(2, "0");
 
     // Print the current date and a message to report that we're finished
-
     console.log("Loading finished.");
     console.log(`The current time is: ${day}/${month}/${year} ${hour}:${minutes}:${seconds}`);
 }

@@ -1,17 +1,5 @@
 "use strict";
 
-function getError(message) {
-    return `<div onclick='removeError(this);' class='alert alert-danger' role='alert'>
-             <strong class="text-danger"><i class='fa fa-times text-danger' aria-hidden= 'true'>
-               </i > Error!
-             </strong>${message}
-           </div>`;
-}
-
-function removeError(error) {
-    $(error).fadeOut();
-}
-
 function validateForm() {
     $("#errors-container").empty();
 
