@@ -18,7 +18,7 @@ function displayPhotos(data) {
 	let card_str = `
     	<div class="col-md text-center max-w-50">
           <div class="card border-dark mb-4">
-            <a href="image_detail.php?imageId=${photo.imageId}">
+            <a href="image_detail.php?id=${photo.id}">
 	      <div class="embed-responsive embed-responsive-4by3">
 		<img class="card-img-top embed-responsive-item"
 		     src=${photo.url}>
@@ -27,7 +27,7 @@ function displayPhotos(data) {
 
             <div class="card-body bg-dark">
               <h5 class="card-title">${photo.title}</h5>
-              <a name="auth-${photo.userId}" href="profile.php?userId=${photo.userId}" class="card-text"></a>
+              <a name="auth-${photo.userId}" href="profile.php?id=${photo.userId}" class="card-text"></a>
               <hr>
 	      <p class="card-text">Puntuación: ${score(photo)}</p>
               <p class="card-text">
@@ -43,17 +43,19 @@ function displayPhotos(data) {
 	    
 	// Etiquetas
 	let tagList = $("p.card-text").last();
-
-	for(let tag of photo.tags) {
-	    let tag_html = $(
-		"<span></span>",
-		{
-		    "class": "badge badge-primary",
-		    text: tag,
-		});
-	    tagList.append(tag_html);
+	if(photo.tags != undefined) {
+	    for(let tag of photo.tags) {
+		let tag_html = $(
+		    "<span></span>",
+		    {
+			"class": "badge badge-primary",
+			text: tag,
+		    });
+		tagList.append(tag_html);
+	    }
+	    $("span.badge").after(" "); // Separar etiquetas
 	}
-	$("span.badge").after(" "); // Separar etiquetas
+	else tagList.text("Sin etiquetas");
 
 	if(count%2 == 0) {
 	    let new_row = $("<div></div>", {"class": "row w-99"});

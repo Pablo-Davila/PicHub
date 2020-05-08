@@ -18,10 +18,10 @@ function score(photo) {
 }
 
 function loadPhotos() {
-    console.log("Cargando fotos...");
+    console.log("Cargando imágenes...");
 
     $.ajax({
-        url: "http://localhost:3000/images?_sort=imageId&_order=desc",
+        url: "http://localhost:3000/images?_sort=id&_order=desc",
         success: displayPhotos,
         error: function (error) {
             console.log("Error al acceder a las fotos: " + error.toString());
@@ -30,10 +30,11 @@ function loadPhotos() {
 }
 
 function loadSinglePhoto(id, edit) {
+    console.log("Cargando imagen...");
 
     // Mostrar imagen
     $.ajax({
-	url: `http://localhost:3000/images?imageId=${id}`,
+	url: `http://localhost:3000/images?id=${id}`,
 	success: function(images) {
 	    let data = images[0];
 	    $("#imagen").attr("src", data.url);
@@ -44,41 +45,32 @@ function loadSinglePhoto(id, edit) {
 	    $("#author").attr("name", `auth-${data.userId}`);
 	    updateAuthorName(data.userId);
 	    $("#date").text(`- ${formatDate(data.date.substr(0,10))}`);
-	    for(let tag of data.tags) {
-		let tag_str;
-		if(edit) tag_str = `
+	    if(data.tags != undefined){	
+		for(let tag of data.tags) {
+		    let tag_str;
+		    if(edit) tag_str = `
                     <span class="badge badge-primary">
  		      ${tag}<span onclick="removeTag(this);" class="txt-sdark"> x</span>
 	            </span>`;
-		else tag_str = `<span class="badge badge-primary">${tag}</span> `;
-		let tag_html = $.parseHTML(tag_str);
-		$("#tags").append(tag_html);
+		    else tag_str = `<span class="badge badge-primary">${tag}</span> `;
+		    let tag_html = $.parseHTML(tag_str);
+		    $("#tags-selected").append(tag_html);
+		}
 	    }
-	    $("#back").attr("href", `image_detail.php?imageId=${id}`);
 	},
 	error: function(error) {
 	    alert(`Error: La imagen de id ${id} no existe: ${error}`);
 	}
     });
-
-    // En image_detail.php
-    if(!edit) {
-	// Actualizar link de edición
-	$("#edit").attr("href", `image_edit.php?imageId=${id}`);
-    }
-    
 }
 
 function updateAuthorName(authorId) {
     $.ajax({
-	url: `http://localhost:3000/users?userId=${authorId}`,
-	success: function(authors) {
-	    //console.log($('[name="auth-1"]'));
-	    //console.log("----");
+	url: `http://localhost:3000/users/${authorId}`,
+	success: function(author) {
 	    $(`[name="auth-${authorId}"]`).each(function(i, elemento) {
-		//console.log("meh");
-		$(elemento).text(authors[0].user);
-		$(elemento).attr("href",`profile.php?userId=${authorId}`);
+		$(elemento).text(author.user);
+		$(elemento).attr("href",`profile.php?id=${authorId}`);
 	    });
 	},
 	error: function(error) {
