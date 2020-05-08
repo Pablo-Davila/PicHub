@@ -33,40 +33,55 @@
 
 	<!-- Formulario-Datos -->
 	<div class="col-md text-center">
-	  <form id="edit-image-form" onsubmit="return validateForm();">
+	  <form id="edit-image-form">
+	    
+	    <!-- Título -->
 	    <label for="title">Título</label>
 	    <input id="title" type="text" required
 		   class="form-control bg-sdark focus-dark"
 		   placeholder="Añade un título a tu imagen">
 
 	    </br>
-	    
+
+	    <!-- Descripción -->
 	    <label for="description">Descripción</label>
 	    <textarea id="description" rows="1" required
 		      class="form-control bg-sdark focus-dark"
-		      placeholder="Añade una descripción a tu imagen">
-	    </textarea>
+		      placeholder="Añade una descripción a tu imagen"></textarea>
+
+	    </br>
+	    
+	    <!-- URL -->
+	    <label for="url">URL</label>
+	    <input id="url" type="text" required
+		   class="form-control bg-sdark focus-dark"
+		   placeholder="URL de tu imagen">
 
             </br>
 
-	    <label for="add-tags">Etiquetas</label>
-	    <div id="add-tags">
-	      <input type="text"
+	    <!-- Etiquetas -->
+	    <label for="tags-input">Etiquetas</label>
+	    <div id="tags-input">
+	      <input type="text" id="tags-add-list"
 		     class="form-inline form-control bg-sdark focus-dark"
 		     placeholder="Añade una etiqueta">
-	      <a href="#tag-added"
-		 class="btn btn-info form-inline">
+	      <div id="tags-add-btn" class="btn btn-info form-inline">
 		Add
-	      </a>
+	      </div>
 	    </div>
-	    <div id="tags" class="mt-3"></div>
+	    <div id="tags-selected" class="mt-3"></div>
 
             </br>
 
+	    <!-- Acciones (botones) -->
             <label for="actions">Acciones</label>
 	    <div id="actions">
-	      <a href="index.php" class="btn btn-danger">Borrar foto</a>
-	      <button type="submit" class="btn btn-success">Guardar</button>
+	      <button id="delete" class="btn btn-danger">
+		Borrar foto
+	      </button>
+	      <button id="save" type="submit" class="btn btn-success">
+		Guardar
+	      </button>
 	    </div>
 	  </form>
 	</div>
