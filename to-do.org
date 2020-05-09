@@ -4,27 +4,54 @@
 #+OPTIONS: toc:0
 #+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#696969; color:#D3D3D3;}</style>
 
-* [3/8] Diseño
+* [4/8] Diseño
   - [X] Hasta el entregable 2.
-  - [ ] Cambiar sistema de etiquetas.
   - [X] Introducir URL sin pop-up.
-  - [ ] Hacer más intuitivo el cartel siguiendo-seguidos.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
-  - [ ] Introducir visibilidad
-  - [ ] Cambiar posición '+'
-  - [ ] Imagen de fondo (?)
+  - [X] Seleccionar visibilidad de imagen.
+  - [ ] Cambiar sistema de etiquetas.
+  - [ ] Hacer más intuitivo el cartel siguiendo-seguidos.
+  - [ ] Cambiar posición '+'.
+  - [ ] Imagen de fondo. (?)
 
-* [0/6] Reglas de negocio
+* [8/10] Implementación JavaScript
+  - [X] Registro: Validación de formulario.
+  - [4/9] Cargar desde backend
+    - [X] Detalle de foto: Cargar desde backend.
+    - [X] Editar foto: Cargar desde backend.
+    - [X] Nuevo: Cargar desde backend.
+    - [X] Imágenes trending: Cargar desde backend.
+    - [ ] Usuarios trending: Cargar desde backend.
+    - [ ] Siguiendo: Cargar desde backend.
+    - [ ] Etiquetas: Cargar desde backend.
+    - [ ] Mi perfil: Cargar desde backend.
+    - [ ] Usuarios siguiendo/seguidos: Cargar desde backend.
+  - [X] Añadir recursos
+    - [X] Crear "tabla" de votos.
+    - [X] Crear "tabla" de comentarios.
+    - [X] Crear "tabla" de usuarios seguidos.
+    - [X] Crear "tabla" de etiquetas.
+    - [X] Crear array de palabras malsonantes.
+  - [X] Añadir nueva imagen.
+  - [X] Editar una imagen.
+  - [X] Eliminar imagen.
+  - [X] Editar/Nueva imagen: Comprobar palabras prohibidas
+  - [X] Errores en peticiones AJAX.
+  - [ ] Errores de query incorrecta.
+  - [X] Crear nuevo usuario.
+  - [ ] Inicio de sesión.
+
+* [1/6] Reglas de negocio
   1. [ ] Limitación en el número de fotos.
-  2. [ ] Uso de lenguaje adecuado.
+  2. [X] Uso de lenguaje adecuado.
   3. [ ] Unicidad de cuentas.
   4. [ ] Unicidad de etiquetas.
   5. [ ] Eliminación de fotos.
   6. [ ] Auto-Seguimiento.
 
-* [0/18] Requisitos funcionales
+* [2/18] Requisitos funcionales
   1. [ ] Fotos recientes.
-  2. [ ] Registro de usuario.
+  2. [X] Registro de usuario.
   3. [ ] Autenticación de usuario.
   4. [ ] Añadir foto.
   5. [ ] Votar foto.
@@ -39,30 +66,5 @@
   14. [ ] Seguir a otro usuario.
   15. [ ] Dejar de seguir.
   16. [ ] Ver fotos de usuarios seguidos.
-  17. [ ] Fotos trending.
+  17. [X] Fotos trending.
   18. [ ] Usuarios trending.
-
-* [4/9] Pasos específicos
-  - [X] Registro: Validación de formulario.
-  - [4/9] Cargar desde backend
-    - [X] Nuevo: Cargar desde backend.
-    - [X] Imágenes trending: Cargar desde backend.
-    - [ ] Usuarios trending: Cargar desde backend.
-    - [ ] Siguiendo: Cargar desde backend.
-    - [ ] Etiquetas: Cargar desde backend.
-    - [ ] Mi perfil: Cargar desde backend.
-    - [ ] Usuarios siguiendo/seguidos: Cargar desde backend.
-    - [X] Detalle de foto: Cargar desde backend.
-    - [X] Editar foto: Cargar desde backend.
-  - [X] Crear tablas
-    - [X] Crear tabla de votos.
-    - [X] Crear tabla de comentarios.
-    - [X] Crear tabla de usuarios seguidos.
-    - [X] Crear tabla de etiquetas.
-  - [X] Añadir nueva imagen.
-  - [X] Editar una imagen.
-  - [ ] Eliminar imagen.
-  - [ ] Editar/Nueva imagen: Comprobar palabras prohibidas
-  - [ ] Errores de query incorrecta.
-  - [ ] Crear nuevo usuario.
-  - [ ] Inicio de sesión.
