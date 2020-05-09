@@ -68,7 +68,7 @@ function loadSinglePhoto(id, edit) {
 	    $("#author").attr("name", `auth-${data.userId}`);
 	    updateAuthorName(data.userId);
 	    $("#date").text(`- ${formatDate(data.date.substr(0,10))}`);
-	    if(data.tags != undefined){	
+	    if(data.tags != undefined) {
 		for(let tag of data.tags) {
 		    let tag_str;
 		    if(edit) tag_str = `
