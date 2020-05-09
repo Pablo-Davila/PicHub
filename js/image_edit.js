@@ -30,6 +30,7 @@ function main() {
 	    $("#imagen").attr("src", $("#url").val());
 	}
     });
+
 }
 
 function deleteImage() {
@@ -53,33 +54,39 @@ function validateForm(event) {
     let url = $("#url").val();
     // tags already defined
     let date = (new Date()).toISOString();
-
-    let data;
-    if(isNew) {
-	data = {
-	    "url": url,
-	    "title": title,
-	    "description": description,
-	    "tags": tags,
-	    "date": date,
-	    "upvotes": 0,
-	    "downvotes": 0
-	};
-    }
-    else {
-    	data = {
-    	    "url": url,
-    	    "title": title,
-    	    "description": description,
-    	    "tags": tags,
-    	    "date": date
-    	};
-    }
+    let priv = $("#private").prop("checked");
     
     // TO-DO Validación
     
     if(!errores){
+
+	// Datos a enviar
+	let data;
 	if(isNew) {
+	    data = {
+		"url": url,
+		"title": title,
+		"description": description,
+		"tags": tags,
+		"date": date,
+		"private": priv,
+		"upvotes": 0,
+		"downvotes": 0
+	    };
+	}
+	else {
+    	    data = {
+    		"url": url,
+    		"title": title,
+    		"description": description,
+    		"tags": tags,
+    		"date": date,
+		"private": priv
+    	    };
+	}
+	
+	if(isNew) {
+	    // Crear una nueva imagen
 	    $.ajax({
 	    	method: "POST",
 	    	url: "http://localhost:3000/images",
@@ -95,7 +102,8 @@ function validateForm(event) {
 		}
 	    });
 	}
-	else{
+	else {
+	    // Editar una imagen existente
 	    $.ajax({
 		type: "PATCH",
 		url: "http://localhost:3000/images/" + id,

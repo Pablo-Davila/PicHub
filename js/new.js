@@ -8,6 +8,7 @@ function displayPhotos(data) {
     let autores = [];
     let count = 0;
     for (let photo of data) {
+	if(photo.private) continue;
 	count++;
 	
 	// HTML de la tarjeta

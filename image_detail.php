@@ -16,13 +16,13 @@
       <div class="row">
 	<div class="col-md text-center">
 	</br></br>
-        <h3 id="title">Detalles</h3>
+        <h3 id="title">Detalles de imagen</h3>
 	</div>
       </div>
 
       <hr>
 
-      <div class="row">
+      <div class="row w-99">
 
 	<!-- Imagen -->
 	<div class="col-md text-center mb-2">
@@ -32,11 +32,14 @@
 	    <a id="author" name="auth-" href=""></a>
 	    <span id="date"></span>
 	  </p>
+	  <p id="private" class="fs-16px"></p>
 	</div>
 
 	<!-- Detalles -->
 	<div class="col-md text-center">
 	  </br>
+
+	  <!-- Descripción -->
 	  <div>
 	    <h4>Descripción</h4>
 	    <p id="description" class="text-left">
@@ -44,7 +47,8 @@
 	  </div>
 
 	  </br>
-	  
+
+	  <!-- Puntuación -->
 	  <div>
 	    <h4 id="score">Puntuación: </h4>
 	    <button type="button" class="btn btn-success">Me gusta</button>
@@ -53,13 +57,15 @@
 
 	  </br>
 
+	  <!-- Etiquetas -->
 	  <div>
 	    <h4>Etiquetas</h4>
 	    <div id="tags-selected"></div>
 	  </div>
 
 	  </br>
-	  
+
+	  <!-- Acciones -->
 	  <div>
 	    <h4>Acciones</h4>
 	    <a id="edit" href="" class="btn btn-info">Editar foto</a> 

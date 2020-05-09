@@ -22,67 +22,83 @@
 
       <hr>
 
-      <div class="row">
-
-	<!-- Imagen -->
-	<div class="col-md text-center mb-2">
-          <img id="imagen"
-	       src="http://via.placeholder.com/500.png"
-	       class="img-fluid rounded max-h-500px">
-	</div>
+      <div class="row w-99">
 
 	<!-- Formulario-Datos -->
 	<div class="col-md text-center">
 	  <form id="edit-image-form">
-	    
-	    <!-- Título -->
-	    <label for="title">Título</label>
-	    <input id="title" type="text" required
-		   class="form-control bg-sdark focus-dark"
-		   placeholder="Añade un título a tu imagen">
+	    <div class="row">
 
-	    </br>
+	      <!-- Imagen -->
+	      <div class="col-md text-center mb-2">
+		<img id="imagen"
+		     src="http://via.placeholder.com/500.png"
+		     class="img-fluid rounded max-h-500px">
 
-	    <!-- Descripción -->
-	    <label for="description">Descripción</label>
-	    <textarea id="description" rows="1" required
-		      class="form-control bg-sdark focus-dark"
-		      placeholder="Añade una descripción a tu imagen"></textarea>
-
-	    </br>
-	    
-	    <!-- URL -->
-	    <label for="url">URL</label>
-	    <input id="url" type="text" required
-		   class="form-control bg-sdark focus-dark"
-		   placeholder="URL de tu imagen">
-
-            </br>
-
-	    <!-- Etiquetas -->
-	    <label for="tags-input">Etiquetas</label>
-	    <div id="tags-input">
-	      <input type="text" id="tags-add-list"
-		     class="form-inline form-control bg-sdark focus-dark"
-		     placeholder="Añade una etiqueta">
-	      <div id="tags-add-btn" class="btn btn-info form-inline">
-		Add
+		<!-- Visibilidad -->
+		<div class="custom-control custom-checkbox mt-4">
+		  <input id="private" type="checkbox"
+			 class="custom-control-input"
+			 checked>
+		  <label for="private" class="custom-control-label fs-16px">
+		    Imagen privada
+		  </label>
+		</div>
 	      </div>
-	    </div>
-	    <div id="tags-selected" class="mt-3"></div>
 
-            </br>
+	      <div class="col-md">
+		<!-- Título -->
+		<label for="title">Título</label>
+		<input id="title" type="text" required
+		       class="form-control bg-sdark focus-dark"
+		       placeholder="Añade un título a tu imagen">
 
-	    <!-- Acciones (botones) -->
-            <label for="actions">Acciones</label>
-	    <div id="actions">
-	      <button id="delete" class="btn btn-danger">
-		Borrar foto
-	      </button>
-	      <button id="save" type="submit" class="btn btn-success">
-		Guardar
-	      </button>
+	        </br>
+
+		<!-- Descripción -->
+		<label for="description">Descripción</label>
+		<textarea id="description" rows="1" required
+			  class="form-control bg-sdark focus-dark"
+			  placeholder="Añade una descripción a tu imagen"></textarea>
+
+   	        </br>
+		
+		<!-- URL -->
+		<label for="url">URL</label>
+		<input id="url" type="text" required
+		       class="form-control bg-sdark focus-dark"
+		       placeholder="URL de tu imagen">
+
+                </br>
+
+		<!-- Etiquetas -->
+		<label for="tags-input">Etiquetas</label>
+		<div id="tags-input">
+		  <input type="text" id="tags-add-list"
+			 class="form-inline form-control bg-sdark focus-dark"
+			 placeholder="Añade una etiqueta">
+		  <div id="tags-add-btn" class="btn btn-info form-inline">
+		    Add
+		  </div>
+		</div>
+		<div id="tags-selected" class="mt-3"></div>
+		
+                </br>
+
+		<!-- Acciones (botones) -->
+		<label for="actions">Acciones</label>
+		<div id="actions">
+		  <button id="delete" class="btn btn-danger">
+		    Borrar foto
+		  </button>
+		  <button id="save" type="submit" class="btn btn-success">
+		    Guardar
+		  </button>
+		</div>
+	      </div>
+	      
 	    </div>
+
 	  </form>
 	</div>
 

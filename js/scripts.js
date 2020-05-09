@@ -60,9 +60,16 @@ function loadSinglePhoto(id, edit) {
 	    if(edit) {
 		$("#title").val(data.title);
 		$("#url").val(data.url);
+		$("#private").prop("checked", data.private);
 	    }
 	    else {
 		$("#title").text(data.title + " - Detalles");
+		if(data.private) {
+		    $("#private").text("Imagen privada");
+		}
+		else {
+		    $("#private").text("Imagen pública");
+		}
 	    }
 	    $("#score").text("Puntuación: " + score(data));
 	    $("#author").attr("name", `auth-${data.userId}`);
