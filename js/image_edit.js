@@ -46,25 +46,35 @@ function addTags() {
 
 function validateForm(event) {
     event.preventDefault();
-    /**/console.log("Empezamos...");
     let errores = false;
 
     let title = $("#title").val();
-    let description = $("#description").text();
+    let description = $("#description").val();
     let url = $("#url").val();
     // tags already defined
-    let date = new Date().toString();
+    let date = (new Date()).toISOString();
 
-    console.log(tags);
-    let data = {
-	"url": url,
-	"title": title,
-	"description": description,
-	"tags": [],
-	"date": date,
-	"upvotes": 0,
-	"downvotes": 0
-    };
+    let data;
+    if(isNew) {
+	data = {
+	    "url": url,
+	    "title": title,
+	    "description": description,
+	    "tags": tags,
+	    "date": date,
+	    "upvotes": 0,
+	    "downvotes": 0
+	};
+    }
+    else {
+    	data = {
+    	    "url": url,
+    	    "title": title,
+    	    "description": description,
+    	    "tags": tags,
+    	    "date": date
+    	};
+    }
     
     // TO-DO Validación
     
@@ -76,26 +86,29 @@ function validateForm(event) {
 	    	data: data,
 	    	dataType: "json",
 		success: function() {
-		    window.location.href = `image_detail.php?id=${id}`;
+		    window.location.href = "index.php";
 		},
 		error: function() {
 		    console.log("Error al crear la imagen.");
-		    $("#errors-container").append(getError("Error al crear la imagen"));
+		    $("#errors-container").empty();
+		    $("#errors-container").append(getError("Error al crear la imagen."));
 		}
 	    });
 	}
 	else{
 	    $.ajax({
-		method: "PATCH",
-		url: "http://localhost:3000/images",
-		data: data,
-		dataType: "json",
+		type: "PATCH",
+		url: "http://localhost:3000/images/" + id,
+		data: JSON.stringify(data),
+		contentType: "application/json; charset=UTF-8",
+		processData: false,
 		success: function() {
 		    window.location.href = "index.php";
 		},
-		error: function() {
+		error: function(error) {
 		    console.log("Error al editar la imagen.");
-		    $("#errors-container").append(getError("Error al crear la imagen"));
+		    $("#errors-container").empty();
+		    $("#errors-container").append(getError("Error al crear la imagen."));
 		}
 	    });
 	}
