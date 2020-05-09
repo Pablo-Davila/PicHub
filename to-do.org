@@ -4,14 +4,15 @@
 #+OPTIONS: toc:0
 #+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#696969; color:#D3D3D3;}</style>
 
-* [2/7] Diseño
+* [3/8] Diseño
   - [X] Hasta el entregable 2.
   - [ ] Cambiar sistema de etiquetas.
-  - [ ] Introducir URL sin pop-up.
+  - [X] Introducir URL sin pop-up.
   - [ ] Hacer más intuitivo el cartel siguiendo-seguidos.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
   - [ ] Introducir visibilidad
   - [ ] Cambiar posición '+'
+  - [ ] Imagen de fondo (?)
 
 * [0/6] Reglas de negocio
   1. [ ] Limitación en el número de fotos.
