@@ -86,11 +86,11 @@
                 </br>
 
 		<!-- Acciones (botones) -->
-		<label for="actions">Acciones</label>
+		<label for="save">Acciones</label>
 		<div id="actions">
-		  <button id="delete" class="btn btn-danger">
+		  <div id="delete" class="btn btn-danger">
 		    Borrar foto
-		  </button>
+		  </div>
 		  <button id="save" type="submit" class="btn btn-success">
 		    Guardar
 		  </button>
