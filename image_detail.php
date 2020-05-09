@@ -51,8 +51,8 @@
 	  <!-- Puntuación -->
 	  <div>
 	    <h4 id="score">Puntuación: </h4>
-	    <button type="button" class="btn btn-success">Me gusta</button>
 	    <button type="button" class="btn btn-danger">No me gusta</button>
+	    <button type="button" class="btn btn-success">Me gusta</button>
 	  </div>
 
 	  </br>
@@ -68,8 +68,12 @@
 	  <!-- Acciones -->
 	  <div>
 	    <h4>Acciones</h4>
-	    <a id="edit" href="" class="btn btn-info">Editar foto</a> 
-	    <a id="delete" href="index.php" class="btn btn-danger">Borrar foto</a>
+	    <div id="actions">
+	      <div id="delete" class="btn btn-danger">
+		Borrar foto
+	      </div>
+	      <a id="edit" href="" class="btn btn-info">Editar foto</a>
+	    </div>
 	  </div>
 	</div>
 
