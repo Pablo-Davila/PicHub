@@ -5,13 +5,13 @@ $(loadPhotos);
 function displayPhotos(data) {
     let row = $("div.container > div.row").last();
 
-    // console.log(data);
     data.sort(function(a, b){
 	return score(b) - score(a);
     });
     
     let count = 0;
     for (let photo of data) {
+	if(count == 10) break;
 	if(photo.private) continue;
 	count++;
 
