@@ -4,6 +4,7 @@
   <head>
     <?php include 'imports.php' ?>
     <title>PicHub - Editar imagen</title>
+    <script type="text/javascript" src="js/filter.js"></script>
     <script type="text/javascript" src="js/image_edit.js"></script>
   </head>
 

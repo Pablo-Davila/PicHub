@@ -4,7 +4,6 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
-//const isNew = urlParams.get('new');
 let isNew;
 
 let tags = [];
@@ -14,10 +13,10 @@ $(main);
 function main() {
 
     // Habilitar botones
-    $("#delete").click(deleteImage);
     $("#tags-add-btn").click(addTags);
     $("#back").attr("href", `image_detail.php?id=${id}`);
     $("form").submit(validateForm);
+    $("#delete").click(deleteImage);
     
     // Cargar imagen
     if(id == undefined) isNew = true;
@@ -31,6 +30,13 @@ function main() {
 	}
     });
 
+    // Comprobar palabras prohibidas al modificar
+    $("#title").change( function() {
+	fixBadWords($("#title"));
+    });
+    $("#description").change( function() {
+	fixBadWords($("#description"));
+    });
 }
 
 function addTags() {
@@ -40,7 +46,9 @@ function addTags() {
 
 function validateForm(event) {
     event.preventDefault();
-    let errores = false;
+    
+    fixBadWords($("#title"));
+    fixBadWords($("#description"));
 
     let title = $("#title").val();
     let description = $("#description").val();
@@ -48,76 +56,71 @@ function validateForm(event) {
     // tags already defined
     let date = (new Date()).toISOString();
     let priv = $("#private").prop("checked");
-    
-    // TO-DO Validación
-    
-    if(!errores){
 
-	// Datos a enviar
-	let data;
-	if(isNew) {
-	    data = {
-		"url": url,
-		"title": title,
-		"description": description,
-		"tags": tags,
-		"date": date,
-		"private": priv,
-		"upvotes": 0,
-		"downvotes": 0
-	    };
-	}
-	else {
-    	    data = {
-    		"url": url,
-    		"title": title,
-    		"description": description,
-    		"tags": tags,
-    		"date": date,
-		"private": priv
-    	    };
-	}
-	
-	if(isNew) {
-	    // Crear una nueva imagen
-	    $.ajax({
-	    	method: "POST",
-	    	url: "http://localhost:3000/images",
-	    	data: JSON.stringify(data),
-	    	dataType: "json",
-		contentType: "application/json; charset=UTF-8",
-		processData: false,
-		success: function() {
-		    window.location.href = "index.php";
-		},
-		error: function() {
-		    console.log("Error al crear la imagen.");
-		    $("#errors-container").empty();
-		    $("#errors-container").append(getError("Error al crear la imagen."));
-		}
-	    });
-	}
-	else {
-	    // Editar una imagen existente
-	    $.ajax({
-		type: "PATCH",
-		url: "http://localhost:3000/images/" + id,
-		data: JSON.stringify(data),
-		contentType: "application/json; charset=UTF-8",
-		processData: false,
-		success: function() {
-		    window.location.href = "index.php";
-		},
-		error: function(error) {
-		    console.log("Error al editar la imagen.");
-		    $("#errors-container").empty();
-		    $("#errors-container").append(getError("Error al crear la imagen."));
-		}
-	    });
-	}
+    // Datos a enviar
+    let data;
+    if(isNew) {
+	data = {
+	    "url": url,
+	    "title": title,
+	    "description": description,
+	    "tags": tags,
+	    "date": date,
+	    "private": priv,
+	    "upvotes": 0,
+	    "downvotes": 0
+	};
+    }
+    else {
+    	data = {
+    	    "url": url,
+    	    "title": title,
+    	    "description": description,
+    	    "tags": tags,
+    	    "date": date,
+	    "private": priv
+    	};
     }
     
-    return !errores;
+    if(isNew) {
+	// Crear una nueva imagen
+	$.ajax({
+	    method: "POST",
+	    url: "http://localhost:3000/images",
+	    data: JSON.stringify(data),
+	    dataType: "json",
+	    contentType: "application/json; charset=UTF-8",
+	    processData: false,
+	    success: function() {
+		window.location.href = "index.php";
+	    },
+	    error: function() {
+		console.log("Error al crear la imagen.");
+		$("#errors-container").empty();
+		$("#errors-container").append(getError("Error al crear la imagen."));
+	    }
+	});
+    }
+    else {
+	// Editar una imagen existente
+	$.ajax({
+	    type: "PATCH",
+	    url: "http://localhost:3000/images/" + id,
+	    data: JSON.stringify(data),
+	    contentType: "application/json; charset=UTF-8",
+	    processData: false,
+	    success: function() {
+		window.location.href = "index.php";
+	    },
+	    error: function(error) {
+		console.log("Error al editar la imagen.");
+		$("#errors-container").empty();
+		$("#errors-container").append(getError("Error al crear la imagen."));
+	    }
+	});
+    }
+    
+    return true;
 }
 
 
