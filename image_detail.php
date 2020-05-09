@@ -70,35 +70,17 @@
       </div>
 
       <hr>
+      
+      <!-- Errores -->
+      <div class="row w-60 mx-auto mt-3">
+	<div class="col-md" id="errors-container"></div>
+      </div>
 
-      <!-- COMENTARIOS -->
+      <!-- Comentarios -->
       <div class="w-75 m-auto">
-	<div id="comments">
-	  
-	  <div class="col-row mb-2">
-	    <div class="bg-dark rounded p-3">
-	      <h5><a href="profile.php?UserName1">
-		UserName1
-	      </a></h5>
-	      <p class="mb-0">This is UserName1's comment ^-^</p>
-	    </div>
-	  </div>
-	  
-	  <div class="col-row mb-2">
-	    <div class="bg-dark rounded p-3">
-	      <h5><a href="profile.php?UserName2">
-		UserName2
-	      </a></h5>
-	      <p class="mb-0">This is UserName2's comment ^-^</p>
-	    </div>
-	  </div>
-	  
-	</div>
-	
-        </br>
 
 	<!-- Nuevo comentario -->
-	<form class="ml-4">
+	<form class="ml-4 mb-4">
 	  <label for="newComment">Nuevo comentario</label>
 	  <textarea id="newComment"
 		    class="form-control bg-sdark focus-dark mb-2"
@@ -109,6 +91,30 @@
 	    Enviar
 	  </button>
 	</form>
+
+	<div id="comments">
+
+	  <!-- Comentario 1 -->
+	  <div class="col-row mb-2">
+	    <div class="bg-dark rounded p-3">
+	      <h5><a href="profile.php?UserName1">
+		  UserName1
+	      </a></h5>
+	      <p class="mb-0">This is UserName1's comment ^-^</p>
+	    </div>
+	  </div>
+
+	  <!-- Comentario 2 -->
+	  <div class="col-row mb-2">
+	    <div class="bg-dark rounded p-3">
+	      <h5><a href="profile.php?UserName2">
+		  UserName2
+	      </a></h5>
+	      <p class="mb-0">This is UserName2's comment ^-^</p>
+	    </div>
+	  </div>
+	  
+	</div>
       </div>
       
     </div>
