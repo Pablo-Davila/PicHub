@@ -33,13 +33,6 @@ function main() {
 
 }
 
-function deleteImage() {
-
-    // TO-DO
-
-    window.location.href = "localhost/index.php";
-}
-
 function addTags() {
 
     //TO-DO
@@ -90,8 +83,10 @@ function validateForm(event) {
 	    $.ajax({
 	    	method: "POST",
 	    	url: "http://localhost:3000/images",
-	    	data: data,
+	    	data: JSON.stringify(data),
 	    	dataType: "json",
+		contentType: "application/json; charset=UTF-8",
+		processData: false,
 		success: function() {
 		    window.location.href = "index.php";
 		},

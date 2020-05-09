@@ -96,6 +96,22 @@ function loadSinglePhoto(id, edit) {
     });
 }
 
+function deleteImage() {
+    console.log("Borrando imagen...");
+    $.ajax({
+	type: "DELETE",
+	url: `http://localhost:3000/images/${id}`,
+	success: function() {
+	    window.location.href = "index.php";
+	},
+	error: function() {
+	    console.log("Error al eliminar la imagen.");
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError("Error al eliminar la imagen."));
+	}	
+    });
+}
+
 function updateAuthorName(authorId) {
     $.ajax({
 	url: `http://localhost:3000/users/${authorId}`,
