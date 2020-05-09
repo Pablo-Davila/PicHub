@@ -55,7 +55,7 @@
 
 	  <div>
 	    <h4>Etiquetas</h4>
-	    <div id="tags"></div>
+	    <div id="tags-selected"></div>
 	  </div>
 
 	  </br>
