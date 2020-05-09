@@ -40,6 +40,8 @@ function loadPhotos() {
         success: displayPhotos,
         error: function (error) {
             console.log("Error al acceder a las fotos: " + error.toString());
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError("Error al cargar las imágenes."));
         }
     });
 }
@@ -50,13 +52,18 @@ function loadSinglePhoto(id, edit) {
     // Mostrar imagen
     $.ajax({
 	method: "GET",
-	url: `http://localhost:3000/images?id=${id}`,
-	success: function(images) {
-	    let data = images[0];
+	url: `http://localhost:3000/images/${id}`,
+	success: function(image) {
+	    let data = image;
 	    $("#imagen").attr("src", data.url);
 	    $("#description").text(data.description);
-	    if(edit) $("#title").val(data.title);
-	    else $("#title").text(data.title + " - Detalles");
+	    if(edit) {
+		$("#title").val(data.title);
+		$("#url").val(data.url);
+	    }
+	    else {
+		$("#title").text(data.title + " - Detalles");
+	    }
 	    $("#score").text("Puntuación: " + score(data));
 	    $("#author").attr("name", `auth-${data.userId}`);
 	    updateAuthorName(data.userId);
@@ -75,7 +82,9 @@ function loadSinglePhoto(id, edit) {
 	    }
 	},
 	error: function(error) {
-	    alert(`Error: La imagen de id ${id} no existe: ${error}`);
+	    console.log(`Error: La imagen de id ${id} no existe: ${error}`);
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError(`Error al cargar la imagen (${id}).`));
 	}
     });
 }
@@ -90,7 +99,12 @@ function updateAuthorName(authorId) {
 	    });
 	},
 	error: function(error) {
-	    console.log(`Error al acceder al autor ${authorId}: ${error}`);
+	    console.log(`Error al acceder al autor (${authorId}): ${error}`);
+	    let errores = $("#errors-container");
+	    if(errores != undefined) {
+		errores.empty();
+		errores.append(getError(`Error al acceder al autor (${authorId}).`));
+	    }
 	    $(`[name="auth-${authorId}"]`).each(function(i, elemento) {
 		$(elemento).text("Desconocido");
 	    });
