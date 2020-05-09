@@ -5,10 +5,11 @@ $(loadPhotos);
 function displayPhotos(data) {
     let row = $("div.container > div.row").last();
 
-    let autores = [];
+    let autores = new Set();
     let count = 0;
     for (let photo of data) {
 	if(photo.private) continue;
+	
 	count++;
 	
 	// HTML de la tarjeta
@@ -35,7 +36,7 @@ function displayPhotos(data) {
 
 	let card_html = $.parseHTML(card_str);
 	row.append(card_html);
-	updateAuthorName(photo.userId);
+	autores.add(photo.userId);
 	    
 	// Etiquetas
 	let tagList = $("p.card-text").last();
@@ -59,6 +60,11 @@ function displayPhotos(data) {
 	    $("div.container").append(new_row);
 	    row = new_row;
 	}
+    }
+
+    // Actualizar nombres de autores
+    for(let id of autores) {
+	updateAuthorName(id);
     }
 }
 
