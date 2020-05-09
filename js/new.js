@@ -5,10 +5,21 @@ $(loadPhotos);
 function displayPhotos(data) {
     let row = $("div.container > div.row").last();
 
+    // Filtrar los resultados de la última semana
+    let aWeekAgo = new Date();
+    aWeekAgo.setDate(aWeekAgo.getDate() - 7);
+    let filteredData = [];
+    for(let image of data){
+	let idate = new Date(image.date);
+	if(idate>aWeekAgo && !image.private) {
+	    filteredData.push(image);
+	}
+    }
+
     let autores = new Set();
     let count = 0;
-    for (let photo of data) {
-	if(photo.private) continue;
+    for (let photo of filteredData) {
+//	if(photo.private) continue;
 	
 	count++;
 	
