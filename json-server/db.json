@@ -17,6 +17,15 @@
       "surname": "MehSurname",
       "phone": "123456789",
       "user": "meh"
+    },
+    {
+      "email": "chumbi@mail.com",
+      "password": "patata",
+      "name": "Pablo",
+      "surname": "Dávila",
+      "phone": "123456789",
+      "user": "chumbi",
+      "id": 3
     }
   ],
   "images": [
@@ -129,8 +138,8 @@
     {
       "url": "https://1.bp.blogspot.com/-p5JKVzHrag0/U0VhwDoA53I/AAAAAAAAC7g/3wxZ3GEw9kE/s1600/patata+2.png",
       "title": "patata",
-      "description": "",
-      "date": "Fri May 08 2020 20:35:00 GMT+0200 (hora de verano de Europa central)",
+      "description": "Una hermosa patatilla.",
+      "date": "2020-05-12T10:10:09.899Z",
       "upvotes": "0",
       "downvotes": "0",
       "id": 8,
@@ -139,9 +148,9 @@
     },
     {
       "url": "https://trofologiamexico.info/site/wp-content/uploads/2019/07/poop_emoji.jpg",
-      "title": "Mierda",
-      "description": "",
-      "date": "Fri May 08 2020 20:37:22 GMT+0200 (hora de verano de Europa central)",
+      "title": "Mierdecita feliz",
+      "description": "Es una ******, pero es feliz. Eso es lo importante.",
+      "date": "2020-05-12T10:08:35.983Z",
       "upvotes": "0",
       "downvotes": "0",
       "id": 10,
