@@ -1,6 +1,14 @@
 "use strict";
 
-function validateForm() {
+$(main);
+
+function main() {
+
+    $("form").submit(validateForm);
+}
+
+function validateForm(event) {
+    event.preventDefault();
     $("#errors-container").empty();
 
     let errores = false;
@@ -12,6 +20,7 @@ function validateForm() {
     let email = $("#email").val();
     let password = $("#password").val();
     let repassword = $("#repassword").val();
+    let telefono = $("#telefono").val();
 
     // Validación de los datos
     if(nombre.trim().length < 3) {
@@ -42,6 +51,35 @@ function validateForm() {
 	    getError("Las contraseñas deben ser iguales.")
 	);
 	errores = true;
+    }
+
+    if(!errores) {
+
+	let data = {
+	    "email": email,
+	    "password": password,
+	    "name": nombre,
+	    "surname": apellidos,
+	    "phone": telefono,
+	    "user": usuario
+	};
+	
+	$.ajax({
+	    method: "POST",
+	    url: "http://localhost:3000/users",
+	    data: JSON.stringify(data),
+	    dataType: "json",
+	    contentType: "application/json; charset=UTF-8",
+	    processData: false,
+	    success: function() {
+		window.location.href = "index.php";
+	    },
+	    error: function() {
+		console.log("Error al registrar al usuario.");
+		$("#errors-container").empty();
+		$("#errors-container").append(getError("Error al registrar al usuario."));
+	    }
+	});
     }
     
     return !errores;

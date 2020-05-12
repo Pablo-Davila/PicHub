@@ -24,8 +24,7 @@
       <hr>
 
       <!-- Formulario -->
-      <form id="reg-form" class="form-basic rounded w-75 py-3 mx-auto"
-	    onsubmit="return validateForm();">
+      <form id="reg-form" class="form-basic rounded w-75 py-3 mx-auto">
 	<div id="form-data" class="row justify-content-center">
 
 	  <!-- Lado izquierdo -->	    
