@@ -180,15 +180,26 @@ div.embed-responsive img {
     position: relative;
 }
 
+.btn-s-s {
+    width: 35%;
+    justify-content: center;
+    min-width: 13em;
+}
+
 /* ========== < ATRIBUTES > ========== */
 [onclick] {
     cursor: pointer;
 }
 
 /* ========== < ID > ========== */
-
 #plus {
     height: 30px;
+    /*
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      height: 65px;
+    */
 }
 
 #logo {

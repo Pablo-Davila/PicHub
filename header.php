@@ -55,11 +55,11 @@
 
       <!-- Lado derecho -->
       <ul class="navbar-nav ml-auto">
-	<li class="nav-item pt-1 mr-3">
+	<!--DEL--><li class="nav-item pt-1 mr-3">
 	  <a href="image_edit.php">
 	    <img id="plus" src="img/plus.svg" href="edit.php">
 	  </a>
-	</li>
+	</li><!--DEL-->
         <li class="nav-item">
           <a class="nav-link" href="profile.php?myUserName">Mi perfil</a>
         </li>
@@ -68,5 +68,10 @@
     </div>
   </nav>
 </div>
+
+<!-- Botón nueva imagen -->
+<!--ADD-><a href="image_edit.php">
+  <img id="plus" src="img/plus.svg" href="edit.php">
+</a>-->
 
 <hr>
