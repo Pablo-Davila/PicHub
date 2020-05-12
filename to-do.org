@@ -4,15 +4,16 @@
 #+OPTIONS: toc:0
 #+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#595959; color:#D3D3D3;}</style>
 
-* [4/8] Diseño HTML+CSS
+* [5/8] Diseño HTML+CSS
   - [X] Hasta el entregable 2.
   - [X] Introducir URL sin pop-up.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
   - [X] Seleccionar visibilidad de imagen.
+  - [X] Hacer más intuitivo el cartel siguiendo-seguidos.
   - [ ] Cambiar sistema de etiquetas.
-  - [ ] Hacer más intuitivo el cartel siguiendo-seguidos.
   - [ ] Cambiar posición '+'.
   - [ ] Imagen de fondo. (?)
+  - [ ] Enlace a GitHub.
 
 * [10/12] Implementación JavaScript
   - [X] Registro: Validación de formulario.
@@ -36,12 +37,14 @@
   - [X] Editar una imagen.
   - [X] Eliminar imagen.
   - [X] Editar/Nueva imagen: Comprobar palabras prohibidas
-  - [X] Errores en peticiones AJAX.
-  - [X] Limitar a 10 las imágenes trending.
   - [X] Filtrar las imágenes recientes (última semana).
-  - [ ] Errores de query incorrecta.
+  - [X] Limitar a 10 las imágenes trending.
   - [X] Crear nuevo usuario.
+  - [X] Errores en peticiones AJAX.
+  - [ ] Errores de query incorrecta.
   - [ ] Inicio de sesión.
+  - [ ] Seguimiento entre usuarios.
+  - [ ] Imágenes trending: solo contar los votos de la última semana.
 
 * [1/6] Reglas de negocio
   1. [ ] Limitación en el número de fotos.
