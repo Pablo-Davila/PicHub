@@ -204,9 +204,9 @@
     {
       "url": "https://images.unsplash.com/photo-1502827186494-9f7976a04548",
       "title": "Impresionante",
-      "description": "Esta escena me deja sin palabras.",
+      "description": "Esta escena me deja sin palabras. Impresionante.",
       "tags": [],
-      "date": "2020-05-09T15:02:27.398Z",
+      "date": "2020-05-12T11:17:45.363Z",
       "private": false,
       "upvotes": 0,
       "downvotes": 0,
@@ -222,6 +222,17 @@
       "upvotes": 0,
       "downvotes": 0,
       "id": 19
+    },
+    {
+      "url": "https://1.bp.blogspot.com/-p5JKVzHrag0/U0VhwDoA53I/AAAAAAAAC7g/3wxZ3GEw9kE/s1600/patata+2.png",
+      "title": "patatta",
+      "description": "añslkdjf",
+      "tags": [],
+      "date": "2020-05-12T11:22:22.165Z",
+      "private": true,
+      "upvotes": 0,
+      "downvotes": 0,
+      "id": 21
     }
   ],
   "votes": [
