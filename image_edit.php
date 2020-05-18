@@ -58,7 +58,7 @@
 
 		<!-- Descripción -->
 		<label for="description">Descripción</label>
-		<textarea id="description" rows="1" required
+		<textarea id="description" rows="1"
 			  class="form-control bg-sdark focus-dark"
 			  placeholder="Añade una descripción a tu imagen"></textarea>
 
