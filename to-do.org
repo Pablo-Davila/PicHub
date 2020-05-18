@@ -15,7 +15,7 @@
   - [ ] Imagen de fondo. (?)
   - [ ] Enlace a GitHub.
 
-* [10/12] Implementación JavaScript
+* [12/15] Implementación JavaScript
   - [X] Registro: Validación de formulario.
   - [4/9] Cargar desde backend
     - [X] Detalle de foto.
@@ -42,7 +42,11 @@
   - [X] Crear nuevo usuario.
   - [X] Errores en peticiones AJAX.
   - [ ] Errores de query incorrecta.
-  - [ ] Inicio de sesión.
+  - [X] Inicio de sesión.
+  - [X] Asignar imagen al usuario al crearla.
+  - [0/2] En función del estado de autenticación
+    - [ ] Modificar la cabecera.
+    - [ ] Modificar la visibilidad de los botones de editar y eliminar.
   - [ ] Seguimiento entre usuarios.
   - [ ] Imágenes trending: solo contar los votos de la última semana.
 
