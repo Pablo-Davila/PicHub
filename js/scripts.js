@@ -39,7 +39,7 @@ function loadPhotos() {
         url: "http://localhost:3000/images?_sort=id&_order=desc",
         success: displayPhotos,
         error: function (error) {
-            console.log("Error al acceder a las fotos: " + error.toString());
+            console.log("Error al acceder a las imágenes: " + error.toString());
 	    $("#errors-container").empty();
 	    $("#errors-container").append(getError("Error al cargar las imágenes."));
         }
@@ -88,8 +88,8 @@ function loadSinglePhoto(id, edit) {
 		}
 	    }
 
-	    // Eliminar botones improcedentes
-	    if(image.userId == getUserId()) {
+	    // Añadir botones editar y eliminar
+	    if(!edit && image.userId==getUserId()) {
 		let actions_html = `
 	    <h4>Acciones</h4>
 	    <div>
@@ -104,9 +104,9 @@ function loadSinglePhoto(id, edit) {
 	    }
 	},
 	error: function(error) {
-	    console.log(`Error: La imagen de id ${id} no existe: ${error}`);
+	    console.log(`Error al cargar la imagen con id ${id}.`);
 	    $("#errors-container").empty();
-	    $("#errors-container").append(getError(`Error al cargar la imagen (${id}).`));
+	    $("#errors-container").append(getError(`Error al cargar la imagen con id ${id}).`));
 	}
     });
 }
