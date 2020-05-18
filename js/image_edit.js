@@ -14,7 +14,12 @@ function main() {
 
     // Habilitar botones
     $("#tags-add-btn").click(addTags);
-    $("#back").attr("href", `image_detail.php?id=${id}`);
+    if(id == null) {
+	$("#back").attr("href", `index.php`);
+    }
+    else {
+	$("#back").attr("href", `image_detail.php?id=${id}`);
+    }
     $("form").submit(validateForm);
     $("#delete").click(deleteImage);
     
@@ -68,7 +73,8 @@ function validateForm(event) {
 	    "date": date,
 	    "private": priv,
 	    "upvotes": 0,
-	    "downvotes": 0
+	    "downvotes": 0,
+	    "userId": getUserId()
 	};
     }
     else {
@@ -78,7 +84,8 @@ function validateForm(event) {
     	    "description": description,
     	    "tags": tags,
     	    "date": date,
-	    "private": priv
+	    "private": priv,
+	    "userId": getUserId()
     	};
     }
     
@@ -91,11 +98,15 @@ function validateForm(event) {
 	    dataType: "json",
 	    contentType: "application/json; charset=UTF-8",
 	    processData: false,
+	    headers: {
+		"Authorization": "Bearer " + getToken()
+	    },
 	    success: function() {
 		window.location.href = "index.php";
 	    },
-	    error: function() {
+	    error: function(error) {
 		console.log("Error al crear la imagen.");
+		console.log(error);
 		$("#errors-container").empty();
 		$("#errors-container").append(getError("Error al crear la imagen."));
 	    }
