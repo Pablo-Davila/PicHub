@@ -36,7 +36,7 @@
 	</div>
 
 	<!-- Detalles -->
-	<div class="col-md text-center">
+	<div id="details" class="col-md text-center">
 	  </br>
 
 	  <!-- Descripción -->
@@ -66,14 +66,7 @@
 	  </br>
 
 	  <!-- Acciones -->
-	  <div>
-	    <h4>Acciones</h4>
-	    <div id="actions">
-	      <div id="delete" class="btn btn-danger">
-		Borrar foto
-	      </div>
-	      <a id="edit" href="" class="btn btn-info">Editar foto</a>
-	    </div>
+	  <div id="actions">
 	  </div>
 	</div>
 
