@@ -9,11 +9,6 @@ $(main);
 
 function main() {
 
-    // Habilitar botones
-    $("#edit").attr("href", `image_edit.php?id=${id}`);
-    $("#back").attr("href", `image_detail.php?id=${id}`);
-    $("#delete").click(deleteImage);
-
     // Cargar imagen
     loadSinglePhoto(id, false);
     

@@ -89,8 +89,18 @@ function loadSinglePhoto(id, edit) {
 	    }
 
 	    // Eliminar botones improcedentes
-	    if(getToken()==null || image.userId!=getUserId()) {
-		$("#actions").remove();
+	    if(image.userId == getUserId()) {
+		let actions_html = `
+	    <h4>Acciones</h4>
+	    <div>
+	      <div id="delete" class="btn btn-danger">
+		Borrar foto
+	      </div>
+	      <a id="edit" href="image_edit.php?id=${id}" class="btn btn-info">Editar foto</a>
+	    </div>`;
+
+		$("#actions").append($.parseHTML(actions_html));
+		$("#delete").click(deleteImage);
 	    }
 	},
 	error: function(error) {
