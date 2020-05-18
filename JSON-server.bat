@@ -1,4 +1,4 @@
+@echo off
 cd json-server/
-json-server db.json
+json-server-auth db.json -r routes.json
 pause
-

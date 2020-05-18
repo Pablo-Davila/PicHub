@@ -23,3 +23,5 @@
 	crossorigin="anonymous"></script> <!--Bootstrap-->
 
 <script type="text/javascript" src="js/scripts.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/jwt-decode.js"></script>

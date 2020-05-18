@@ -4,6 +4,7 @@
   <head>
     <?php include 'imports.php' ?>
     <title>PicHub - Login</title>
+    <script src="js/login.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -24,14 +25,25 @@
       <!-- Formulario -->
       <form id="login-form"
 	    class="form-basic rounded w-25 min-w-16m mx-auto py-3">
+	<!-- Email -->
+	<label for="email">Email</label>
+ 	<input type="email" id="email" name="email" required
+	       class="form-control bg-sdark mb-4 focus-light"
+	       placeholder="Email">
+
+	<!-- Username
 	<label for="username">Nombre de usuario</label>
 	<input id="username" type="text"
 	       class="form-control bg-sdark mb-4 focus-light"
-	       placeholder="Usuario">
+	       placeholder="Usuario"> -->
+
+	<!-- Password -->
 	<label for="password">Contraseña</label>
 	<input id="password" type="password"
 	       class="form-control bg-sdark mb-4 focus-light"
 	       placeholder="Contraseña">
+
+	<!-- Submit -->
 	<button id="submitbtn" type="submit"
 		class="btn btn-info d-block mx-auto w-auto">
 	  Log in

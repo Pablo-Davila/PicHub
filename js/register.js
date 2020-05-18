@@ -54,7 +54,6 @@ function validateForm(event) {
     }
 
     if(!errores) {
-
 	let data = {
 	    "email": email,
 	    "password": password,
@@ -66,16 +65,18 @@ function validateForm(event) {
 	
 	$.ajax({
 	    method: "POST",
-	    url: "http://localhost:3000/users",
+	    url: "http://localhost:3000/register",
 	    data: JSON.stringify(data),
 	    dataType: "json",
 	    contentType: "application/json; charset=UTF-8",
 	    processData: false,
-	    success: function() {
+	    success: function(data) {
+		storeToken(data.accessToken);
 		window.location.href = "index.php";
 	    },
-	    error: function() {
+	    error: function(error) {
 		console.log("Error al registrar al usuario.");
+		console.log(error);
 		$("#errors-container").empty();
 		$("#errors-container").append(getError("Error al registrar al usuario."));
 	    }
