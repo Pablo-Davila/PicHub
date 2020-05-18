@@ -120,6 +120,9 @@ function validateForm(event) {
 	    data: JSON.stringify(data),
 	    contentType: "application/json; charset=UTF-8",
 	    processData: false,
+	    headers: {
+		"Authorization": "Bearer " + getToken()
+	    },
 	    success: function() {
 		window.location.href = "index.php";
 	    },
