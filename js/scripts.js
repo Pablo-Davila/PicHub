@@ -87,6 +87,11 @@ function loadSinglePhoto(id, edit) {
 		    $("#tags-selected").append(tag_html);
 		}
 	    }
+
+	    // Eliminar botones improcedentes
+	    if(getToken()==null || image.userId!=getUserId()) {
+		$("#actions").remove();
+	    }
 	},
 	error: function(error) {
 	    console.log(`Error: La imagen de id ${id} no existe: ${error}`);
@@ -101,6 +106,9 @@ function deleteImage() {
     $.ajax({
 	type: "DELETE",
 	url: `http://localhost:3000/images/${id}`,
+	headers: {
+	    "Authorization": "Bearer " + getToken()
+	},
 	success: function() {
 	    window.location.href = "index.php";
 	},
