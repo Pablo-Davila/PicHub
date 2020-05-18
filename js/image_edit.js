@@ -10,6 +10,29 @@ let tags = [];
 
 $(main);
 
+function moreThanFifty(userId) {
+    $.ajax({
+	method: "GET",
+	url: `http://localhost:3000/images?userId=${userId}`,
+	success: function(data) {
+	    if(data.length >= 2) {
+		$("#errors-container").append(getError("Ya ha alcanzado el límite de 50 imágenes."));
+	    }
+	    else {
+		let save_html = `
+		  <button id="save" type="submit" class="btn btn-success">
+		    Guardar
+		  </button>`;
+		$("#actions").append($.parseHTML(save_html));
+		$("form").submit(validateForm);
+	    }
+	},
+	error: function(error) {
+	    console.log(error);
+	}
+    });
+}
+
 function main() {
 
     // Habilitar botones
@@ -20,8 +43,10 @@ function main() {
     else {
 	$("#back").attr("href", `image_detail.php?id=${id}`);
     }
-    $("form").submit(validateForm);
     $("#delete").click(deleteImage);
+
+    // Comprobar límite de fotos y habilitar submit
+    moreThanFifty(getUserId());
     
     // Cargar imagen
     if(id == undefined) isNew = true;

@@ -92,9 +92,6 @@
 		  <div id="delete" class="btn btn-danger">
 		    Borrar foto
 		  </div>
-		  <button id="save" type="submit" class="btn btn-success">
-		    Guardar
-		  </button>
 		</div>
 	      </div>
 	      
