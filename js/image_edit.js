@@ -55,7 +55,7 @@ function main() {
     // Actualizar imagen al cambiar la URL
     let url_input = $("#url");
     url_input.change(function() {
-	if(/\.jpg$/i.test(url_input.val()) || /\.png$/i.test(url_input.val())) {
+	if(/\.jpg$/i.test(url_input.val()) || /\.png$/i.test(url_input.val()) || /\.jpeg$/i.test(url_input.val())) {
 	    $("#imagen").attr("src", $("#url").val());
 	}
     });
