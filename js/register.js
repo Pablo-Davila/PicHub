@@ -76,9 +76,8 @@ function validateForm(event) {
 	    },
 	    error: function(error) {
 		console.log("Error al registrar al usuario.");
-		console.log(error);
 		$("#errors-container").empty();
-		$("#errors-container").append(getError("Error al registrar al usuario."));
+		$("#errors-container").append(getError("Ya existe un usuario con ese email."));
 	    }
 	});
     }

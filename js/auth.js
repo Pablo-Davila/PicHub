@@ -28,6 +28,8 @@ function getUserId() {
 function logOut(){
     localStorage.removeItem("token");
     localStorage.removeItem("tokenTime");
-    localStorage.removeItem("userId"); // Añadido por mi
+    localStorage.removeItem("userId");
+
+    console.log("Sesión cerrada");
 }
 

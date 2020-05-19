@@ -154,7 +154,7 @@ function validateForm(event) {
 	    error: function(error) {
 		console.log("Error al editar la imagen.");
 		$("#errors-container").empty();
-		$("#errors-container").append(getError("Error al crear la imagen."));
+		$("#errors-container").append(getError("Error al editar la imagen."));
 	    }
 	});
     }
