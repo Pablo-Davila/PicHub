@@ -131,9 +131,8 @@ function validateForm(event) {
 	    },
 	    error: function(error) {
 		console.log("Error al crear la imagen.");
-		console.log(error);
 		$("#errors-container").empty();
-		$("#errors-container").append(getError("Error al crear la imagen."));
+		$("#errors-container").append(getError("No se ha podido crear la imagen."));
 	    }
 	});
     }
@@ -154,7 +153,7 @@ function validateForm(event) {
 	    error: function(error) {
 		console.log("Error al editar la imagen.");
 		$("#errors-container").empty();
-		$("#errors-container").append(getError("Error al editar la imagen."));
+		$("#errors-container").append(getError("No se ha podido editar la imagen."));
 	    }
 	});
     }
