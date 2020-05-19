@@ -49,6 +49,12 @@
 	  Log in
 	</button>
       </form>
+      </br>
+      
+      <!-- Errores -->
+      <div class="row w-60 mx-auto">
+	<div class="col-md" id="errors-container"></div>
+      </div>
       
     </div>
     

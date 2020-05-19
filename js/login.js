@@ -32,12 +32,13 @@ function validateForm(event) {
 	    data: JSON.stringify(data),
 	    success: function(data) {
 		storeToken(data.accessToken);
-		/**/console.log(data.accessToken);
+		console.log("Sesión iniciada con éxito");
 		window.location.href = "index.php";
 	    },
 	    error: function(error) {
-		//TO-DO
-		/**/console.log(error);
+		console.log("Error al iniciar sesión.");
+		$("#errors-container").empty();
+		$("#errors-container").append(getError("Email o contraseña incorrectos."));
 	    }
 	});
     }
