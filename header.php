@@ -61,7 +61,7 @@
 	  </a>
 	</li><!--DEL-->
         <li class="nav-item">
-          <a class="nav-link" href="profile.php?myUserName">Mi perfil</a>
+          <a id="my-profile" class="nav-link" href="">Mi perfil</a>
         </li>
       </ul>
       

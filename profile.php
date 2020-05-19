@@ -55,7 +55,7 @@
 	    
 	    <div class="row">
 	      <div class="col-md">
-		<a href="followers.php"
+		<a id="followers" href="followers.php"
 		   class="btn btn-info form-inline text-white a-center
 			  btn-s-s">
 		  Siguiendo a 314 usuarios
@@ -67,7 +67,7 @@
 	    
 	    <div class="row">
 	      <div class="col-md">
-		<a href="followers.php"
+		<a id="followed" href="followers.php"
 		   class="btn btn-info form-inline text-white a-center
 			  btn-s-s">
 		  Seguido por 159 usuarios
