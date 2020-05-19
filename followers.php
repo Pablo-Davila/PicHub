@@ -4,6 +4,7 @@
   <head>
     <?php include 'imports.php' ?>
     <title>PicHub - Seguidores</title>
+    <script type="text/javascript" src="js/followers.js"></script>
   </head>
 
   <body>
@@ -26,23 +27,23 @@
 	  <hr>
 
 	  <!-- Lista -->
-	  <ul id="shoppingList" class="list-group w-75 m-auto">
+	  <ul id="followers-list" class="list-group w-75 m-auto">
 	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php"class="lh-1-8">UserName2</span>
+	      <a href="profile.php" class="lh-1-8">UserName2</a>
 	      <a href="#followed"
 		 class="btn btn-info text-white d-inline-block lh-1">
 		Seguir
 	      </a>
 	    </li>
 	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php"class="lh-1-8">UserName3</span>
+	      <a href="profile.php" class="lh-1-8">UserName3</a>
 	      <a href="#followed"
 		 class="btn btn-info text-white d-inline-block lh-1">
 		Seguir
 	      </a>
 	    </li>
 	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php"class="lh-1-8">UserName4</span>
+	      <a href="profile.php" class="lh-1-8">UserName4</a>
 	      <a href="#followed"
 		 class="btn btn-info text-white d-inline-block lh-1">
 		Seguir
@@ -66,23 +67,23 @@
 	  <hr>
 
 	  <!-- Lista -->
-	  <ul id="shoppingList" class="list-group w-75 m-auto">
+	  <ul id="followed-list" class="list-group w-75 m-auto">
 	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php"class="lh-1-8">UserName2</span>
+	      <a href="profile.php" class="lh-1-8">UserName2</a>
 	      <a href="#followed"
 		 class="btn btn-info text-white d-inline-block lh-1">
 		Seguir
 	      </a>
 	    </li>
 	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php"class="lh-1-8">UserName3</span>
+	      <a href="profile.php" class="lh-1-8">UserName3</a>
 	      <a href="#followed"
 		 class="btn btn-info text-white d-inline-block lh-1">
 		Seguir
 	      </a>
 	    </li>
 	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php"class="lh-1-8">UserName4</span>
+	      <a href="profile.php" class="lh-1-8">UserName4</a>
 	      <a href="#followed"
 		 class="btn btn-info text-white d-inline-block lh-1">
 		Seguir
@@ -93,6 +94,11 @@
 	</div>
 	
       </div>
+    </div>
+    
+    <!-- Errores -->
+    <div class="row w-60 mx-auto">
+      <div class="col-md" id="errors-container"></div>
     </div>
 
     <?php include 'footer.php' ?>
