@@ -154,6 +154,11 @@
       "followerId": "14",
       "targetId": "12",
       "id": 2
+    },
+    {
+      "followerId": "12",
+      "targetId": "14",
+      "id": 3
     }
   ],
   "tags": [
