@@ -51,6 +51,7 @@
     - [X] Modificar la visibilidad de los botones de editar y eliminar.
     - [ ] Modificar la cabecera.
     - [X] Modificar la visibilidad del botón de seguir.
+    - [ ] Ocultar perfiles de usuario para los no autenticados.
   - [X] Límitar el número de imágenes por usuario.
   - [ ] Restablecer a 50 el límite de imágenes por usuario.
   - [X] Seguimiento entre usuarios.
@@ -63,15 +64,15 @@
     - [ ] Evitar la modificación de imágenes comentadas.
   - [ ] Imágenes trending: solo contar los votos de la última semana.
 
-* [3/6] Reglas de negocio
+* [4/6] Reglas de negocio
   1. [X] Limitación en el número de fotos.
   2. [X] Uso de lenguaje adecuado.
   3. [X] Unicidad de cuentas.
   4. [ ] Unicidad de etiquetas.
   5. [ ] Eliminación de fotos.
-  6. [ ] Auto-Seguimiento.
+  6. [X] Auto-Seguimiento.
 
-* [7/18] Requisitos funcionales
+* [10/18] Requisitos funcionales
   1. [X] Fotos recientes.
   2. [X] Registro de usuario.
   3. [X] Autenticación de usuario.
@@ -79,14 +80,14 @@
   5. [ ] Votar foto.
   6. [X] Modificar foto.
   7. [X] Eliminar foto.
-  8. [ ] Perfiles de usuarios.
+  8. [X] Perfiles de usuarios.
   9. [ ] Asociar etiqueta a foto.
   10. [ ] Eliminar etiqueta de foto.
   11. [ ] Crear etiqueta.
   12. [ ] Buscar por etiqueta.
   13. [ ] Comentar foto.
-  14. [ ] Seguir a otro usuario.
-  15. [ ] Dejar de seguir.
+  14. [X] Seguir a otro usuario.
+  15. [X] Dejar de seguir.
   16. [ ] Ver fotos de usuarios seguidos.
   17. [X] Fotos trending.
   18. [ ] Usuarios trending.
