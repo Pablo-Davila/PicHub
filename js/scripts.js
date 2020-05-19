@@ -174,6 +174,9 @@ function main() {
     // Print the current date and a message to report that we're finished
     console.log("Loading finished.");
     console.log(`The current time is: ${day}/${month}/${year} ${hour}:${minutes}:${seconds}`);
+
+    // Update profile link
+    $("#my-profile").attr("href",`profile.php?id=${getUserId()}`);
 }
 
 

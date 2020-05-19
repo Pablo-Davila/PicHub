@@ -54,6 +54,13 @@ function main() {
 	    $("#errors-container").append(getError("Error al acceder a las imágenes del usuario."));
 	}
     });
+
+    // Actualizar links de seguidores y seguidos
+    $("#followers").attr("href", `followers.php?id=${id}`);
+    $("#followed").attr("href", `followers.php?id=${id}`);
+
+    // Actualizar número de seguidores y seguidos
+    //TO-DO
 }
 
 function updateFollow() {
