@@ -51,6 +51,9 @@
         <li class="nav-item">
           <a class="nav-link" href="register.php">Registro</a>
         </li>
+        <li class="nav-item">
+          <a id="logout" class="nav-link" href="index.php">Cerrar sesión</a>
+        </li>
       </ul>
 
       <!-- Lado derecho -->
