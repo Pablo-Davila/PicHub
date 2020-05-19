@@ -61,6 +61,25 @@ function main() {
 
     // Actualizar número de seguidores y seguidos
     //TO-DO
+    $.ajax({
+	method: "GET",
+	url: "http://localhost:3000/follows",
+	success: function(data) {
+	    let followed = 0;
+	    let followers = 0;
+	    for(let f of data){
+		if(f.followerId == id) followed++;
+		else if(f.targetId == id) followers++;
+	    }
+	    $("#followers").text(`Seguido por ${followers} usuarios`);
+	    $("#followed").text(`Siguiendo a ${followed} usuarios`);
+	},
+	error: function(error) {
+            console.log("Error al acceder al número de seguidores-seguidos.");
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError("No se pudo acceder al número de seguidores-seguidos."));
+	}
+    });
 }
 
 function updateFollow() {
