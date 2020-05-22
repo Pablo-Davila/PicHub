@@ -42,33 +42,36 @@
       "url": "https://1.bp.blogspot.com/-p5JKVzHrag0/U0VhwDoA53I/AAAAAAAAC7g/3wxZ3GEw9kE/s1600/patata+2.png",
       "title": "patata",
       "description": "Una hermosa patatilla.",
-      "date": "2020-05-14T10:10:09.899Z",
+      "date": "2020-05-22T15:23:31.406Z",
       "upvotes": "0",
       "downvotes": "0",
       "id": 8,
       "tags": [],
+      "userId": "12",
       "private": false
     },
     {
       "url": "https://trofologiamexico.info/site/wp-content/uploads/2019/07/poop_emoji.jpg",
       "title": "Mierdecita feliz",
       "description": "Es una ******, pero es feliz. Eso es lo importante.",
-      "date": "2020-05-15T10:08:35.983Z",
+      "date": "2020-05-22T15:23:37.252Z",
       "upvotes": "0",
       "downvotes": "0",
       "id": 10,
       "tags": [],
+      "userId": "12",
       "private": false
     },
     {
       "url": "https://static1.abc.es/media/sociedad/2020/05/08/mapafases-kEtH--1200x630@abc.jpg",
       "title": "Fases del confinamiento",
       "description": "Acaban de anunciar qué provincias pasan a la fase 1.",
-      "date": "2020-05-13T13:32:26.557Z",
+      "date": "2020-05-22T15:24:10.826Z",
       "upvotes": "0",
       "downvotes": "0",
       "id": 14,
       "tags": [],
+      "userId": "13",
       "private": false
     },
     {
@@ -80,6 +83,7 @@
       "downvotes": 0,
       "id": 15,
       "tags": [],
+      "userId": "13",
       "private": false
     },
     {
@@ -91,17 +95,19 @@
       "downvotes": "0",
       "id": 16,
       "tags": [],
+      "userId": "14",
       "private": false
     },
     {
       "url": "https://images.unsplash.com/photo-1544470555-62aaefa30931",
       "title": "Vórtice",
       "description": "No sé cómo ha pasado esto, pero le he hecho una foto.",
-      "date": "2020-05-1509T12:30:42.160Z",
+      "date": "2020-05-22T15:22:47.133Z",
       "upvotes": "0",
       "downvotes": "0",
       "id": 17,
       "tags": [],
+      "userId": "14",
       "private": false
     },
     {
@@ -113,30 +119,8 @@
       "private": false,
       "upvotes": 0,
       "downvotes": 0,
+      "userId": "13",
       "id": 18
-    },
-    {
-      "url": "https://1.bp.blogspot.com/-p5JKVzHrag0/U0VhwDoA53I/AAAAAAAAC7g/3wxZ3GEw9kE/s1600/patata+2.png",
-      "title": "patatta",
-      "description": "añslkdjf",
-      "tags": [],
-      "date": "2020-05-17T11:22:22.165Z",
-      "private": false,
-      "upvotes": 0,
-      "downvotes": 0,
-      "id": 21
-    },
-    {
-      "url": "https://i.pinimg.com/736x/55/73/79/557379cd49d885920604c4129759414e.jpg",
-      "title": "ADN",
-      "description": "El mayor descubrimiento histórico en el ámbito de la biología.",
-      "tags": [],
-      "date": "2020-05-18T17:18:23.431Z",
-      "private": false,
-      "upvotes": 0,
-      "downvotes": 0,
-      "userId": "14",
-      "id": 22
     },
     {
       "url": "https://previews.dropbox.com/p/thumb/AAzwNLQ8UUBq898-c6xRR6TDXABCCJGtpvfK6AOSfIJRnURGNIeblt1SCyp6f6-QrOQzs9L_aYlTKDs6ourxs3ILnQgDUO0FUqoiVYlZjdRKcU4VwV_uFVcEOrdjif1kvdaV7TMVyD3e6q08NyU1wpaaZI7wkbjEgkpjHOjtF24d2fyT0oWk1-LetJisbvzgKHKUZZVPjwC68mfOfB_hitB5KMrPJfqxYvUmDuN1ghhZplE1zUUV2muCpQyfOqKGGUFLnGFSNPjW0yGRGep_RXWcpUZp_OLvu2_mc9VFyEhPVLTYsWwfb2m8n46wjJQw7tmgrtABHBm3RBHIOxNp2_W_QNDslZnYMS7MyNyxg8AHXw/p.jpeg",
@@ -161,6 +145,18 @@
       "downvotes": 0,
       "userId": "15",
       "id": 24
+    },
+    {
+      "url": "https://i.pinimg.com/736x/55/73/79/557379cd49d885920604c4129759414e.jpg",
+      "title": "ADN",
+      "description": "El mayor descubrimiento histórico en el campo de la biología.",
+      "tags": [],
+      "date": "2020-05-22T14:19:01.642Z",
+      "private": false,
+      "upvotes": 0,
+      "downvotes": 0,
+      "userId": "14",
+      "id": 25
     }
   ],
   "votes": [],
@@ -175,6 +171,21 @@
       "followerId": "12",
       "targetId": "14",
       "id": 3
+    },
+    {
+      "followerId": "14",
+      "targetId": "12",
+      "id": 4
+    },
+    {
+      "followerId": "14",
+      "targetId": "15",
+      "id": 5
+    },
+    {
+      "followerId": "15",
+      "targetId": "12",
+      "id": 6
     }
   ],
   "tags": [
