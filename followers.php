@@ -26,29 +26,8 @@
 
 	  <hr>
 
-	  <!-- Lista -->
+	  <!-- Lista de seguidores -->
 	  <ul id="followers-list" class="list-group w-75 m-auto">
-	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php" class="lh-1-8">UserName2</a>
-	      <a href="#followed"
-		 class="btn btn-info text-white d-inline-block lh-1">
-		Seguir
-	      </a>
-	    </li>
-	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php" class="lh-1-8">UserName3</a>
-	      <a href="#followed"
-		 class="btn btn-info text-white d-inline-block lh-1">
-		Seguir
-	      </a>
-	    </li>
-	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php" class="lh-1-8">UserName4</a>
-	      <a href="#followed"
-		 class="btn btn-info text-white d-inline-block lh-1">
-		Seguir
-	      </a>
-	    </li>
 	  </ul>
 
 	</div>
@@ -66,29 +45,8 @@
 
 	  <hr>
 
-	  <!-- Lista -->
+	  <!-- Lista de seguidos -->
 	  <ul id="followed-list" class="list-group w-75 m-auto">
-	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php" class="lh-1-8">UserName2</a>
-	      <a href="#followed"
-		 class="btn btn-info text-white d-inline-block lh-1">
-		Seguir
-	      </a>
-	    </li>
-	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php" class="lh-1-8">UserName3</a>
-	      <a href="#followed"
-		 class="btn btn-info text-white d-inline-block lh-1">
-		Seguir
-	      </a>
-	    </li>
-	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a href="profile.php" class="lh-1-8">UserName4</a>
-	      <a href="#followed"
-		 class="btn btn-info text-white d-inline-block lh-1">
-		Seguir
-	      </a>
-	    </li>
 	  </ul>
 
 	</div>
