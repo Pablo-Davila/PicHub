@@ -7,6 +7,27 @@ function main() {
     $("form").submit(validateForm);
 }
 
+function createUser(data) {
+    
+    $.ajax({
+	method: "POST",
+	url: "http://localhost:3000/register",
+	data: JSON.stringify(data),
+	dataType: "json",
+	contentType: "application/json; charset=UTF-8",
+	processData: false,
+	success: function(data) {
+	    storeToken(data.accessToken);
+	    window.location.href = "index.php";
+	},
+	error: function(error) {
+	    console.log("Error al registrar al usuario.");
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError("Ya existe un usuario con ese email."));
+	}
+    });
+}
+
 function validateForm(event) {
     event.preventDefault();
     $("#errors-container").empty();
@@ -45,6 +66,7 @@ function validateForm(event) {
 	$("#errors-container").append(
 	    getError("El teléfono tiene un formato incorrecto.")
 	);
+	errores = true;
     }
     if(password != repassword) {
 	$("#errors-container").append(
@@ -64,20 +86,24 @@ function validateForm(event) {
 	};
 	
 	$.ajax({
-	    method: "POST",
-	    url: "http://localhost:3000/register",
-	    data: JSON.stringify(data),
-	    dataType: "json",
-	    contentType: "application/json; charset=UTF-8",
-	    processData: false,
+	    method: "GET",
+	    url: `http://localhost:3000/users?user=${usuario}`,
 	    success: function(data) {
-		storeToken(data.accessToken);
-		window.location.href = "index.php";
+		if(data.length == 0) createUser(data);
+		else {
+		    console.log("Error: Ya existe una cuenta con ese nombre de usuario.");
+		    $("#errors-container").empty();
+		    $("#errors-container").append(
+			getError("Ya existe una cuenta con ese nombre de usuario.")
+		    );
+		}
 	    },
 	    error: function(error) {
-		console.log("Error al registrar al usuario.");
+		console.log("Error al acceder a la base de datos de usuarios.");
 		$("#errors-container").empty();
-		$("#errors-container").append(getError("Ya existe un usuario con ese email."));
+		$("#errors-container").append(
+		    getError("No se puedo acceder a la base de datos de usuarios.")
+		);
 	    }
 	});
     }
