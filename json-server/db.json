@@ -26,6 +26,15 @@
       "phone": "987654321",
       "user": "Chumbi",
       "id": 14
+    },
+    {
+      "email": "druiz@us.es",
+      "password": "$2a$10$tzWKGACjgpNrtkREo3YFSeYjxI9gEgKbwE/MxCWSKBLTERhCjjn82",
+      "name": "David",
+      "surname": "Ruiz Cortés",
+      "phone": "213654987",
+      "user": "DRuizCortes",
+      "id": 15
     }
   ],
   "images": [
@@ -130,16 +139,28 @@
       "id": 22
     },
     {
-      "url": "https://uc785f5f7527b2fbb79e76932668.previews.dropboxusercontent.com/p/thumb/AAwat73qgAXBDNj3wqzgA5ant4N-KTZwXWOGYTb3YZ6Gqi-TNQBoPDj2PqkseFa220bn0_VSRnkr1pJKHwVDEZwTItxblcCt0SNrHGGYsQZ3QoyoMla4PcHOHp3QSNhAx6ibnrlq4Jl1LA8bQVipop3GT_xlNXr5J4pelDq5vKjigdoJpE4LYln50ok5CmoAPNulnhJcLaRl3iKOj5CNUe9J7dv-YyPgHIO0lLqY63rJ4WSHDqmLXob_L3N5uohp9mK7dsxEfDeq9t_2twQb5qSpDdw6hhfDN57qnRCxaHJ6wlHDhmxQ3piYik49ZwJawQ6k9c69Dha1T-kELJE8kpuYCYQeb1ZpfCk6s83iH5SgkYexCP9UVHdt5tPgg7us67liN0qCscXypPHKowNH171I/p.jpeg",
+      "url": "https://previews.dropbox.com/p/thumb/AAzwNLQ8UUBq898-c6xRR6TDXABCCJGtpvfK6AOSfIJRnURGNIeblt1SCyp6f6-QrOQzs9L_aYlTKDs6ourxs3ILnQgDUO0FUqoiVYlZjdRKcU4VwV_uFVcEOrdjif1kvdaV7TMVyD3e6q08NyU1wpaaZI7wkbjEgkpjHOjtF24d2fyT0oWk1-LetJisbvzgKHKUZZVPjwC68mfOfB_hitB5KMrPJfqxYvUmDuN1ghhZplE1zUUV2muCpQyfOqKGGUFLnGFSNPjW0yGRGep_RXWcpUZp_OLvu2_mc9VFyEhPVLTYsWwfb2m8n46wjJQw7tmgrtABHBm3RBHIOxNp2_W_QNDslZnYMS7MyNyxg8AHXw/p.jpeg",
       "title": "Conejo y tortuga",
       "description": "Pareja inseparable",
       "tags": [],
-      "date": "2020-05-18T22:55:31.350Z",
+      "date": "2020-05-22T11:34:11.185Z",
       "private": false,
       "upvotes": 0,
       "downvotes": 0,
       "userId": "14",
       "id": 23
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/proxy/XMhlBKX27VSq0CnJYyfRMsvJv6cRYp_40E6Lesgkw0FrGi2L1jifjl7eaNq5zAZKOSIM1pcElV8bfDWJ2j0ZkbLYLsINX7s",
+      "title": "Logo LSI",
+      "description": "El logo de mi departamento.",
+      "tags": [],
+      "date": "2020-05-22T11:30:29.412Z",
+      "private": true,
+      "upvotes": 0,
+      "downvotes": 0,
+      "userId": "15",
+      "id": 24
     }
   ],
   "votes": [],
@@ -149,11 +170,6 @@
       "id": 1,
       "followerId": 1,
       "targetId": 2
-    },
-    {
-      "followerId": "14",
-      "targetId": "12",
-      "id": 2
     },
     {
       "followerId": "12",
