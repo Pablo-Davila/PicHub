@@ -11,7 +11,7 @@ function displayPhotos(data) {
     let filteredData = [];
     for(let image of data){
 	let idate = new Date(image.date);
-	if(idate>aWeekAgo && !image.private) {
+	if(idate>aWeekAgo) {
 	    filteredData.push(image);
 	}
     }
