@@ -15,7 +15,7 @@
   - [ ] Imagen de fondo. (?)
   - [ ] Enlace a GitHub.
 
-* [13/16] Implementación JavaScript
+* [15/17] Implementación JavaScript
   - [X] Registro: Validación de formulario.
   - [5/8] Cargar desde backend
     - [X] Detalle de foto.
@@ -44,16 +44,15 @@
   - [X] Limitar a 10 las imágenes trending.
   - [X] Crear nuevo usuario.
   - [X] Errores en peticiones AJAX.
-  - [?] Errores de query incorrecta.
   - [X] Inicio de sesión.
   - [X] Asignar imagen al usuario al crearla.
-  - [2/3] En función del estado de autenticación
+  - [2/4] En función del estado de autenticación
     - [X] Modificar la visibilidad de los botones de editar y eliminar.
     - [ ] Modificar la cabecera.
     - [X] Modificar la visibilidad del botón de seguir.
     - [ ] Ocultar perfiles de usuario para los no autenticados.
   - [X] Límitar el número de imágenes por usuario.
-  - [ ] Restablecer a 50 el límite de imágenes por usuario.
+  - [X] Restablecer a 50 el límite de imágenes por usuario.
   - [X] Seguimiento entre usuarios.
   - [ ] Usuarios siguiendo/seguidos: Habilitar botones de seguimiento.
   - [0/2] Votos:
@@ -62,6 +61,7 @@
   - [0/2] Comentarios:
     - [ ] Añadir comentarios.
     - [ ] Evitar la modificación de imágenes comentadas.
+  - [X] Redireccionar a los usuarios que accedan a una página no autorizada.
   - [ ] Imágenes trending: solo contar los votos de la última semana.
 
 * [4/6] Reglas de negocio
