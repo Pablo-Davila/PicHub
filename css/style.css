@@ -68,6 +68,10 @@ a.dropdown-item:hover {
     line-height: 1.8 !important;
 }
 
+.lh-2-3 {
+    line-height: 2.3 !important;
+}
+
 .w-30 {
     width: 30% !important;
 }
