@@ -5,6 +5,53 @@ $(main);
 // Main
 function main() {
 
+    // Fill navbar
+    if(getToken() == null) {
+	let right_str = `
+        <li class="nav-item">
+          <a id="a-login" class="nav-link" href="login.php">Login</a>
+        </li>
+        <li class="nav-item">
+          <a id="a-register" class="nav-link" href="register.php">Registro</a>
+        </li>`;
+	$("#nav-der").append(right_str);
+    }
+    else {
+	let left_str = `
+        <li class="nav-item dropdown">
+          <a id="a-trending" class="nav-link dropdown-toggle" href="#"
+	     id="navbarDesplegableId" data-toggle="dropdown"
+	     aria-haspopup="true" aria-expanded="false">
+	    Trending
+          </a>
+          <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+	    <a class="dropdown-item" href="trending_users.php">Usuarios trending</a>
+	    <a class="dropdown-item" href="trending_images.php">Imágenes trending</a>
+          </div>
+        </li>
+        <li class="nav-item">
+	<li class="nav-item">
+          <a id="a-siguiendo" class="nav-link" href="following.php">Siguiendo</a>
+        </li>
+        <li class="nav-item">
+	<li class="nav-item">
+          <a id="a-etiquetas" class="nav-link" href="tags.php">Etiquetas</a>
+        </li>`;
+	$("#nav-izq").append(left_str);
+	
+	let right_str = `
+        <li class="nav-item mr-2">
+          <a id="logout" class="nav-link" href="index.php">Cerrar sesión</a>
+        </li>
+        <li class="nav-item border border-light rounded-pill px-1">
+          <b><a id="my-profile" name="auth-${getUserId()}" class="nav-link"
+             href="profile.php=${getUserId()}">Mi perfil</a></b>
+        </li>`;
+	$("#nav-der").append(right_str);
+
+	updateAuthorName(getUserId());
+    }
+    
     // Update profile link
     $("#my-profile").attr("href",`profile.php?id=${getUserId()}`);
 

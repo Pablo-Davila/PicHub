@@ -18,11 +18,11 @@
     
     <div class="collapse navbar-collapse txt_light" id="navbarNav">
       <!--Lado izquierdo-->
-      <ul class="navbar-nav">
+      <ul id="nav-izq" class="navbar-nav">
         <li class="nav-item">
           <a id="a-nuevo" class="nav-link" href="index.php">Nuevo</a>
         </li>
-        <li class="nav-item dropdown">
+        <!--<li class="nav-item dropdown">
           <a id="a-trending" class="nav-link dropdown-toggle" href="#"
 	     id="navbarDesplegableId" data-toggle="dropdown"
 	     aria-haspopup="true" aria-expanded="false">
@@ -40,27 +40,26 @@
         <li class="nav-item">
 	<li class="nav-item">
           <a id="a-etiquetas" class="nav-link" href="tags.php">Etiquetas</a>
-        </li>
+        </li>-->
       </ul>
 
       <!-- Centro -->
-      <ul class="navbar-nav mx-auto">
+      <!--<ul class="navbar-nav mx-auto">
         <li class="nav-item">
           <a id="a-login" class="nav-link" href="login.php">Login</a>
         </li>
         <li class="nav-item">
           <a id="a-register" class="nav-link" href="register.php">Registro</a>
-        </li>
-        <li class="nav-item">
+        </li>        <li class="nav-item">
           <a id="logout" class="nav-link" href="index.php">Cerrar sesión</a>
         </li>
-      </ul>
+      </ul>-->
 
       <!-- Lado derecho -->
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+      <ul id="nav-der" class="navbar-nav ml-auto">
+        <!--<li class="nav-item">
           <a id="my-profile" class="nav-link" href="">Mi perfil</a>
-        </li>
+        </li>-->
       </ul>
       
     </div>
