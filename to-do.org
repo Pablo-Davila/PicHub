@@ -4,14 +4,15 @@
 #+OPTIONS: toc:0
 #+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#595959; color:#D3D3D3;}</style>
 
-* [5/8] Diseño HTML+CSS
+* [7/10] Diseño HTML+CSS
   - [X] Hasta el entregable 2.
   - [X] Introducir URL sin pop-up.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
   - [X] Seleccionar visibilidad de imagen.
   - [X] Hacer más intuitivo el cartel siguiendo-seguidos.
+  - [X] Destacar la página actual en la barra superior.
   - [ ] Cambiar sistema de etiquetas.
-  - [ ] Cambiar posición '+'.
+  - [X] Cambiar posición '+'.
   - [ ] Imagen de fondo. (?)
   - [ ] Enlace a GitHub.
 
@@ -46,11 +47,11 @@
   - [X] Errores en peticiones AJAX.
   - [X] Inicio de sesión.
   - [X] Asignar imagen al usuario al crearla.
-  - [2/4] En función del estado de autenticación
+  - [3/4] En función del estado de autenticación
     - [X] Modificar la visibilidad de los botones de editar y eliminar.
     - [ ] Modificar la cabecera.
     - [X] Modificar la visibilidad del botón de seguir.
-    - [ ] Ocultar perfiles de usuario para los no autenticados.
+    - [X] Ocultar perfiles de usuario para los no autenticados.
   - [X] Límitar el número de imágenes por usuario.
   - [X] Restablecer a 50 el límite de imágenes por usuario.
   - [X] Seguimiento entre usuarios.
