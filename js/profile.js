@@ -15,7 +15,7 @@ function main() {
     if(id != getUserId()) {
 	let btn_html = `
 	      <div id="follow"
-		 class="btn btn-info text-white ml-3 mb-2 d-inline-block">
+		 class="btn btn-info text-white ml-3 d-inline">
 		Seguir
 	      </div>`;
 	$("#data-title-div").append($.parseHTML(btn_html));
@@ -23,7 +23,7 @@ function main() {
     }
 
     // Actualizar seguir/dejar de seguir
-    updateFollow();
+    updateFollowed();
 
     // Rellenar datos de usuario
     console.log("Cargando datos de usuario...");
@@ -63,7 +63,10 @@ function main() {
     $("#followed").attr("href", `followers.php?id=${id}`);
 
     // Actualizar número de seguidores y seguidos
-    //TO-DO
+    updateFollowNumbers();
+}
+
+function updateFollowNumbers() {
     $.ajax({
 	method: "GET",
 	url: "http://localhost:3000/follows",
@@ -85,7 +88,7 @@ function main() {
     });
 }
 
-function updateFollow() {
+function updateFollowed() {
     $.ajax({
 	method: "GET",
 	url: `http://localhost:3000/follows?followerId=${getUserId()}`,
@@ -125,6 +128,7 @@ function postFollow() {
 	success: function() {
 	    $("#follow").text("Dejar de seguir");
 	    console.log(`Se ha empezado a seguir al usuario con id ${id}.`);
+	    updateFollowNumbers();
 	},
 	error: function(error) {
             console.log(`Error al seguir al usuario con id ${id}.`);
@@ -144,6 +148,7 @@ function deleteFollow(f_id) {
 	success: function() {
 	    $("#follow").text("Seguir");
 	    console.log(`Se ha dejado de seguir al usuario ${id}.`);
+	    updateFollowNumbers();
 	},
 	error: function(error) {
             console.log(`Error al dejar de seguir al usuario ${id}.`);
