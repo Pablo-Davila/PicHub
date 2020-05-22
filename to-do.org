@@ -56,13 +56,16 @@
   - [X] Restablecer a 50 el límite de imágenes por usuario.
   - [X] Seguimiento entre usuarios.
   - [ ] Usuarios siguiendo/seguidos: Habilitar botones de seguimiento.
-  - [0/2] Votos:
-    - [ ] Añadir y modificar.
-    - [ ] Calcular puntuación de las imágenes (eliminar sistema antiguo).
+  - [X] Redireccionar a los usuarios que accedan a una página no autorizada.
+  - [1/2] Etiquetas:
+    - [X] Crear una nueva etiqueta.
+    - [ ] Asignar/Quitar una etiqueta a una imagen.
   - [2/2] Comentarios:
     - [X] Añadir comentarios.
     - [X] RN-005.
-  - [X] Redireccionar a los usuarios que accedan a una página no autorizada.
+  - [0/2] Votos:
+    - [ ] Añadir y modificar.
+    - [ ] Calcular puntuación de las imágenes (eliminar sistema antiguo).
   - [ ] Imágenes trending: solo contar los votos de la última semana.
 
 * [5/6] Reglas de negocio
