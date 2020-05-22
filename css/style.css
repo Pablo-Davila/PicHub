@@ -170,8 +170,9 @@ div.embed-responsive img {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     border: 0;
+    object-fit: cover;
 }
 
 .form-basic {
@@ -195,12 +196,10 @@ div.embed-responsive img {
 /* ========== < ID > ========== */
 #plus {
     height: 30px;
-    /*
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      height: 65px;
-    */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 65px;
 }
 
 #logo {
