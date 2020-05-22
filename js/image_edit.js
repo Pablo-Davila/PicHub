@@ -1,5 +1,8 @@
 "use strict";
 
+// Límite de imágenes por usuario
+let lim = 50;
+
 // Información a partir de la URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -9,7 +12,6 @@ let isNew;
 let tags = [];
 
 $(main);
-
 
 function main() {
 
@@ -36,7 +38,9 @@ function main() {
     // Actualizar imagen al cambiar la URL
     let url_input = $("#url");
     url_input.change(function() {
-	if(/\.jpg$/i.test(url_input.val()) || /\.png$/i.test(url_input.val()) || /\.jpeg$/i.test(url_input.val())) {
+	if(/\.jpg$/i.test(url_input.val())
+	   || /\.png$/i.test(url_input.val())
+	   || /\.jpeg$/i.test(url_input.val())) {
 	    $("#imagen").attr("src", $("#url").val());
 	}
     });
@@ -55,7 +59,7 @@ function moreThanFifty(userId) {
 	method: "GET",
 	url: `http://localhost:3000/images?userId=${userId}`,
 	success: function(data) {
-	    if(data.length >= 50) {
+	    if(data.length >= lim) {
 		$("#errors-container").append(getError("Ya ha alcanzado el límite de 50 imágenes."));
 	    }
 	    else {
