@@ -29,6 +29,9 @@
 
       <hr>
 
+      <!-- Warning para no autenticados -->
+      <div id="warning" class="row w-75 mx-auto"></div>
+
       <!-- Filas de fotos -->
       <div class="row w-99"></div>
     </div>

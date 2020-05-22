@@ -1,6 +1,24 @@
 "use strict";
 
-$(loadPhotos);
+$(main);
+
+function main() {
+
+    // Mostrar warning a usuarios no autenticados
+    if(getToken() == null) {
+	let warning_str =
+	    `<div onclick='removeError(this);' class='alert alert-warning mx-auto' role='alert'>
+             <strong class="text-warning">
+               <i class='fa fa-warning text-warning' aria-hidden='true'></i >
+               Warning
+             </strong>Regístrese o inicie sesión para acceder a la funcionalidad completa de la página
+           </div>`;
+	$("#warning").append($.parseHTML(warning_str));
+    }
+
+    // Cargar imágenes
+    loadPhotos();
+}
 
 function displayPhotos(data) {
     let row = $("div.container > div.row").last();
@@ -19,8 +37,6 @@ function displayPhotos(data) {
     let autores = new Set();
     let count = 0;
     for (let photo of filteredData) {
-//	if(photo.private) continue;
-	
 	count++;
 	
 	// HTML de la tarjeta
