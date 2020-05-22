@@ -31,7 +31,8 @@
       <!-- Texto -->
       <div class="row w-99 mb-4">
 	<div class="col-md text-center">
-	  Lo sentimos, debes estar autenticado para acceder a página.
+	  Lo sentimos, no cuenta con los permisos necesarios para
+	  acceder a esa página.
 	</div>
       </div>
 
