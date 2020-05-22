@@ -59,21 +59,21 @@
   - [0/2] Votos:
     - [ ] Añadir y modificar.
     - [ ] Calcular puntuación de las imágenes (eliminar sistema antiguo).
-  - [0/2] Comentarios:
-    - [ ] Añadir comentarios.
-    - [ ] Evitar la modificación de imágenes comentadas.
+  - [2/2] Comentarios:
+    - [X] Añadir comentarios.
+    - [X] RN-005.
   - [X] Redireccionar a los usuarios que accedan a una página no autorizada.
   - [ ] Imágenes trending: solo contar los votos de la última semana.
 
-* [4/6] Reglas de negocio
+* [5/6] Reglas de negocio
   1. [X] Limitación en el número de fotos.
   2. [X] Uso de lenguaje adecuado.
   3. [X] Unicidad de cuentas.
   4. [ ] Unicidad de etiquetas.
-  5. [ ] Eliminación de fotos.
+  5. [X] Eliminación de fotos.
   6. [X] Auto-Seguimiento.
 
-* [10/18] Requisitos funcionales
+* [11/18] Requisitos funcionales
   1. [X] Fotos recientes.
   2. [X] Registro de usuario.
   3. [X] Autenticación de usuario.
@@ -86,7 +86,7 @@
   10. [ ] Eliminar etiqueta de foto.
   11. [ ] Crear etiqueta.
   12. [ ] Buscar por etiqueta.
-  13. [ ] Comentar foto.
+  13. [X] Comentar foto.
   14. [X] Seguir a otro usuario.
   15. [X] Dejar de seguir.
   16. [ ] Ver fotos de usuarios seguidos.
