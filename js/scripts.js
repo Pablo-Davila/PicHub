@@ -5,12 +5,20 @@ $(main);
 // Main
 function main() {
 
-    let date = new Date();
+    // Update profile link
+    $("#my-profile").attr("href",`profile.php?id=${getUserId()}`);
 
+    // Enable logout
+    $("#logout").click(logOut);
+
+    // Mark current page as active
+    glowActivePage();
+    
+    // Store date
+    let date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;  // Months are 0-based for some reason...
     let year = date.getFullYear();
-
     let hour = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
@@ -23,12 +31,6 @@ function main() {
     // Print the current date and a message to report that we're finished
     console.log("Loading finished.");
     console.log(`The current time is: ${day}/${month}/${year} ${hour}:${minutes}:${seconds}`);
-
-    // Update profile link
-    $("#my-profile").attr("href",`profile.php?id=${getUserId()}`);
-
-    // Enable logout
-    $("#logout").click(logOut);
 }
 
 // Errores
@@ -64,6 +66,18 @@ function kickNonAuthenticated() {
     if(getToken() == null) {
 	window.location.href = "error.php";
     }
+}
+
+function glowActivePage() {
+    let page = window.location.pathname;
+    if(page == "/PicHub/index.php") $("#a-nuevo").css("color", "var(--laqua)");
+    else if(page == "/PicHub/trending_images.php") $("#a-trending").css("color", "var(--laqua)");
+    else if(page == "/PicHub/trending_users.php") $("#a-trending").css("color", "var(--laqua)");
+    else if(page == "/PicHub/following.php") $("#a-siguiendo").css("color", "var(--laqua)");
+    else if(page == "/PicHub/tags.php") $("#a-etiquetas").css("color", "var(--laqua)");
+    else if(page == "/PicHub/login.php") $("#a-login").css("color", "var(--laqua)");
+    else if(page == "/PicHub/register.php") $("#a-register").css("color", "var(--laqua)");
+    else if(page == "/PicHub/profile.php") $("#my-profile").css("color", "var(--laqua)");
 }
 
 // Cargar imágenes
@@ -144,8 +158,7 @@ function loadSinglePhoto(id, edit) {
 	},
 	error: function(error) {
 	    console.log(`Error al cargar la imagen con id ${id}.`);
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError(`Error al cargar la imagen con id ${id}).`));
+	    $("#errors-container").append(getError(`No se pudo cargar la imagen con id ${id}.`));
 	}
     });
 }
@@ -163,8 +176,7 @@ function deleteImage() {
 	},
 	error: function() {
 	    console.log("Error al eliminar la imagen.");
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("Error al eliminar la imagen."));
+	    $("#errors-container").append(getError("No se pudo eliminar la imagen."));
 	}	
     });
 }
@@ -183,7 +195,7 @@ function updateAuthorName(authorId) {
 	    let errores = $("#errors-container");
 	    if(errores != undefined) {
 		errores.empty();
-		errores.append(getError(`Error al acceder al autor (${authorId}).`));
+		errores.append(getError(`No se pudo acceder al autor (${authorId}).`));
 	    }
 	    $(`[name="auth-${authorId}"]`).each(function(i, elemento) {
 		$(elemento).text("Desconocido");

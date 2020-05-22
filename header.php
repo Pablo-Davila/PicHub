@@ -20,10 +20,10 @@
       <!--Lado izquierdo-->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="index.php">Nuevo</a>
+          <a id="a-nuevo" class="nav-link" href="index.php">Nuevo</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#"
+          <a id="a-trending" class="nav-link dropdown-toggle" href="#"
 	     id="navbarDesplegableId" data-toggle="dropdown"
 	     aria-haspopup="true" aria-expanded="false">
 	    Trending
@@ -35,21 +35,21 @@
         </li>
         <li class="nav-item">
 	<li class="nav-item">
-          <a class="nav-link" href="following.php">Siguiendo</a>
+          <a id="a-siguiendo" class="nav-link" href="following.php">Siguiendo</a>
         </li>
         <li class="nav-item">
 	<li class="nav-item">
-          <a class="nav-link" href="tags.php">Etiquetas</a>
+          <a id="a-etiquetas" class="nav-link" href="tags.php">Etiquetas</a>
         </li>
       </ul>
 
       <!-- Centro -->
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link" href="login.php">Login</a>
+          <a id="a-login" class="nav-link" href="login.php">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register.php">Registro</a>
+          <a id="a-register" class="nav-link" href="register.php">Registro</a>
         </li>
         <li class="nav-item">
           <a id="logout" class="nav-link" href="index.php">Cerrar sesión</a>
@@ -58,11 +58,6 @@
 
       <!-- Lado derecho -->
       <ul class="navbar-nav ml-auto">
-	<!--DEL--><li class="nav-item pt-1 mr-3">
-	  <a href="image_edit.php">
-	    <img id="plus" src="img/plus.svg" href="edit.php">
-	  </a>
-	</li><!--DEL-->
         <li class="nav-item">
           <a id="my-profile" class="nav-link" href="">Mi perfil</a>
         </li>
@@ -73,8 +68,8 @@
 </div>
 
 <!-- Botón nueva imagen -->
-<!--ADD-><a href="image_edit.php">
+<a href="image_edit.php">
   <img id="plus" src="img/plus.svg" href="edit.php">
-</a>-->
+</a>
 
 <hr>
