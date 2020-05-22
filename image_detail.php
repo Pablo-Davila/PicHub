@@ -95,29 +95,8 @@
 	  </button>
 	</form>
 
-	<div id="comments">
-
-	  <!-- Comentario 1 -->
-	  <div class="col-row mb-2">
-	    <div class="bg-dark rounded p-3">
-	      <h5><a href="profile.php?UserName1">
-		  UserName1
-	      </a></h5>
-	      <p class="mb-0">This is UserName1's comment ^-^</p>
-	    </div>
-	  </div>
-
-	  <!-- Comentario 2 -->
-	  <div class="col-row mb-2">
-	    <div class="bg-dark rounded p-3">
-	      <h5><a href="profile.php?UserName2">
-		  UserName2
-	      </a></h5>
-	      <p class="mb-0">This is UserName2's comment ^-^</p>
-	    </div>
-	  </div>
-	  
-	</div>
+	<!-- Comentarios existentes -->
+	<div id="old-comments"></div>
       </div>
       
     </div>
