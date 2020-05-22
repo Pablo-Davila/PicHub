@@ -80,20 +80,16 @@
       </div>
 
       <!-- Comentarios -->
-      <div class="w-75 m-auto">
+      <div id="comments-section" class="w-75 m-auto">
 
 	<!-- Nuevo comentario -->
-	<form class="ml-4 mb-4">
+	<div id="form" class="ml-4 mb-4">
 	  <label for="newComment">Nuevo comentario</label>
-	  <textarea id="newComment"
+	  <textarea id="newComment" disabled
 		    class="form-control bg-sdark focus-dark mb-2"
-		    placeholder="Escribe un nuevo comentario"></textarea>
-	  
-	  <button id="submitbtn" type="submit"
-		  class="btn btn-info d-block ml-auto mr-0 w-auto">
-	    Enviar
-	  </button>
-	</form>
+		    placeholder="Debes iniciar sesión para poder comentar y ver otros comentarios."></textarea>
+	  <!-- Aquí estará el botón de enviar -->
+	</div>
 
 	<!-- Comentarios existentes -->
 	<div id="old-comments"></div>

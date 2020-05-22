@@ -12,14 +12,60 @@ function main() {
     // Cargar imagen
     loadSinglePhoto(id, false);
     
-    // Cargar comentarios
-    if(getToken() != null) loadComments();
+    if(getToken() != null) {
+	
+	// Allow new comments
+	$("#newComment").attr("disabled", false);
+	$("#newComment").attr("placeholder", "Escribe un nuevo comentario.");
+	let btn_str = `
+	  <button id="submitbtn"
+		  class="btn btn-info d-block ml-auto mr-0 w-auto">
+	    Enviar
+	  </button>`;
+	$("#form").append($.parseHTML(btn_str));
+	$("#submitbtn").click(newComment);
+	
+	// Cargar comentarios
+	loadComments();
+    }
+}
+
+function newComment() {
+    if($("#newComment").val() == "") return;
+    
+    let data = {
+	"imageId": id,
+	"userId": getUserId(),
+	"text": $("#newComment").val(),
+	"date": (new Date()).toISOString()
+    };
+    $("#newComment").val("");
+    
+    $.ajax({
+	method: "POST",
+	url: "http://localhost:3000/comments",
+	data: JSON.stringify(data),
+	dataType: "json",
+	contentType: "application/json; charset=UTF-8",
+	processData: false,
+	headers: {
+	    "Authorization": "Bearer " + getToken()
+	},
+	success: loadComments,
+	error: function(error) {
+	    console.log("Error al crear la imagen.");
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError("No se ha podido crear la imagen."));
+	}
+    });
 }
 
 function loadComments() {
+    $("#old-comments").empty();
+    
     $.ajax({
 	method: "GET",
-	url: `http://localhost:3000/comments?imageId=${id}`,
+	url: `http://localhost:3000/comments?imageId=${id}&_sort=date&_order=desc`,
 	success: function(data) {
 	    for(let c of data) {
 		let comment_str = `
