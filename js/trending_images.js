@@ -1,6 +1,15 @@
 "use strict";
 
-$(loadPhotos);
+$(main);
+
+function main() {
+
+    // Expulsar usuarios no autenticados
+    kickNonAuthenticated();
+
+    // Cargar imágenes
+    loadPhotos();
+}
 
 function displayPhotos(data) {
     let row = $("div.container > div.row").last();
@@ -12,7 +21,6 @@ function displayPhotos(data) {
     let count = 0;
     for (let photo of data) {
 	if(count == 10) break;
-	if(photo.private) continue;
 	count++;
 
 	// HTML de la tarjeta
@@ -41,7 +49,7 @@ function displayPhotos(data) {
 	let card_html = $.parseHTML(card_str);
 	row.append(card_html);
 	updateAuthorName(photo.userId);
-	    
+	
 	// Etiquetas
 	let tagList = $("p.card-text").last();
 	if(photo.tags != undefined) {

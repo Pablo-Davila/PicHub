@@ -60,12 +60,18 @@ function score(photo) {
     return photo.upvotes - photo.downvotes;
 }
 
+function kickNonAuthenticated() {
+    if(getToken() == null) {
+	window.location.href = "error.php";
+    }
+}
+
 // Cargar imágenes
 function loadPhotos() {
     console.log("Cargando imágenes...");
 
     $.ajax({
-        url: "http://localhost:3000/images?_sort=id&_order=desc",
+        url: "http://localhost:3000/images?_sort=id&_order=desc&private=false",
         success: displayPhotos,
         error: function (error) {
             console.log("Error al acceder a las imágenes: " + error.toString());

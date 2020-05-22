@@ -8,6 +8,9 @@ $(main);
 
 function main() {
 
+    // Expulsar usuarios no autenticados
+    kickNonAuthenticated();
+
     // Mostrar botón de seguir
     if(id != getUserId()) {
 	let btn_html = `

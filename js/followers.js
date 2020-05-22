@@ -8,6 +8,9 @@ $(main);
 
 function main() {
 
+    // Expulsar usuarios no autenticados
+    kickNonAuthenticated();
+    
     // Cargar listas
     console.log("Cargando listas de usuarios seguidores y seguidos...");
     $.ajax({
