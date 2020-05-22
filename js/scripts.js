@@ -137,6 +137,10 @@ function loadSinglePhoto(id, edit) {
 		$("#actions").append($.parseHTML(actions_html));
 		$("#delete").click(deleteImage);
 	    }
+	    // Expulsar usuario no autorizado
+	    if(image.userId!=getUserId() && (edit || image.private)) {
+		window.location.href = "error.php";
+	    }
 	},
 	error: function(error) {
 	    console.log(`Error al cargar la imagen con id ${id}.`);
