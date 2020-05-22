@@ -82,7 +82,9 @@
       "upvotes": 0,
       "downvotes": 0,
       "id": 15,
-      "tags": [],
+      "tags": [
+        1
+      ],
       "userId": "13",
       "private": false
     },
@@ -106,7 +108,9 @@
       "upvotes": "0",
       "downvotes": "0",
       "id": 17,
-      "tags": [],
+      "tags": [
+        2
+      ],
       "userId": "14",
       "private": false
     },
@@ -114,7 +118,9 @@
       "url": "https://images.unsplash.com/photo-1502827186494-9f7976a04548",
       "title": "Impresionante",
       "description": "Esta escena me deja sin palabras. Impresionante.",
-      "tags": [],
+      "tags": [
+        1
+      ],
       "date": "2020-05-16T11:17:45.363Z",
       "private": false,
       "upvotes": 0,
@@ -232,8 +238,24 @@
       "name": "sevilla"
     },
     {
-      "id": 1,
-      "name": "comida"
+      "name": "ciencia",
+      "id": 3
+    },
+    {
+      "name": "actualidad",
+      "id": 4
+    },
+    {
+      "name": "españa",
+      "id": 5
+    },
+    {
+      "name": "comida",
+      "id": 6
+    },
+    {
+      "name": "animales",
+      "id": 7
     }
   ],
   "swearwords": [
