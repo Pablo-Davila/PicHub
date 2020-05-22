@@ -85,12 +85,11 @@ function loadPhotos() {
     console.log("Cargando imágenes...");
 
     $.ajax({
-        url: "http://localhost:3000/images?_sort=id&_order=desc&private=false",
+        url: "http://localhost:3000/images?private=false&_sort=date&_order=desc",
         success: displayPhotos,
         error: function (error) {
             console.log("Error al acceder a las imágenes: " + error.toString());
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("Error al cargar las imágenes."));
+	    $("#errors-container").append(getError("No se pudo cargar las imágenes."));
         }
     });
 }
@@ -151,10 +150,13 @@ function loadSinglePhoto(id, edit) {
 		$("#actions").append($.parseHTML(actions_html));
 		$("#delete").click(deleteImage);
 	    }
+	    
 	    // Expulsar usuario no autorizado
 	    if(image.userId!=getUserId() && (edit || image.private)) {
 		window.location.href = "error.php";
 	    }
+
+	    console.log("Imagen cargada");
 	},
 	error: function(error) {
 	    console.log(`Error al cargar la imagen con id ${id}.`);
@@ -164,20 +166,45 @@ function loadSinglePhoto(id, edit) {
 }
 
 function deleteImage() {
-    console.log("Borrando imagen...");
-    $.ajax({
-	type: "DELETE",
-	url: `http://localhost:3000/images/${id}`,
-	headers: {
-	    "Authorization": "Bearer " + getToken()
-	},
-	success: function() {
-	    window.location.href = "index.php";
-	},
-	error: function() {
-	    console.log("Error al eliminar la imagen.");
-	    $("#errors-container").append(getError("No se pudo eliminar la imagen."));
-	}	
+    console.log("Eliminando imagen...");
+
+    new Promise((resolve, reject) => {
+	$.ajax({
+	    method: "GET",
+	    url: `http://localhost:3000/comments?imageId=${id}`,
+	    success: function(data) {
+		if(data.length == 0) resolve();
+		else {
+		    console.log("Error: No se puede eliminar una imagen con comentarios.");
+		    $("#errors-container").empty();
+		    $("#errors-container").append(
+			getError("No se puede eliminar una imagen con comentarios.")
+		    );
+		}
+	    },
+	    error: reject
+	});
+    }).then( function() {
+	$.ajax({
+	    type: "DELETE",
+	    url: `http://localhost:3000/images/${id}`,
+	    headers: {
+		"Authorization": "Bearer " + getToken()
+	    },
+	    success: function() {
+		console.log("Imagen eliminada");
+		window.location.href = "index.php";
+	    },
+	    error: function() {
+		console.log("Error al eliminar la imagen.");
+		$("#errors-container").empty();
+		$("#errors-container").append(getError("No se pudo eliminar la imagen."));
+	    }	
+	});
+    }).catch(function() {
+	console.log("Error al eliminar la imagen.");
+	$("#errors-container").empty();
+	$("#errors-container").append(getError("No se pudo eliminar la imagen."));
     });
 }
 

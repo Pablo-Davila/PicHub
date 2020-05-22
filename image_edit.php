@@ -40,7 +40,7 @@
 		<div class="custom-control custom-checkbox mt-4">
 		  <input id="private" type="checkbox"
 			 class="custom-control-input"
-			 checked>
+			 checked disabled>
 		  <label for="private" class="custom-control-label fs-16px">
 		    Imagen privada
 		  </label>
