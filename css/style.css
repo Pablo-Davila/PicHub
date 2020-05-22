@@ -82,7 +82,8 @@ a.dropdown-item:hover {
 
 .w-99 {
     width: 99% !important;
-    margin: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .h-min {
