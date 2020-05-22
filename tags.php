@@ -3,7 +3,8 @@
 
   <head>
     <?php include 'imports.php' ?>
-    <title>PicHub - Búsqueda por etiqueta</title>
+    <title>PicHub - Etiquetas</title>
+    <script type="text/javascript" src="js/tags.js"></script>
   </head>
 
   <body>
@@ -18,226 +19,63 @@
 
     <!-- Cuerpo -->
     <div class="container">
+      
       <!-- Título -->
       <div class="row">
 	<div class="col-md text-center">
 	</br></br>
-        <h3>Búsqueda de imágenes por etiqueta</h3>
+        <h3>Etiquetas</h3>
 	</div>
       </div>
       <hr>
+      
+      <!-- Errores -->
+      <div class="row w-60 mx-auto mt-3">
+	<div class="col-md" id="errors-container"></div>
+      </div>
 
       <!-- Elegir etiqueta -->
-      <select id="tagSelect"
+      <div id="newTag-section" class="row">
+	<div class="col-ms text-center mx-auto">
+	  <label for="newTag" class="h5 d-block">Nueva etiqueta</label>
+	  <input type="text" id="newTag"
+		 class="form-inline form-control bg-sdark focus-dark"
+		 placeholder="Añade una etiqueta">
+	  <div id="tags-add-btn" class="btn btn-info form-inline">
+	    Add
+	  </div>
+	</div>
+      </div>
+      <!--<select id="tagSelect"
 	      class="form-control bg-sdark input-focus txt-light">
 	<option>Paisajes</option>
 	<option>Naturaleza</option>
 	<option>Comida</option>
 	<option>Gastronomía</option>
 	<option>Animales</option>
-      </select>
+      </select>-->
+      
       </br>
 
-      <!-- FILA 1 -->
-      <div class="row w-99">
-
-	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img class="card-img-top embed-responsive-item"
-		     src="https://images.unsplash.com/photo-1502827186494-9f7976a04548">
-	      </div>
-            </a>
-
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 1</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 1</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Paisaje</span>
-		<span class="badge badge-primary">Naturaleza</span>
-              </p>
-            </div>
-          </div>
+      <!-- Lista de etiquetas -->
+      <div class="row mb-4">
+	<div class="col-ms text-center mx-auto max-w-50">
+	  <label for="lista" class="h5">Etiquetas existentes</label>
+	  <div id="lista" class="col-md text-center lh-2-3"></div>
 	</div>
-
-	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img src="https://images.unsplash.com/photo-1444464666168-49d633b86797"
-		     class="card-img-top embed-responsive-item">
-	      </div>
-            </a>
-
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 2</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 2</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Animales</span>
-              </p>
-            </div>
-          </div>
-	</div>
-
-	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img src="https://images.unsplash.com/photo-1548092352-4944c775dd75"
-		     class="card-img-top embed-responsive-item">
-	      </div>
-            </a>
-
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 3</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 3</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Comida</span>
-		<span class="badge badge-primary">Gastronomía</span>
-              </p>
-            </div>
-          </div>
-	</div>
-
       </div>
-      
-      <!-- FILA 2 -->
-      <div class="row w-99">
-	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img src="https://images.unsplash.com/photo-1547592166-23ac45744acd"
-		     class="card-img-top embed-responsive-item">
-	      </div>
-            </a>
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 4</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 4</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Paisaje</span>
-		<span class="badge badge-primary">Naturaleza</span>
-              </p>
-            </div>
-          </div>
-	</div>
 
+      <!-- Mensaje -->
+      <div id="msg" class="row w-99 mb-4">
 	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img src="https://images.unsplash.com/photo-1515164664657-6ba669e028f3"
-		     class="card-img-top embed-responsive-item">
-	      </div>
-            </a>
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 5</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 5</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Animales</span>
-              </p>
-            </div>
-          </div>
+	  </br>
+	  Seleccione una etiqueta
 	</div>
-
-	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img src="https://images.unsplash.com/photo-1506438714564-f9bb34d1f290"
-		     class="card-img-top embed-responsive-item">
-	      </div>
-            </a>
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 6</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 6</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Comida</span>
-		<span class="badge badge-primary">Gastronomía</span>
-              </p>
-            </div>
-          </div>
-	</div>
-	
       </div>
-      
-      <!-- FILA 3 -->
-      <div class="row w-99">
-	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img src="https://images.unsplash.com/photo-1567758611957-73e666678347"
-		     class="card-img-top embed-responsive-item">
-	      </div>
-            </a>
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 7</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 7</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Paisaje</span>
-		<span class="badge badge-primary">Naturaleza</span>
-              </p>
-            </div>
-          </div>
-	</div>
 
-	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img src="https://images.unsplash.com/photo-1509018877337-3af7dd307ea9"
-		     class="card-img-top embed-responsive-item">
-	      </div>
-            </a>
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 8</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 8</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Animales</span>
-              </p>
-            </div>
-          </div>
-	</div>
-
-	<div class="col-md text-center">
-          <div class="card border-dark mb-4">
-            <a href="image_detail.php">
-	      <div class="embed-responsive embed-responsive-4by3">
-		<img src="https://images.unsplash.com/photo-1512513810084-580214ebe390"
-		     class="card-img-top embed-responsive-item">
-	      </div>
-            </a>
-            <div class="card-body bg-dark">
-              <h5 class="card-title">Título de la imagen 9</h5>
-              <a href="profile.php" class="card-text">Autor de la imagen 9</a>
-              <hr>
-              <p class="card-text">
-		Etiquetas:
-		<span class="badge badge-primary">Comida</span>
-		<span class="badge badge-primary">Gastronomía</span>
-              </p>
-            </div>
-          </div>
-	</div>
-	
+      <div id="images">
+	<!-- FILA 1 -->
+	<div class="row w-99"></div>
       </div>
       
     </div>

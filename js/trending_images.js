@@ -17,7 +17,9 @@ function displayPhotos(data) {
     data.sort(function(a, b){
 	return score(b) - score(a);
     });
-    
+
+    let autores = new Set();
+    let etiquetas = new Set();
     let count = 0;
     for (let photo of data) {
 	if(count == 10) break;
@@ -54,13 +56,9 @@ function displayPhotos(data) {
 	let tagList = $("p.card-text").last();
 	if(photo.tags != undefined) {
 	    for(let tag of photo.tags) {
-		let tag_html = $(
-		    "<span></span>",
-		    {
-			"class": "badge badge-primary",
-			text: tag,
-		    });
-		tagList.append(tag_html);
+		let tag_src = `<span name="tag-${tag}" class="badge badge-primary"></span>`;
+		tagList.append($.parseHTML(tag_src));
+		etiquetas.add(tag);
 	    }
 	    $("span.badge").after(" "); // Separar etiquetas
 	}
@@ -71,6 +69,10 @@ function displayPhotos(data) {
 	    $("div.container").append(new_row);
 	    row = new_row;
 	}
+	
+	// Actualizar nombres de autores y etiquetas
+	for(let a of autores) updateAuthorName(a);
+	for(let t of etiquetas) updateTagName(t);
     }
     console.log(`Mostradas ${count} imágenes`);
 }

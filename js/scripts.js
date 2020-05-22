@@ -278,4 +278,27 @@ function updateAuthorName(authorId) {
     });
 }
 
+function updateTagName(tagId) {
+    $.ajax({
+	url: `http://localhost:3000/tags/${tagId}`,
+	success: function(tag) {
+	    $(`[name="tag-${tagId}"]`).each(function(i, elemento) {
+		$(elemento).text(tag.name);
+		//TO-DO$(elemento).attr("href",`profile.php?id=${authorId}`);
+	    });
+	},
+	error: function(error) {
+	    console.log(`Error al acceder a la etiqueta (${tagId})`);
+	    let errores = $("#errors-container");
+	    if(errores != undefined) {
+		errores.empty();
+		errores.append(getError(`No se pudo acceder a la etiqueta (${tagId}).`));
+	    }
+	    $(`[name="tag-${tagId}"]`).each(function(i, elemento) {
+		$(elemento).text("???");
+	    });
+	}
+    });
+}
+
 

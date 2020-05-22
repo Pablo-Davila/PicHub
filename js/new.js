@@ -35,6 +35,7 @@ function displayPhotos(data) {
     }
 
     let autores = new Set();
+    let etiquetas = new Set();
     let count = 0;
     for (let photo of filteredData) {
 	count++;
@@ -64,24 +65,20 @@ function displayPhotos(data) {
 	let card_html = $.parseHTML(card_str);
 	row.append(card_html);
 	autores.add(photo.userId);
-	    
+	
 	// Etiquetas
 	let tagList = $("p.card-text").last();
 	if(photo.tags != undefined) {
-
 	    for(let tag of photo.tags) {
-		let tag_html = $(
-		    "<span></span>",
-		    {
-			"class": "badge badge-primary",
-			text: tag,
-		    });
-		tagList.append(tag_html);
+		let tag_src = `<span name="tag-${tag}" class="badge badge-primary"></span>`;
+		tagList.append($.parseHTML(tag_src));
+		etiquetas.add(tag);
 	    }
 	    $("span.badge").after(" "); // Separar etiquetas
 	}
 	else tagList.text("Sin etiquetas");
 
+	// Cambio de fila
 	if(count%3 == 0) {
 	    let new_row = $("<div></div>", {"class": "row w-99"});
 	    $("div.container").append(new_row);
@@ -89,10 +86,9 @@ function displayPhotos(data) {
 	}
     }
 
-    // Actualizar nombres de autores
-    for(let id of autores) {
-	updateAuthorName(id);
-    }
+    // Actualizar nombres de autores y etiquetas
+    for(let a of autores) updateAuthorName(a);
+    for(let t of etiquetas) updateTagName(t);
 }
 
 
