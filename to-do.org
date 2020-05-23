@@ -18,14 +18,14 @@
 
 * [15/17] Implementación JavaScript
   - [X] Registro: Validación de formulario.
-  - [5/8] Cargar desde backend
+  - [6/8] Cargar desde backend
     - [X] Detalle de foto.
     - [X] Editar foto.
     - [X] Nuevo.
     - [X] Imágenes trending.
     - [ ] Usuarios trending.
     - [ ] Siguiendo.
-    - [ ] Etiquetas.
+    - [X] Etiquetas.
     - [3/3] Mi perfil
       - [X] Datos de usuario.
       - [X] Seguidores/seguidos.
@@ -57,26 +57,26 @@
   - [X] Seguimiento entre usuarios.
   - [ ] Usuarios siguiendo/seguidos: Habilitar botones de seguimiento.
   - [X] Redireccionar a los usuarios que accedan a una página no autorizada.
-  - [1/2] Etiquetas:
-    - [X] Crear una nueva etiqueta.
-    - [ ] Asignar/Quitar una etiqueta a una imagen.
   - [2/2] Comentarios:
     - [X] Añadir comentarios.
     - [X] RN-005.
+  - [2/2] Etiquetas:
+    - [X] Crear una nueva etiqueta.
+    - [X] Asignar/Quitar una etiqueta a una imagen.
   - [0/2] Votos:
     - [ ] Añadir y modificar.
     - [ ] Calcular puntuación de las imágenes (eliminar sistema antiguo).
   - [ ] Imágenes trending: solo contar los votos de la última semana.
 
-* [5/6] Reglas de negocio
+* [6/6] Reglas de negocio
   1. [X] Limitación en el número de fotos.
   2. [X] Uso de lenguaje adecuado.
   3. [X] Unicidad de cuentas.
-  4. [ ] Unicidad de etiquetas.
+  4. [X] Unicidad de etiquetas.
   5. [X] Eliminación de fotos.
   6. [X] Auto-Seguimiento.x
 
-* [11/18] Requisitos funcionales
+* [15/18] Requisitos funcionales
   1. [X] Fotos recientes.
   2. [X] Registro de usuario.
   3. [X] Autenticación de usuario.
@@ -85,10 +85,10 @@
   6. [X] Modificar foto.
   7. [X] Eliminar foto.
   8. [X] Perfiles de usuarios.
-  9. [ ] Asociar etiqueta a foto.
-  10. [ ] Eliminar etiqueta de foto.
-  11. [ ] Crear etiqueta.
-  12. [ ] Buscar por etiqueta.
+  9. [X] Asociar etiqueta a foto.
+  10. [X] Eliminar etiqueta de foto.
+  11. [X] Crear etiqueta.
+  12. [X] Buscar por etiqueta.
   13. [X] Comentar foto.
   14. [X] Seguir a otro usuario.
   15. [X] Dejar de seguir.
