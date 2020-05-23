@@ -10,6 +10,7 @@ const id = urlParams.get('id');
 let isNew;
 
 let tags = [];
+let dic;
 
 $(main);
 
@@ -19,7 +20,6 @@ function main() {
     kickNonAuthenticated();
     
     // Habilitar botones
-    $("#tags-add-btn").click(addTags);
     if(id == null) {
 	$("#back").attr("href", `index.php`);
     }
@@ -62,6 +62,9 @@ function main() {
     $("#description").change( function() {
 	fixBadWords($("#description"));
     });
+
+    // Etiquetas
+    $("#tags-add-btn").click(newTag);
 }
 
 function moreThanFifty(userId) {
@@ -88,11 +91,6 @@ function moreThanFifty(userId) {
     });
 }
 
-function addTags() {
-
-    //TO-DO
-}
-
 function validateForm(event) {
     event.preventDefault();
     
@@ -106,7 +104,7 @@ function validateForm(event) {
     let date = (new Date()).toISOString();
     let priv = $("#private").prop("checked");
 
-    // Datos a enviar
+    // Enviar datos
     let data;
     if(isNew) {
 	data = {
@@ -120,20 +118,7 @@ function validateForm(event) {
 	    "downvotes": 0,
 	    "userId": getUserId()
 	};
-    }
-    else {
-    	data = {
-    	    "url": url,
-    	    "title": title,
-    	    "description": description,
-    	    "tags": tags,
-    	    "date": date,
-	    "private": priv,
-	    "userId": getUserId()
-    	};
-    }
-    
-    if(isNew) {
+	
 	// Crear una nueva imagen
 	$.ajax({
 	    method: "POST",
@@ -156,6 +141,16 @@ function validateForm(event) {
 	});
     }
     else {
+    	data = {
+    	    "url": url,
+    	    "title": title,
+    	    "description": description,
+    	    "tags": tags,
+    	    "date": date,
+	    "private": priv,
+	    "userId": getUserId()
+    	};
+	
 	// Editar una imagen existente
 	$.ajax({
 	    type: "PATCH",
@@ -178,6 +173,41 @@ function validateForm(event) {
     }
     
     return true;
+}
+
+// Tags
+function updateTagOptions() {
+    $.ajax({
+	method: "GET",
+	url: "http://localhost:3000/tags",
+	success: function(data) {
+	    $("#tagSelect").empty();
+	    dic = new Map();
+	    for(let t of data){
+		if(!tags.includes(t.id)) {
+		    let opt_str = `<option>${t.name}</option>`;
+		    $("#tagSelect").append($.parseHTML(opt_str));
+		}
+		dic.set(t.name, t.id);
+	    }
+	},
+	error: function(error) {
+	    console.log("Error al acceder a las etiquetas del sistema.");
+	    $("#errors-container").append(getError("No se pudo acceder a las etiquetas del sistema."));
+	}
+    });
+}
+
+function newTag() {
+    let tagName = $("#tagSelect").val();
+    tags.push(dic.get(tagName));
+    let tag_src = `
+                      <span class="badge badge-primary">
+                        <span>${tagName}</span>
+                        <span onclick="removeTag(this);" class="txt-sdark"> x</span>
+	              </span>`;
+    $("#tags-selected").append($.parseHTML(tag_src));
+    updateTagOptions();
 }
 
 

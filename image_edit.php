@@ -75,9 +75,9 @@
 		<!-- Etiquetas -->
 		<label for="tags-input">Etiquetas</label>
 		<div id="tags-input">
-		  <input type="text" id="tags-add-list"
-			 class="form-inline form-control bg-sdark focus-dark"
-			 placeholder="Añade una etiqueta">
+		  <select id="tagSelect"
+			  class="form-inline form-control bg-sdark input-focus txt-light">
+		  </select>
 		  <div id="tags-add-btn" class="btn btn-info form-inline">
 		    Add
 		  </div>
