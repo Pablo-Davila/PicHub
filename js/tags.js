@@ -118,27 +118,49 @@ function newTag() {
     let data = {
 	name: $("#newTag").val().toLowerCase()
     };
-    
-    $.ajax({
-	method: "POST",
-	url: "http://localhost:3000/tags",
-	data: JSON.stringify(data),
-	dataType: "json",
-	contentType: "application/json; charset=UTF-8",
-	processData: false,
-	headers: {
-	    "Authorization": "Bearer " + getToken()
-	},
-	success: function() {
-	    $("#newTag").val("");
-	    displayTags();
-	    console.log("Etiqueta creada");
-	},
-	error: function (error) {
-	    console.log("Error al crear la etiqueta.");
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("No se pudo crear la etiqueta."));
-        }
+
+    new Promise((resolve,reject) => {
+	$.ajax({
+	    method: "GET",
+	    url: `http://localhost:3000/tags?name=${data.name}`,
+	    success: function(data) {
+		if(data.length == 0) resolve();
+		else {
+		    console.log("Error: Esa etiqueta ya existe.");
+		    $("#errors-container").empty();
+		    $("#errors-container").append(
+			getError("Esa etiqueta ya existe.")
+		    );
+		}
+	    },
+	    error: reject
+	});
+    }).then( function() {
+	$.ajax({
+	    method: "POST",
+	    url: "http://localhost:3000/tags",
+	    data: JSON.stringify(data),
+	    dataType: "json",
+	    contentType: "application/json; charset=UTF-8",
+	    processData: false,
+	    headers: {
+		"Authorization": "Bearer " + getToken()
+	    },
+	    success: function() {
+		$("#newTag").val("");
+		displayTags();
+		console.log("Etiqueta creada");
+	    },
+	    error: function (error) {
+		console.log("Error al crear la etiqueta.");
+		$("#errors-container").empty();
+		$("#errors-container").append(getError("No se pudo crear la etiqueta."));
+            }
+	});
+    }).catch( function(error) {
+	console.log("Error al acceder a las etiquetas del sistema.");
+	$("#errors-container").empty();
+	$("#errors-container").append(getError("No se pudo acceder a las etiquetas del sistema."));
     });
 }
 
