@@ -4,14 +4,14 @@
 #+OPTIONS: toc:0
 #+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#595959; color:#D3D3D3;}</style>
 
-* [7/10] Diseño HTML+CSS
+* [8/10] Diseño HTML+CSS
   - [X] Hasta el entregable 2.
   - [X] Introducir URL sin pop-up.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
   - [X] Seleccionar visibilidad de imagen.
   - [X] Hacer más intuitivo el cartel siguiendo-seguidos.
   - [X] Destacar la página actual en la barra superior.
-  - [ ] Cambiar sistema de etiquetas.
+  - [X] Cambiar sistema de etiquetas.
   - [X] Cambiar posición '+'.
   - [ ] Imagen de fondo. (?)
   - [ ] Enlace a GitHub.
