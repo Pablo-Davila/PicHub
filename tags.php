@@ -46,14 +46,6 @@
 	  </div>
 	</div>
       </div>
-      <!--<select id="tagSelect"
-	      class="form-control bg-sdark input-focus txt-light">
-	<option>Paisajes</option>
-	<option>Naturaleza</option>
-	<option>Comida</option>
-	<option>Gastronomía</option>
-	<option>Animales</option>
-      </select>-->
       
       </br>
 
