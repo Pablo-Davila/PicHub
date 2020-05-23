@@ -156,6 +156,8 @@ function loadSinglePhoto(id, edit) {
 		$("#title").val(data.title);
 		$("#url").val(data.url);
 		$("#private").prop("checked", data.private);
+		if(data.tags != undefined) tags = data.tags;
+		updateTagOptions();
 	    }
 	    else {
 		$("#title").text(data.title + " - Detalles");
@@ -170,16 +172,19 @@ function loadSinglePhoto(id, edit) {
 	    $("#author").attr("name", `auth-${data.userId}`);
 	    updateAuthorName(data.userId);
 	    $("#date").text(`- ${formatDate(data.date.substr(0,10))}`);
+
+	    // Etiquetas
 	    if(data.tags != undefined){	
 		for(let tag of data.tags) {
 		    let tag_str;
 		    if(edit) tag_str = `
-                    <span class="badge badge-primary">
- 		      ${tag}<span onclick="removeTag(this);" class="txt-sdark"> x</span>
-	            </span>`;
-		    else tag_str = `<span class="badge badge-primary">${tag}</span> `;
-		    let tag_html = $.parseHTML(tag_str);
-		    $("#tags-selected").append(tag_html);
+                      <span class="badge badge-primary">
+                        <span name="tag-${tag}"></span>
+                        <span onclick="removeTag(this);" class="txt-sdark"> x</span>
+	              </span>`;
+		    else tag_str = `<span name="tag-${tag}" class="badge badge-primary"></span> `;
+		    $("#tags-selected").append($.parseHTML(tag_str));
+		    updateTagName(tag);
 		}
 	    }
 
