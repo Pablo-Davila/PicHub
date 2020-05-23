@@ -93,10 +93,6 @@ function removeError(error) {
     $(error).fadeOut();
 }
 
-function removeTag(tag) {
-    $(tag).parent().fadeOut();
-}
-
 // Otras utilidades
 function formatDate(date) {
     let year = date.substr(0,4);
@@ -180,7 +176,7 @@ function loadSinglePhoto(id, edit) {
 		    if(edit) tag_str = `
                       <span class="badge badge-primary">
                         <span name="tag-${tag}"></span>
-                        <span onclick="removeTag(this);" class="txt-sdark"> x</span>
+                        <span name="${tag}" onclick="removeTag(this);" class="txt-sdark"> x</span>
 	              </span>`;
 		    else tag_str = `<span name="tag-${tag}" class="badge badge-primary"></span> `;
 		    $("#tags-selected").append($.parseHTML(tag_str));
@@ -251,7 +247,7 @@ function deleteImage() {
 		console.log("Error al eliminar la imagen.");
 		$("#errors-container").empty();
 		$("#errors-container").append(getError("No se pudo eliminar la imagen."));
-	    }	
+	    }
 	});
     }).catch(function() {
 	console.log("Error al eliminar la imagen.");

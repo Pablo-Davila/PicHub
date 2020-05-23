@@ -204,10 +204,21 @@ function newTag() {
     let tag_src = `
                       <span class="badge badge-primary">
                         <span>${tagName}</span>
-                        <span onclick="removeTag(this);" class="txt-sdark"> x</span>
+                        <span name="${dic.get(tagName)} onclick="removeTag(this);" class="txt-sdark""> x</span>
 	              </span>`;
     $("#tags-selected").append($.parseHTML(tag_src));
     updateTagOptions();
+}
+
+function removeTag(tagX) {
+    let tagId = $(tagX).attr("name");
+    $(tagX).parent().fadeOut();
+    for(let i=0; i<tags.length; i++){
+	if(tags[i] == tagId) {
+	    tags.splice(i,1);
+	    break;
+	}
+    }
 }
 
 
