@@ -50,7 +50,8 @@ function main() {
     url_input.change(function() {
 	if(/\.jpg$/i.test(url_input.val())
 	   || /\.png$/i.test(url_input.val())
-	   || /\.jpeg$/i.test(url_input.val())) {
+	   || /\.jpeg$/i.test(url_input.val())
+	   || /\.gif$/i.test(url_input.val())) {
 	    $("#imagen").attr("src", $("#url").val());
 	}
     });
