@@ -237,6 +237,11 @@
       "followerId": "13",
       "targetId": "14",
       "id": 7
+    },
+    {
+      "followerId": "14",
+      "targetId": "13",
+      "id": 8
     }
   ],
   "tags": [
