@@ -20,11 +20,11 @@ function main() {
 	    let authors = [];
 	    for(let f of data) {
 		if(f.followerId == id) {
-		    $("#followers-list").append(getListElement(f.targetId));
+		    $("#followed-list").append(getListElement(f.targetId));
 		    authors.push(f.targetId);
 		}
 		else if(f.targetId == id) {
-		    $("#followed-list").append(getListElement(f.followerId));
+		    $("#followers-list").append(getListElement(f.followerId));
 		    authors.push(f.followerId);
 		}
 	    }
