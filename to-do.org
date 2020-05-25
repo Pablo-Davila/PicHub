@@ -18,13 +18,13 @@
 
 * [15/17] Implementación JavaScript
   - [X] Registro: Validación de formulario.
-  - [6/8] Cargar desde backend
+  - [7/8] Cargar desde backend
     - [X] Detalle de foto.
     - [X] Editar foto.
     - [X] Nuevo.
     - [X] Imágenes trending.
     - [ ] Usuarios trending.
-    - [ ] Siguiendo.
+    - [X] Siguiendo.
     - [X] Etiquetas.
     - [3/3] Mi perfil
       - [X] Datos de usuario.
