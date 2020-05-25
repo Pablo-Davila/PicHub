@@ -29,7 +29,7 @@ function displayPhotos(data) {
     let filteredData = [];
     for(let image of data){
 	let idate = new Date(image.date);
-	if(idate>aWeekAgo) {
+	if(idate > aWeekAgo) {
 	    filteredData.push(image);
 	}
     }
@@ -37,7 +37,7 @@ function displayPhotos(data) {
     let autores = new Set();
     let etiquetas = new Set();
     let count = 0;
-    for (let photo of filteredData) {
+    for(let photo of filteredData) {
 	count++;
 	
 	// HTML de la tarjeta
