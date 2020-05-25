@@ -89,6 +89,8 @@ function displayPhotos(data) {
     // Actualizar nombres de autores y etiquetas
     for(let a of autores) updateAuthorName(a);
     for(let t of etiquetas) updateTagName(t);
+
+    console.log(`Mostradas ${count} imágenes`);
 }
 
 
