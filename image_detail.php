@@ -49,10 +49,9 @@
 	  </br>
 
 	  <!-- Puntuación -->
-	  <div>
-	    <h4 id="score">Puntuación: </h4>
-	    <button type="button" class="btn btn-danger">No me gusta</button>
-	    <button type="button" class="btn btn-success">Me gusta</button>
+	  <div id="score-section" class="h1">
+	    <h4>Puntuación: <span id="score"></span>
+	    </h4>
 	  </div>
 
 	  </br>
