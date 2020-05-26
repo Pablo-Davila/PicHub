@@ -4,7 +4,7 @@
 #+OPTIONS: toc:0
 #+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#595959; color:#D3D3D3;}</style>
 
-* [9/11] Diseño HTML+CSS
+* [11/12] Diseño HTML+CSS
   - [X] Hasta el entregable 2.
   - [X] Introducir URL sin pop-up.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
@@ -14,8 +14,9 @@
   - [X] Cambiar sistema de etiquetas.
   - [X] Cambiar posición '+'.
   - [X] Cambiar estilo like-dislike.
+  - [X] Enlace a GitHub.
+  - [X] Enlace a to-do.html
   - [ ] Imagen de fondo. (?)
-  - [ ] Enlace a GitHub.
 
 * [13/13] Implementación JavaScript
   - [X] Registro: Validación de formulario.
@@ -79,7 +80,7 @@
   5. [X] Eliminación de fotos.
   6. [X] Auto-Seguimiento.x
 
-* [17/18] Requisitos funcionales
+* [18/18] Requisitos funcionales
   1. [X] Fotos recientes.
   2. [X] Registro de usuario.
   3. [X] Autenticación de usuario.
@@ -97,4 +98,4 @@
   15. [X] Dejar de seguir.
   16. [X] Ver fotos de usuarios seguidos.
   17. [X] Fotos trending.
-  18. [ ] Usuarios trending.
+  18. [X] Usuarios trending.
