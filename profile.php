@@ -55,10 +55,12 @@
 	    
 	    <div class="row">
 	      <div class="col-md">
-		<a id="followers" href="followers.php"
+		<a id="link-ff1"
 		   class="btn btn-info form-inline text-white a-center
 			  btn-s-s">
-		  Siguiendo a 314 usuarios
+		  Siguiendo a
+		  <span id="followed" class="text-light mx-1">314</span>
+		  usuarios
 		</a>
 	      </div>
 	    </div>
@@ -67,10 +69,12 @@
 	    
 	    <div class="row">
 	      <div class="col-md">
-		<a id="followed" href="followers.php"
+		<a id="link-ff2"
 		   class="btn btn-info form-inline text-white a-center
 			  btn-s-s">
-		  Seguido por 159 usuarios
+		  Seguido por
+		  <span id="followers" class="text-light mx-1">159</span>
+		  usuarios
 		</a>
 	      </div>
 	    </div>

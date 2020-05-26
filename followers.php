@@ -20,7 +20,9 @@
 	  <div class="row">
 	    <div class="col-md">
               </br></br>
-	      <h3 class="ml-4 text-center">Seguidores de UserName1</h3>
+	      <h3 id="followers-title" class="ml-4 text-center">
+		Seguidores de <span name="auth-"></span>
+	      </h3>
 	    </div>
 	  </div>
 
@@ -39,7 +41,9 @@
 	  <div class="row">
 	    <div class="col-md">
               </br></br>
-	      <h3 class="ml-4 text-center">Seguidos por UserName1</h3>
+	      <h3 id="followed-title" class="ml-4 text-center">
+		Seguidos por <span name="auth-"></span>
+	      </h3>
 	    </div>
 	  </div>
 

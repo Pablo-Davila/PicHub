@@ -2,7 +2,7 @@
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
+const id = parseInt(urlParams.get('id'));
 
 $(main);
 
@@ -10,6 +10,10 @@ function main() {
 
     // Expulsar usuarios no autenticados
     kickNonAuthenticated();
+
+    // Actualizar títulos
+    $("h3 > span").attr("name", `auth-${id}`);
+    updateAuthorName(id);
     
     // Cargar listas
     console.log("Cargando listas de usuarios seguidores y seguidos...");
@@ -17,19 +21,20 @@ function main() {
 	method: "GET",
 	url: "http://localhost:3000/follows",
 	success: function(data) {
-	    let authors = [];
+	    let authors = new Set();
 	    for(let f of data) {
 		if(f.followerId == id) {
 		    $("#followed-list").append(getListElement(f.targetId));
-		    authors.push(f.targetId);
+		    authors.add(f.targetId);
 		}
 		else if(f.targetId == id) {
 		    $("#followers-list").append(getListElement(f.followerId));
-		    authors.push(f.followerId);
+		    authors.add(f.followerId);
 		}
 	    }
 	    for(let userId of authors){
 		updateAuthorName(userId);
+		updateFollowData(userId);
 	    }
 	    console.log("Usuarios seguidores y seguidos cargados con éxito");
 	},
@@ -43,15 +48,15 @@ function main() {
 
 function getListElement(userId) {
     let elem_html = `
-	    <li class="list-group-item bg-dark rounded flex-space mb-3">
-	      <a name=auth-${userId} href="profile.php?id=${userId}" class="lh-1-8"></a>
-	      <div class="btn btn-info text-white d-inline-block lh-1">
-		Seguir
-	      </div>
-	    </li>`;
-    let elem = $.parseHTML(elem_html);
-    //elem.click(function() { alert("meh"); });
-    return elem;
+	<li class="list-group-item bg-dark rounded flex-space mb-3">
+	  <a name=auth-${userId} href="profile.php?id=${userId}" class="lh-1-8"></a>
+	  ${(userId==getUserId())?
+                "" :
+                `<div name="fol-${userId}" class="btn btn-info text-white d-inline-block lh-1">
+	           Seguir
+	        </div>`}
+	</li>`;
+    return $.parseHTML(elem_html);
 }
 
 

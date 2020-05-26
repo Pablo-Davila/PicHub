@@ -2,7 +2,7 @@
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
+const id = parseInt(urlParams.get('id'));
 
 $(main);
 
@@ -14,16 +14,17 @@ function main() {
     // Mostrar botón de seguir
     if(id != getUserId()) {
 	let btn_html = `
-	      <div id="follow"
+	      <div id="follow" name="fol-${id}"
 		 class="btn btn-info text-white ml-3 d-inline">
 		Seguir
 	      </div>`;
 	$("#data-title-div").append($.parseHTML(btn_html));
-	$("#follow").click(toggleFollow);
     }
 
     // Actualizar seguir/dejar de seguir
-    updateFollowed();
+    $("#followers").attr("name", `followersN-${id}`);
+    $("#followed").attr("name", `followedN-${id}`);
+    updateFollowData(id);
 
     // Rellenar datos de usuario
     console.log("Cargando datos de usuario...");
@@ -59,135 +60,13 @@ function main() {
     });
 
     // Actualizar links de seguidores y seguidos
-    $("#followers").attr("href", `followers.php?id=${id}`);
-    $("#followed").attr("href", `followers.php?id=${id}`);
-
-    // Actualizar número de seguidores y seguidos
-    updateFollowNumbers();
-}
-
-function updateFollowNumbers() {
-    $.ajax({
-	method: "GET",
-	url: "http://localhost:3000/follows",
-	success: function(data) {
-	    let followed = 0;
-	    let followers = 0;
-	    for(let f of data){
-		if(f.followerId == id) followed++;
-		else if(f.targetId == id) followers++;
-	    }
-	    $("#followers").text(`Seguido por ${followers} usuarios`);
-	    $("#followed").text(`Siguiendo a ${followed} usuarios`);
-	},
-	error: function(error) {
-            console.log("Error al acceder al número de seguidores-seguidos.");
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("No se pudo acceder al número de seguidores-seguidos."));
-	}
-    });
-}
-
-function updateFollowed() {
-    $.ajax({
-	method: "GET",
-	url: `http://localhost:3000/follows?followerId=${getUserId()}`,
-	success: function(data) {
-	    let followed = false;
-	    let f_id;
-	    for(let f of data) {
-		if(f.targetId == id) {
-		    followed = true;
-		    f_id = f.id;
-		}
-	    }
-	    if(followed) $("#follow").text("Dejar de seguir");
-	    else $("#follow").text("Seguir");
-	},
-	error: function(error) {
-            console.log("Error al comprobar si se sigue al usuario.");
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("Error al comprobar si se sigue al usuario."));
-	}
-    });
-}
-
-function postFollow() {
-    let data = {
-	"followerId": getUserId(),
-	"targetId": id
-    };
-    
-    $.ajax({
-	method: "POST",
-	url: "http://localhost:3000/follows",
-	data: JSON.stringify(data),
-	dataType: "json",
-	contentType: "application/json; charset=UTF-8",
-	processData: false,
-	success: function() {
-	    $("#follow").text("Dejar de seguir");
-	    console.log(`Se ha empezado a seguir al usuario con id ${id}.`);
-	    updateFollowNumbers();
-	},
-	error: function(error) {
-            console.log(`Error al seguir al usuario con id ${id}.`);
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("Error al seguir al usuario."));
-	}
-    });
-}
-
-function deleteFollow(f_id) {
-    $.ajax({
-	type: "DELETE",
-	url: `http://localhost:3000/follows/${f_id}`,
-	headers: {
-	    "Authorization": "Bearer " + getToken()
-	},
-	success: function() {
-	    $("#follow").text("Seguir");
-	    console.log(`Se ha dejado de seguir al usuario ${id}.`);
-	    updateFollowNumbers();
-	},
-	error: function(error) {
-            console.log(`Error al dejar de seguir al usuario ${id}.`);
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("Error al dejar de seguir al usuario."));
-	}
-    });
-}
-
-function toggleFollow() {
-    if(id == getUserId()) return;
-    $.ajax({
-	method: "GET",
-	url: `http://localhost:3000/follows?followerId=${getUserId()}`,
-	success: function(data) {
-	    let followed = false;
-	    let f_id;
-	    for(let f of data) {
-		if(f.targetId == id) {
-		    followed = true;
-		    f_id = f.id;
-		}
-	    }
-	    if(followed) deleteFollow(f_id);
-	    else postFollow();
-	},
-	error: function(error) {
-            console.log("Error al comprobar si se sigue al usuario.");
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("Error al comprobar si se sigue al usuario."));
-	}
-    });
+    $("#link-ff1").attr("href", `followers.php?id=${id}`);
+    $("#link-ff2").attr("href", `followers.php?id=${id}`);
 }
 
 function displayPersonalPhotos(data) {
     let row = $("div.container > div.row").last();
     
-
-    let autores = new Set();
     let etiquetas = new Set();
     let count = 0;
     for (let photo of data) {
@@ -217,7 +96,6 @@ function displayPersonalPhotos(data) {
 
 	let card_html = $.parseHTML(card_str);
 	row.append(card_html);
-	autores.add(photo.userId);
 	    
 	// Etiquetas
 	let tagList = $("p.card-text").last();
@@ -239,7 +117,6 @@ function displayPersonalPhotos(data) {
     }
     
     // Actualizar nombres de autores y etiquetas
-    for(let a of autores) updateAuthorName(a);
     for(let t of etiquetas) updateTagName(t);
     
     console.log(`Mostradas ${count} imágenes`);
