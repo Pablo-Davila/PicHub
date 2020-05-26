@@ -4,7 +4,7 @@
 #+OPTIONS: toc:0
 #+HTML_HEAD: <style>.outline-2 { display:block; width:30%; margin-left:auto; margin-right:auto;} * { background-color:#595959; color:#D3D3D3;}</style>
 
-* [8/10] Diseño HTML+CSS
+* [9/11] Diseño HTML+CSS
   - [X] Hasta el entregable 2.
   - [X] Introducir URL sin pop-up.
   - [X] Limitar el tamaño de la imagen en Detalles y Editar.
@@ -13,60 +13,63 @@
   - [X] Destacar la página actual en la barra superior.
   - [X] Cambiar sistema de etiquetas.
   - [X] Cambiar posición '+'.
+  - [X] Cambiar estilo like-dislike.
   - [ ] Imagen de fondo. (?)
   - [ ] Enlace a GitHub.
 
-* [15/16] Implementación JavaScript
+* [13/13] Implementación JavaScript
   - [X] Registro: Validación de formulario.
-  - [7/8] Cargar desde backend
+  - [X] Cargar desde backend
     - [X] Detalle de foto.
     - [X] Editar foto.
     - [X] Nuevo.
     - [X] Imágenes trending.
-    - [ ] Usuarios trending.
+    - [X] Usuarios trending.
     - [X] Siguiendo.
     - [X] Etiquetas.
-    - [3/3] Mi perfil
+    - [X] Mi perfil
       - [X] Datos de usuario.
       - [X] Seguidores/seguidos.
       - [X] Imágenes del usuario.
     - [X] Usuarios siguiendo/seguidos.
-  - [5/5] Añadir recursos JSON
-    - [X] Crear "tabla" de votos.
-    - [X] Crear "tabla" de comentarios.
+  - [X] Añadir recursos JSON:
     - [X] Crear "tabla" de usuarios seguidos.
     - [X] Crear "tabla" de etiquetas.
+    - [X] Crear "tabla" de comentarios.
+    - [X] Crear "tabla" de votos.
     - [X] Crear array de palabras malsonantes.
-  - [X] Añadir nueva imagen.
-  - [X] Editar una imagen.
-  - [X] Eliminar imagen.
-  - [X] Editar/Nueva imagen: Comprobar palabras prohibidas
-  - [X] Filtrar las imágenes recientes (última semana).
-  - [X] Limitar a 10 las imágenes trending.
-  - [X] Crear nuevo usuario.
-  - [X] Errores en peticiones AJAX.
-  - [X] Inicio de sesión.
-  - [X] Asignar imagen al usuario al crearla.
-  - [4/4] En función del estado de autenticación
+  - [X] Recientes: Filtrar imágenes (última semana).
+  - [X] Imágenes:
+    - [X] Añadir nueva imagen.
+    - [X] Editar una imagen.
+    - [X] Eliminar imagen.
+    - [X] Editar/Nueva imagen: Comprobar palabras prohibidas
+    - [X] Límitar el número de imágenes por usuario.
+  - [X] Gestión de usuarios:
+    - [X] Crear nuevo usuario.
+    - [X] Inicio de sesión.
+    - [X] Asignar imagen al usuario al crearla.
+  - [X] Control de acceso:
     - [X] Modificar la visibilidad de los botones de editar y eliminar.
     - [X] Modificar la cabecera.
-    - [X] Modificar la visibilidad del botón de seguir.
     - [X] Ocultar perfiles de usuario para los no autenticados.
-  - [X] Límitar el número de imágenes por usuario.
-  - [X] Restablecer a 50 el límite de imágenes por usuario.
-  - [X] Seguimiento entre usuarios.
-  - [ ] Usuarios siguiendo/seguidos: Habilitar botones de seguimiento.
-  - [X] Redireccionar a los usuarios que accedan a una página no autorizada.
-  - [2/2] Comentarios:
+    - [X] Redireccionar a los usuarios que accedan a una página no autorizada.
+  - [X] Seguimiento entre usuarios:
+    - [X] Modificar la visibilidad del botón de seguir.
+    - [X] Usuarios siguiendo/seguidos: Habilitar botones de seguimiento.
+  - [X] Comentarios:
     - [X] Añadir comentarios.
     - [X] RN-005.
-  - [2/2] Etiquetas:
+  - [X] Etiquetas:
     - [X] Crear una nueva etiqueta.
     - [X] Asignar/Quitar una etiqueta a una imagen.
-  - [0/3] Votos:
-    - [ ] Añadir y modificar.
-    - [ ] Calcular puntuación de las imágenes (eliminar sistema antiguo).
-    - [ ] Imágenes trending: solo contar los votos de la última semana.
+  - [X] Votos:
+    - [X] Añadir y modificar.
+    - [X] Calcular puntuación de las imágenes (eliminar sistema antiguo).
+  - [X] Imágenes trending:
+    - [X] Limitar a 10 las imágenes trending.
+    - [X] Imágenes trending: solo contar los votos de la última semana.
+  - [X] Mostrar errores en peticiones AJAX.
 
 * [6/6] Reglas de negocio
   1. [X] Limitación en el número de fotos.
@@ -76,12 +79,12 @@
   5. [X] Eliminación de fotos.
   6. [X] Auto-Seguimiento.x
 
-* [16/18] Requisitos funcionales
+* [17/18] Requisitos funcionales
   1. [X] Fotos recientes.
   2. [X] Registro de usuario.
   3. [X] Autenticación de usuario.
   4. [X] Añadir foto.
-  5. [ ] Votar foto.
+  5. [X] Votar foto.
   6. [X] Modificar foto.
   7. [X] Eliminar foto.
   8. [X] Perfiles de usuarios.
