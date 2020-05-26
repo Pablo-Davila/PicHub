@@ -6,7 +6,7 @@ let lim = 50;
 // Información a partir de la URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = parseInt(urlParams.get('id'));
+const id = urlParams.get('id');
 let isNew;
 
 let tags = [];
