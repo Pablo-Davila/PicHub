@@ -48,8 +48,20 @@ a.dropdown-item:hover {
     color: #212529 !important;
 }
 
+.bg-light {
+    background-color: var(--light) !important;
+}
+
 .bg-sdark {
     background-color: var(--sdark) !important;
+}
+
+.bg-sdark {
+    background-color: var(--sdark) !important;
+}
+
+.bg-dark {
+    background-color: var(--dark) !important;
 }
 
 .border-dark {
