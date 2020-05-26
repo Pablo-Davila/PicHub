@@ -83,8 +83,8 @@ function main() {
 // Errores
 function getError(message) {
     return `<div onclick='removeError(this);' class='alert alert-danger' role='alert'>
-             <strong class="text-danger"><i class='fa fa-times text-danger' aria-hidden= 'true'>
-               </i > Error!
+             <strong class="text-danger">
+               <i class='fa fa-times text-danger' aria-hidden= 'true'></i> Error!
              </strong>${message}
            </div>`;
 }
@@ -99,10 +99,6 @@ function formatDate(date) {
     let month = date.substr(5,2);
     let day = date.substr(8,2);
     return `${day}/${month}/${year}`;
-}
-
-function score(photo) {
-    return photo.upvotes - photo.downvotes;
 }
 
 function kickNonAuthenticated() {
@@ -148,6 +144,9 @@ function loadSinglePhoto(id, edit) {
 	    let data = image;
 	    $("#imagen").attr("src", data.url);
 	    $("#description").text(data.description);
+	    $("#author").attr("name", `auth-${data.userId}`);
+	    updateAuthorName(data.userId);
+	    $("#date").text(`- ${formatDate(data.date.substr(0,10))}`);
 	    if(edit) {
 		$("#title").val(data.title);
 		$("#url").val(data.url);
@@ -164,10 +163,6 @@ function loadSinglePhoto(id, edit) {
 		    $("#private").text("Imagen pública");
 		}
 	    }
-	    $("#score").text("Puntuación: " + score(data));
-	    $("#author").attr("name", `auth-${data.userId}`);
-	    updateAuthorName(data.userId);
-	    $("#date").text(`- ${formatDate(data.date.substr(0,10))}`);
 
 	    // Etiquetas
 	    if(data.tags != undefined){	
@@ -243,21 +238,85 @@ function deleteImage() {
 		console.log("Imagen eliminada");
 		window.location.href = "index.php";
 	    },
-	    error: function() {
+	    error: function(error) {
 		console.log("Error al eliminar la imagen.");
 		$("#errors-container").empty();
-		$("#errors-container").append(getError("No se pudo eliminar la imagen."));
+		$("#errors-container").append(getError("No se pudo eliminar la imagen.", error));
 	    }
 	});
-    }).catch(function() {
+    }).catch(function(error) {
 	console.log("Error al eliminar la imagen.");
 	$("#errors-container").empty();
-	$("#errors-container").append(getError("No se pudo eliminar la imagen."));
+	$("#errors-container").append(getError("No se pudo eliminar la imagen.", error));
     });
 }
 
+// Seguimiento entre usuarios
+function postFollow(userId) {
+    let data = {
+	"followerId": getUserId(),
+	"targetId": userId
+    };
+    
+    $.ajax({
+	method: "POST",
+	url: "http://localhost:3000/follows",
+	data: JSON.stringify(data),
+	dataType: "json",
+	contentType: "application/json; charset=UTF-8",
+	processData: false,
+	success: function() {
+	    updateFollowData(userId);
+	    console.log(`Se ha empezado a seguir al usuario con id ${userId}.`);
+	},
+	error: function(error) {
+            console.log(`Error al seguir al usuario con id ${userId}.`);
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError("Error al seguir al usuario.", error));
+	}
+    });
+}
+
+function deleteFollow(userId, f_id) {
+    $.ajax({
+	type: "DELETE",
+	url: `http://localhost:3000/follows/${f_id}`,
+	headers: {
+	    "Authorization": "Bearer " + getToken()
+	},
+	success: function() {
+	    updateFollowData(userId);
+	    console.log(`Se ha dejado de seguir al usuario ${userId}.`);
+	},
+	error: function(error) {
+            console.log(`Error al dejar de seguir al usuario.`, error);
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError(`Error al dejar de seguir al usuario ${userId}.`));
+	}
+    });
+}
+
+function toggleFollow(userId) {
+    if(userId == getUserId()) return;
+    $.ajax({
+	method: "GET",
+	url: `http://localhost:3000/follows?followerId=${getUserId()}&targetId=${userId}`,
+	success: function(data) {
+	    if(data.length == 0) postFollow(userId);
+	    else deleteFollow(userId, data[0].id);
+	},
+	error: function(error) {
+            console.log("Error al comprobar si se sigue al usuario.", error);
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError("Error al comprobar si se sigue al usuario."));
+	}
+    });
+}
+
+// Actualización de datos
 function updateAuthorName(authorId) {
     $.ajax({
+	method: "GET",
 	url: `http://localhost:3000/users/${authorId}`,
 	success: function(author) {
 	    $(`[name="auth-${authorId}"]`).each(function(i, elemento) {
@@ -281,6 +340,7 @@ function updateAuthorName(authorId) {
 
 function updateTagName(tagId) {
     $.ajax({
+	method: "GET",
 	url: `http://localhost:3000/tags/${tagId}`,
 	success: function(tag) {
 	    $(`[name="tag-${tagId}"]`).each(function(i, elemento) {
@@ -300,6 +360,102 @@ function updateTagName(tagId) {
 	    });
 	}
     });
+}
+
+function updateScore(imageId) {
+    $.ajax({
+	method: "GET",
+	url: `http://localhost:3000/votes?imageId=${imageId}`,
+	success: function(data) {
+	    let numerador = 0;
+	    let denominador = 0;
+	    for(let v of data) {
+		denominador++;
+		if(v.like) numerador++;
+		else numerador--;
+	    }
+	    $(`[name="score-${imageId}"]`).each(function(i, elemento) {
+		let puntuacion = (denominador==0)? 0 : (numerador/denominador).toFixed(2);
+	    	$(elemento).text(puntuacion);
+	    });
+	},
+	error: function(error) {
+	    console.log(`Error al acceder a los votos del sistema`);
+	    let errores = $("#errors-container");
+	    if(errores != undefined) {
+		errores.empty();
+		errores.append(getError(`No se pudo acceder a los votos del sistema.`));
+	    }
+	    $(`[name="score-${imageId}"]`).each(function(i, elemento) {
+		$(elemento).text("???");
+	    });
+	}
+    });
+}
+
+function updateFollowData(userId) {
+    $.ajax({
+	method: "GET",
+	url: `http://localhost:3000/follows?followerId=${getUserId()}&targetId=${userId}`,
+	success: function(data) {
+	    let fNumber = $(`[name="folN-${userId})"`);
+	    if(data.length == 0) {
+		$(`[name="fol-${userId}"]`).each(function(i, elemento) {
+	    	    $(elemento).text("Seguir");
+		});
+	    }
+	    else {
+		$(`[name="fol-${userId}"]`).each(function(i, elemento) {
+	    	    $(elemento).text("Dejar de seguir");
+		});
+	    }
+	    $(`[name="fol-${userId}"]`).one("click", function() { toggleFollow(userId); });
+	},
+	error: function(error) {
+	    console.log(`Error al acceder a los votos del sistema`, error);
+	    let errores = $("#errors-container");
+	    if(errores != undefined) {
+		errores.empty();
+		errores.append(getError(`No se pudo acceder a los votos del sistema.`));
+	    }
+	    $(`[name="score-${imageId}"]`).each(function(i, elemento) {
+		$(elemento).text("???");
+	    });
+	}
+    });
+    updateFollowNumber(userId);
+}
+
+function updateFollowNumber(userId) {
+    $.ajax({
+	method: "GET",
+	url: `http://localhost:3000/follows`,
+	success: function(data) {
+	    let followers = 0;
+	    let followed = 0;
+	    for(let f of data) {
+		if(f.targetId == userId) followers++;
+		else if(f.followerId == userId) followed++;
+	    }
+	    $(`[name="followersN-${userId}"]`).each(function(i, elemento) {
+	    	$(elemento).text(followers);
+	    });
+	    $(`[name="followedN-${userId}"]`).each(function(i, elemento) {
+	    	$(elemento).text(followed);
+	    });
+	},
+	error: function(error) {
+	    console.log(`Error al calcular el número de seguidores del usuario ${userId}`, error);
+	    let errores = $("#errors-container");
+	    if(errores != undefined) {
+		errores.empty();
+		errores.append(getError(`No se pudo calcular el número de seguidores del usuario ${userId}.`));
+	    }
+	    $(`[name="score-${imageId}"]`).each(function(i, elemento) {
+		$(elemento).text("???");
+	    });
+	}
+    });    
 }
 
 
