@@ -47,7 +47,7 @@
       "downvotes": "0",
       "id": 8,
       "tags": [],
-      "userId": "12",
+      "userId": 12,
       "private": false
     },
     {
@@ -59,7 +59,7 @@
       "downvotes": "0",
       "id": 10,
       "tags": [],
-      "userId": "12",
+      "userId": 12,
       "private": false
     },
     {
@@ -74,21 +74,22 @@
         5,
         4
       ],
-      "userId": "13",
+      "userId": 13,
       "private": false
     },
     {
       "url": "https://i.pinimg.com/originals/20/c8/66/20c866c639dcb489e21e8a7c6a089a5d.jpg",
       "title": "Cielo estrellado",
-      "description": "El cielo nocturno estaba precioso ayer. a",
-      "date": "2020-05-23T01:44:23.379Z",
+      "description": "El cielo nocturno estaba precioso ayer.",
+      "date": "2020-05-25T23:27:04.894Z",
       "upvotes": 0,
       "downvotes": 0,
       "id": 15,
       "tags": [
-        1
+        1,
+        2
       ],
-      "userId": "13",
+      "userId": 13,
       "private": false
     },
     {
@@ -103,7 +104,7 @@
         7,
         6
       ],
-      "userId": "14",
+      "userId": 14,
       "private": false
     },
     {
@@ -118,7 +119,7 @@
         3,
         1
       ],
-      "userId": "14",
+      "userId": 14,
       "private": false
     },
     {
@@ -132,7 +133,7 @@
       "private": false,
       "upvotes": 0,
       "downvotes": 0,
-      "userId": "13",
+      "userId": 13,
       "id": 18
     },
     {
@@ -146,7 +147,7 @@
       "private": false,
       "upvotes": 0,
       "downvotes": 0,
-      "userId": "14",
+      "userId": 14,
       "id": 23
     },
     {
@@ -158,7 +159,7 @@
       "private": true,
       "upvotes": 0,
       "downvotes": 0,
-      "userId": "15",
+      "userId": 15,
       "id": 24
     },
     {
@@ -168,15 +169,79 @@
       "tags": [
         3
       ],
-      "date": "2020-05-23T01:07:39.825Z",
+      "date": "2020-05-25T23:52:24.629Z",
       "private": false,
       "upvotes": 0,
       "downvotes": 0,
-      "userId": "14",
+      "userId": 14,
       "id": 25
     }
   ],
-  "votes": [],
+  "votes": [
+    {
+      "like": true,
+      "date": "2020-05-25T16:58:26.282Z",
+      "userId": 13,
+      "imageId": 23,
+      "id": 2
+    },
+    {
+      "like": true,
+      "date": "2020-05-25T19:16:51.375Z",
+      "userId": 14,
+      "imageId": 23,
+      "id": 3
+    },
+    {
+      "like": false,
+      "date": "2020-05-25T17:08:35.333Z",
+      "userId": 12,
+      "imageId": 23,
+      "id": 4
+    },
+    {
+      "like": true,
+      "date": "2020-05-25T18:47:28.600Z",
+      "userId": 14,
+      "imageId": 25,
+      "id": 5
+    },
+    {
+      "like": false,
+      "date": "2020-05-25T18:48:25.775Z",
+      "userId": 14,
+      "imageId": 8,
+      "id": 6
+    },
+    {
+      "like": true,
+      "date": "2020-05-25T23:33:20.890Z",
+      "userId": 13,
+      "imageId": 18,
+      "id": 7
+    },
+    {
+      "like": false,
+      "date": "2020-05-25T23:34:16.993Z",
+      "userId": 15,
+      "imageId": 18,
+      "id": 8
+    },
+    {
+      "like": true,
+      "date": "2020-05-25T23:34:51.332Z",
+      "userId": 12,
+      "imageId": 18,
+      "id": 9
+    },
+    {
+      "like": true,
+      "date": "2020-05-25T23:35:26.882Z",
+      "userId": 15,
+      "imageId": 23,
+      "id": 10
+    }
+  ],
   "comments": [
     {
       "imageId": 14,
@@ -186,25 +251,60 @@
       "id": 1
     },
     {
-      "imageId": "14",
-      "userId": "13",
+      "imageId": 14,
+      "userId": 13,
       "text": "Comentario de prueba 2",
       "date": "2020-05-22T17:19:53.044Z",
       "id": 3
     },
     {
-      "imageId": "14",
-      "userId": "14",
+      "imageId": 14,
+      "userId": 14,
       "text": "Comentario de prueba 9",
       "date": "2020-05-22T17:34:13.214Z",
       "id": 10
     },
     {
-      "imageId": "14",
-      "userId": "14",
+      "imageId": 14,
+      "userId": 14,
       "text": "Soy feliz, porque este sistema de comentarios funciona ^-^",
       "date": "2020-05-22T17:38:16.697Z",
       "id": 12
+    },
+    {
+      "imageId": 23,
+      "userId": 14,
+      "text": "Foto de Copito con la tortuga de mi primo.",
+      "date": "2020-05-25T16:24:21.730Z",
+      "id": 13
+    },
+    {
+      "imageId": 23,
+      "userId": 13,
+      "text": "Que monada <3",
+      "date": "2020-05-25T16:25:11.720Z",
+      "id": 14
+    },
+    {
+      "imageId": "15",
+      "userId": 14,
+      "text": "Hermoso sin duda",
+      "date": "2020-05-25T23:57:55.624Z",
+      "id": 15
+    },
+    {
+      "imageId": "18",
+      "userId": 14,
+      "text": "O.O",
+      "date": "2020-05-25T23:58:12.166Z",
+      "id": 16
+    },
+    {
+      "imageId": "25",
+      "userId": 14,
+      "text": "42! Lo sabía!!... ¿Cuál era la pregunta?",
+      "date": "2020-05-26T00:02:46.214Z",
+      "id": 17
     }
   ],
   "follows": [
@@ -214,34 +314,39 @@
       "targetId": 2
     },
     {
-      "followerId": "12",
-      "targetId": "14",
+      "followerId": 12,
+      "targetId": 14,
       "id": 3
     },
     {
-      "followerId": "14",
-      "targetId": "12",
-      "id": 4
-    },
-    {
-      "followerId": "14",
-      "targetId": "15",
-      "id": 5
-    },
-    {
-      "followerId": "15",
-      "targetId": "12",
+      "followerId": 15,
+      "targetId": 12,
       "id": 6
     },
     {
-      "followerId": "13",
-      "targetId": "14",
+      "followerId": 13,
+      "targetId": 14,
       "id": 7
     },
     {
-      "followerId": "14",
-      "targetId": "13",
-      "id": 8
+      "followerId": 12,
+      "targetId": 15,
+      "id": 9
+    },
+    {
+      "followerId": 14,
+      "targetId": 13,
+      "id": 15
+    },
+    {
+      "followerId": 14,
+      "targetId": 15,
+      "id": 16
+    },
+    {
+      "followerId": 14,
+      "targetId": 12,
+      "id": 17
     }
   ],
   "tags": [
