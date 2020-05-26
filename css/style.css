@@ -210,6 +210,14 @@ div.embed-responsive img {
 }
 
 /* ========== < ID > ========== */
+#to-do {
+    height: 30px;
+    position: fixed;
+    bottom: 100px;
+    right: 37px;
+    height: 65px;
+}
+
 #plus {
     height: 30px;
     position: fixed;
