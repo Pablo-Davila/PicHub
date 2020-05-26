@@ -6,7 +6,7 @@ let lim = 50;
 // Información a partir de la URL
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id');
+const id = parseInt(urlParams.get('id'));
 let isNew;
 
 let tags = [];
@@ -34,7 +34,7 @@ function main() {
 	    if(data.length == 0) $("#private").attr("disabled", false);
 	},
 	error: function(error) {
-	    console.log("Error: No se ha podido comprobar que la foto no tenga comentarios, por lo que no se podrá modificar su privacidad");
+	    console.log("Error: No se ha podido comprobar que la foto no tenga comentarios, por lo que no se podrá modificar su privacidad.");
 	}
     });
 
@@ -47,7 +47,7 @@ function main() {
 
     // Actualizar imagen al cambiar la URL
     let url_input = $("#url");
-    url_input.change(function() {
+    url_input.change( function() {
 	if(/\.jpg$/i.test(url_input.val())
 	   || /\.png$/i.test(url_input.val())
 	   || /\.jpeg$/i.test(url_input.val())
@@ -203,10 +203,10 @@ function newTag() {
     let tagName = $("#tagSelect").val();
     tags.push(dic.get(tagName));
     let tag_src = `
-                      <span class="badge badge-primary">
-                        <span>${tagName}</span>
-                        <span name="${dic.get(tagName)} onclick="removeTag(this);" class="txt-sdark""> x</span>
-	              </span>`;
+      <span class="badge badge-primary">
+        <span>${tagName}</span>
+        <span name="${dic.get(tagName)} onclick="removeTag(this);" class="txt-sdark""> x</span>
+      </span>`;
     $("#tags-selected").append($.parseHTML(tag_src));
     updateTagOptions();
 }

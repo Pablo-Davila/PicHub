@@ -13,11 +13,9 @@ function main() {
     $.ajax({
 	method: "GET",
         url: "http://localhost:3000/images?private=false&_sort=date&_order=desc",
-        success: function(data) {
-	    displayFiltered(data);
-	},
+        success: displayFiltered,
         error: function (error) {
-            console.log("Error al acceder a las imágenes: " + error.toString());
+            console.log("Error al acceder a las imágenes del sistema.", error);
 	    $("#errors-container").append(getError("No se pudo cargar las imágenes."));
         }
     });
@@ -32,12 +30,12 @@ function displayFiltered(data) {
 	    error: reject
 	});
     }).then( function(followed) {
-	let fUsers = followed.map(f => f.targetId);
-	let filtered = data.filter(i => fUsers.includes(i.userId));
+	let fUsers = followed.map(f => parseInt(f.targetId));
+	let filtered = data.filter(i => fUsers.includes(parseInt(i.userId)));
 	displayPhotos(filtered);
     }).catch( function (error) {
-            console.log("Error al acceder a los usuarios seguidos.");
-	    $("#errors-container").append(getError("No se pudo acceder a los usuarios seguidos."));
+        console.log("Error al acceder a los usuarios seguidos.", error);
+	$("#errors-container").append(getError("No se pudo acceder a los usuarios seguidos."));
     });
 }
 

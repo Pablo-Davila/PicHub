@@ -22,7 +22,7 @@ function getToken() {
 }
 
 function getUserId() {
-    return localStorage.getItem("userId");
+    return parseInt(localStorage.getItem("userId"));
 }
 
 function logOut(){
