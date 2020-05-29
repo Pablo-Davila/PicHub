@@ -51,7 +51,7 @@ function loadTrendingUsers(data) {
 	for(let u of data){
 	    let elem_str = `
 	  <li class="list-group-item bg-dark rounded flex-space mb-3">
-	    <a href="profile.php?id=${u.id}" class="w-25 text-left">#${c} ${u.user}</a>
+	    <a href="profile.php?id=${u.id}" class="w-25 text-center">#${c} ${u.user}</a>
 	    <span><span name="followersN-${u.id}">${map.get(u.id)}</span> seguidores</span>
             <div id="f-btn-${u.id}" class="w-25"></div>
 	  </li>`;
