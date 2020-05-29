@@ -115,8 +115,6 @@ function validateForm(event) {
 	    "tags": tags,
 	    "date": date,
 	    "private": priv,
-	    "upvotes": 0,
-	    "downvotes": 0,
 	    "userId": getUserId()
 	};
 	
