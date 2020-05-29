@@ -30,14 +30,4 @@
   </nav>
 </div>
 
-<!-- Botón lista to-do -->
-<a href="to-do.html" class="display-4" target="_blank">
-  <i id="to-do" class="fa fa-list"></i>
-</a>
-
-<!-- Botón nueva imagen -->
-<a href="image_edit.php">
-  <img id="plus" src="img/plus.svg">
-</a>
-
 <hr>
