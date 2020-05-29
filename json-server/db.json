@@ -43,8 +43,6 @@
       "title": "patata",
       "description": "Una hermosa patatilla.",
       "date": "2020-05-22T15:23:31.406Z",
-      "upvotes": "0",
-      "downvotes": "0",
       "id": 8,
       "tags": [],
       "userId": 12,
@@ -55,8 +53,6 @@
       "title": "Mierdecita feliz",
       "description": "Es una ******, pero es feliz. Eso es lo importante.",
       "date": "2020-05-22T15:23:37.252Z",
-      "upvotes": "0",
-      "downvotes": "0",
       "id": 10,
       "tags": [],
       "userId": 12,
@@ -67,8 +63,6 @@
       "title": "Fases del confinamiento",
       "description": "Acaban de anunciar qué provincias pasan a la fase 1.",
       "date": "2020-05-23T01:08:51.790Z",
-      "upvotes": "0",
-      "downvotes": "0",
       "id": 14,
       "tags": [
         5,
@@ -82,8 +76,6 @@
       "title": "Cielo estrellado",
       "description": "El cielo nocturno estaba precioso ayer.",
       "date": "2020-05-25T23:27:04.894Z",
-      "upvotes": 0,
-      "downvotes": 0,
       "id": 15,
       "tags": [
         1,
@@ -97,8 +89,6 @@
       "title": "Camarón (de la isla)",
       "description": "Es un artrópodo de color anaranjado que se puede ver, está visiblemente enfadado con el universo, porque siempre que se lo comen está en un cartucho barato.\nPor favor, la próxima vez que decidan comer camarones tengan consideración por ellos y cómanselos de uno en uno, para poder apreciar su valía individual.\n- Inma Martín Cordero -",
       "date": "2020-05-23T01:07:22.904Z",
-      "upvotes": "0",
-      "downvotes": "0",
       "id": 16,
       "tags": [
         7,
@@ -112,8 +102,6 @@
       "title": "Vórtice",
       "description": "No sé cómo ha pasado esto, pero le he hecho una foto.",
       "date": "2020-05-23T01:06:54.495Z",
-      "upvotes": "0",
-      "downvotes": "0",
       "id": 17,
       "tags": [
         3,
@@ -131,8 +119,6 @@
       ],
       "date": "2020-05-23T01:09:11.110Z",
       "private": false,
-      "upvotes": 0,
-      "downvotes": 0,
       "userId": 13,
       "id": 18
     },
@@ -145,8 +131,6 @@
       ],
       "date": "2020-05-23T01:08:06.165Z",
       "private": false,
-      "upvotes": 0,
-      "downvotes": 0,
       "userId": 14,
       "id": 23
     },
@@ -155,10 +139,8 @@
       "title": "Logo LSI",
       "description": "El logo de mi departamento.",
       "tags": [],
-      "date": "2020-05-25T11:45:13.695Z",
+      "date": "2020-05-26T11:46:25.636Z",
       "private": true,
-      "upvotes": 0,
-      "downvotes": 0,
       "userId": 15,
       "id": 24
     },
@@ -171,8 +153,6 @@
       ],
       "date": "2020-05-25T23:52:24.629Z",
       "private": false,
-      "upvotes": 0,
-      "downvotes": 0,
       "userId": 14,
       "id": 25
     }
@@ -240,6 +220,13 @@
       "userId": 15,
       "imageId": 23,
       "id": 10
+    },
+    {
+      "like": false,
+      "date": "2020-05-26T11:43:17.302Z",
+      "userId": 14,
+      "imageId": 15,
+      "id": 11
     }
   ],
   "comments": [
@@ -305,6 +292,13 @@
       "text": "42! Lo sabía!!... ¿Cuál era la pregunta?",
       "date": "2020-05-26T00:02:46.214Z",
       "id": 17
+    },
+    {
+      "imageId": 23,
+      "userId": 14,
+      "text": "Esto es un comentario",
+      "date": "2020-05-26T11:43:56.681Z",
+      "id": 18
     }
   ],
   "follows": [
@@ -340,13 +334,13 @@
     },
     {
       "followerId": 14,
-      "targetId": 15,
-      "id": 16
+      "targetId": 12,
+      "id": 17
     },
     {
       "followerId": 14,
-      "targetId": 12,
-      "id": 17
+      "targetId": 15,
+      "id": 18
     }
   ],
   "tags": [
@@ -377,6 +371,14 @@
     {
       "name": "animales",
       "id": 7
+    },
+    {
+      "name": "etsii",
+      "id": 8
+    },
+    {
+      "name": "patata",
+      "id": 9
     }
   ],
   "swearwords": [
