@@ -42,7 +42,7 @@ function displayPhotos(data) {
 	
 	// HTML de la tarjeta
 	let card_str = `
-    	<div class="col-md text-center max-w-33">
+    	<div name="tarjeta-3" class="col-md text-center">
           <div class="card border-dark mb-4">
             <a href="image_detail.php?id=${photo.id}">
 	      <div class="embed-responsive embed-responsive-4by3">

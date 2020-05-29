@@ -15,6 +15,7 @@ function main() {
           <a id="a-register" class="nav-link" href="register.php">Registro</a>
         </li>`;
 	$("#nav-der").append(right_str);
+	$("#flechas").remove();
     }
     else {
 	let left_str = `
@@ -43,8 +44,9 @@ function main() {
         <li class="nav-item mr-2">
           <a id="logout" class="nav-link" href="index.php">Cerrar sesión</a>
         </li>
-        <li class="nav-item border border-light rounded-pill px-1">
-          <b><a id="my-profile" name="auth-${getUserId()}" class="nav-link"
+        <li class="nav-item">
+          <b><a id="my-profile" name="auth-${getUserId()}"
+                class="nav-link border border-light rounded-pill px-2 w-min"
              href="profile.php=${getUserId()}">Mi perfil</a></b>
         </li>`;
 	$("#nav-der").append(right_str);
