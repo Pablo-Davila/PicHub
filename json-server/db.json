@@ -329,18 +329,23 @@
     },
     {
       "followerId": 14,
-      "targetId": 12,
-      "id": 19
-    },
-    {
-      "followerId": 14,
       "targetId": 13,
       "id": 20
     },
     {
       "followerId": 14,
+      "targetId": 12,
+      "id": 22
+    },
+    {
+      "followerId": 14,
       "targetId": 15,
-      "id": 21
+      "id": 23
+    },
+    {
+      "followerId": 15,
+      "targetId": 14,
+      "id": 24
     }
   ],
   "tags": [
