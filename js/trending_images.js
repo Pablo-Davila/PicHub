@@ -14,35 +14,9 @@ function main() {
 function displayPhotos(data) {
     let row = $("div.container > div.row").last();
 
-    // Acumular promesas de cálculo de puntuaciones
-    let promises = [];
-    for(let i=0; i<data.length; i++) {
-	promises.push(
-	    new Promise( (resolve,reject) => {
-		$.ajax({
-		    method: "GET",
-		    url: `http://localhost:3000/votes?imageId=${data[i].id}`,
-		    success: function(votes) {
-			let numerador = 0;
-			let denominador = 0;
-			let aWeekAgo = new Date();
-			aWeekAgo.setDate(aWeekAgo.getDate() - 7);
-			for(let v of votes) {
-			    if(new Date(v.date) > aWeekAgo) {
-				denominador++;
-				if(v.like) numerador++;
-				else numerador--;
-			    }
-			}
-			let score = (denominador==0)? 0 : (numerador/denominador).toFixed(2);
-			resolve(new Array(data[i].id, score));
-		    },
-		    error: reject
-		});
-	    })
-	);
-    }
-
+    // Obtener promesas de cálculo de puntuaciones
+    let promises = getImagesScoresPromises(data);
+    
     // Una vez estén todas actualizadas
     Promise.all(promises).then( function(scores) {
 	let map = new Map(scores);
