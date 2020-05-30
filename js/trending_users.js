@@ -22,7 +22,7 @@ function main() {
 }
 
 function loadTrendingUsers(data) {
-    let row = $("div.container > div.row").last();
+    $("ul").empty();
 
     // Acumular promesas de cálculo de puntuaciones de imágenes
     let promises = [];

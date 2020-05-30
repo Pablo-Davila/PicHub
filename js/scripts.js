@@ -268,8 +268,24 @@ function postFollow(userId) {
 	contentType: "application/json; charset=UTF-8",
 	processData: false,
 	success: function() {
-	    updateFollowData(userId);
 	    console.log(`Se ha empezado a seguir al usuario con id ${userId}.`);
+	    let page = window.location.pathname;
+	    if(page == "/PicHub/trending_users.php") {
+		$.ajax({
+		    method: "GET",
+		    url: `http://localhost:3000/users`,
+		    success: loadTrendingUsers,
+		    error: function(error) {
+			console.log("Error al acceder a los usuarios del sistema.");
+			$("#errors-container").append(
+			    getError("No se ha podido acceder a los usuarios del sistema.")
+			);
+		    }
+		});
+	    }
+	    else {
+		updateFollowData(userId);
+	    }
 	},
 	error: function(error) {
             console.log(`Error al seguir al usuario con id ${userId}.`);
@@ -287,8 +303,24 @@ function deleteFollow(userId, f_id) {
 	    "Authorization": "Bearer " + getToken()
 	},
 	success: function() {
-	    updateFollowData(userId);
 	    console.log(`Se ha dejado de seguir al usuario ${userId}.`);
+	    let page = window.location.pathname;
+	    if(page == "/PicHub/trending_users.php") {
+		$.ajax({
+		    method: "GET",
+		    url: `http://localhost:3000/users`,
+		    success: loadTrendingUsers,
+		    error: function(error) {
+			console.log("Error al acceder a los usuarios del sistema.");
+			$("#errors-container").append(
+			    getError("No se ha podido acceder a los usuarios del sistema.")
+			);
+		    }
+		});
+	    }
+	    else {
+		updateFollowData(userId);
+	    }
 	},
 	error: function(error) {
             console.log(`Error al dejar de seguir al usuario.`, error);
