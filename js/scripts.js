@@ -47,7 +47,7 @@ function main() {
         <li class="nav-item">
           <b><a id="my-profile" name="auth-${getUserId()}"
                 class="nav-link border border-light rounded-pill px-2 w-min"
-             href="profile.php=${getUserId()}">Mi perfil</a></b>
+             href="profile.php=${getUserId()}"></a></b>
         </li>`;
 	$("#nav-der").append(right_str);
 
@@ -107,6 +107,10 @@ function kickNonAuthenticated() {
     if(getToken() == null) {
 	window.location.href = "error.php";
     }
+}
+
+function sumi(a,b) {
+    return parseInt(a) + parseInt(b);
 }
 
 function glowActivePage() {
@@ -490,6 +494,41 @@ function updateFollowNumber(userId) {
 	    });
 	}
     });    
+}
+
+// Puntuaciones imágenes
+function getImagesScoresPromises(images) {
+    
+    // Acumular promesas de cálculo de puntuaciones
+    let promises = [];
+    for(let i=0; i<images.length; i++) {
+	promises.push(
+	    new Promise( (resolve,reject) => {
+		$.ajax({
+		    method: "GET",
+		    url: `http://localhost:3000/votes?imageId=${images[i].id}`,
+		    success: function(votes) {
+			let numerador = 0;
+			let denominador = 0;
+			let aWeekAgo = new Date();
+			aWeekAgo.setDate(aWeekAgo.getDate() - 7);
+			for(let v of votes) {
+			    if(new Date(v.date) > aWeekAgo) {
+				denominador++;
+				if(v.like) numerador++;
+				else numerador--;
+			    }
+			}
+			let score = (denominador==0)? 0 : (numerador/denominador).toFixed(2);
+			resolve(new Array(images[i].id, score));
+		    },
+		    error: reject
+		});
+	    })
+	);
+    }
+
+    return promises;
 }
 
 

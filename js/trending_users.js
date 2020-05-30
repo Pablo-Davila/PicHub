@@ -22,9 +22,9 @@ function main() {
 }
 
 function loadTrendingUsers(data) {
-    $("ul").empty();
+    $(".container > ul").empty();
 
-    // Acumular promesas de cálculo de puntuaciones de imágenes
+    // Acumular promesas de número de seguidores
     let promises = [];
     for(let u of data) {
 	promises.push(
@@ -51,8 +51,10 @@ function loadTrendingUsers(data) {
 	for(let u of data){
 	    let elem_str = `
 	  <li class="list-group-item bg-dark rounded flex-space mb-3">
-	    <a href="profile.php?id=${u.id}" class="w-25 text-center">#${c} ${u.user}</a>
-	    <span><span name="followersN-${u.id}">${map.get(u.id)}</span> seguidores</span>
+	    <a href="profile.php?id=${u.id}" class="w-25 text-center">
+              #${c} (<span name="followersN-${u.id}">${map.get(u.id)}</span>) ${u.user}
+            </a>
+	    <span>Media: <span name="userScore-${u.id}"></span></span>
             <div id="f-btn-${u.id}" class="w-25"></div>
 	  </li>`;
 	    $("#top-users").append($.parseHTML(elem_str));
@@ -70,6 +72,41 @@ function loadTrendingUsers(data) {
 	console.log("Error al acceder a los usuarios del sistema.", error);
 	$("#errors-container").append(getError("No se ha podido acceder a los usuarios del sistema."));
     });
+
+    updateUserScores(data);
 }
 
+function updateUserScores(users) {
+    
+    // Acumular promesas de imágenes de cada usuario
+    let imgPromises = [];
+    for(let u of users) {
+	imgPromises.push(
+	    new Promise( (resolve,reject) => {
+		$.ajax({
+		    method: "GET",
+		    url: `http://localhost:3000/images?userId=${u.id}`,
+		    success: function(images) {
+			resolve(new Array(u.id, images));// Algo con resolve
+		    },
+		    error: reject
+		});
+	    })
+	);
+    }
+
+    // Para cada grupo de imágenes calcular la media de sus puntuaciones
+    Promise.all(imgPromises).then( function(imagesPerUser) {
+	let map = new Map(imagesPerUser);
+	for(let u of users) {
+	    let imagesScoresPromises = getImagesScoresPromises(map.get(u.id));
+	    Promise.all(imagesScoresPromises).then( function(scores) {
+		scores = scores.map(x => x[1]);
+		/**/console.log(scores);
+		let userScore = (scores.reduce(sumi, 0) / scores.length).toFixed(2);
+		$(`[name="userScore-${u.id}"]`).text(userScore);
+	    });
+	}
+    });
+}
 
