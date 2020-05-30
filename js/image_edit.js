@@ -42,7 +42,10 @@ function main() {
     moreThanFifty(getUserId());
     
     // Cargar imagen
-    if(id == undefined) isNew = true;
+    if(id == undefined) {
+	isNew = true;
+	updateTagOptions();	
+    }
     else loadSinglePhoto(id, true);
 
     // Actualizar imagen al cambiar la URL
@@ -180,6 +183,7 @@ function updateTagOptions() {
 	method: "GET",
 	url: "http://localhost:3000/tags",
 	success: function(data) {
+	    /**/console.log(data);
 	    $("#tagSelect").empty();
 	    dic = new Map();
 	    for(let t of data){
@@ -200,12 +204,12 @@ function updateTagOptions() {
 function newTag() {
     let tagName = $("#tagSelect").val();
     tags.push(dic.get(tagName));
-    let tag_src = `
+    let tag_str = `
       <span class="badge badge-primary">
-        <span>${tagName}</span>
-        <span name="${dic.get(tagName)} onclick="removeTag(this);" class="txt-sdark""> x</span>
+         <span>${tagName}</span>
+         <span name="${dic.get(tagName)}" onclick="removeTag(this);" class="txt-sdark"> x</span>
       </span>`;
-    $("#tags-selected").append($.parseHTML(tag_src));
+    $("#tags-selected").append($.parseHTML(tag_str));
     updateTagOptions();
 }
 
@@ -218,6 +222,7 @@ function removeTag(tagX) {
 	    break;
 	}
     }
+    updateTagOptions();
 }
 
 
