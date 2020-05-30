@@ -35,6 +35,33 @@
       "phone": "213654987",
       "user": "DRuizCortes",
       "id": 15
+    },
+    {
+      "email": "pedro@mail.com",
+      "password": "$2a$10$kVlKIWnawqYiun8TWoRZguSlded/H7VGQTdTTwkYKdpaY7cWyC1WS",
+      "name": "Pedro",
+      "surname": "Picapiedra",
+      "phone": "123456789",
+      "user": "PedroPedro",
+      "id": 16
+    },
+    {
+      "email": "potter@mail.com",
+      "password": "$2a$10$w4PAEJrs/9fIPwalbpTnxudPiBbFSjogCdDorTQ1wHBEv6M7ZbXea",
+      "name": "Harry",
+      "surname": "Potter",
+      "phone": "987654321",
+      "user": "Potter1234",
+      "id": 17
+    },
+    {
+      "email": "frodo@mail.com",
+      "password": "$2a$10$4nHK76Oszi7iUNGtZdIc7.380lCLLhk9wvCu0xK9sq3XAiJovO.Je",
+      "name": "Frodo",
+      "surname": "Bolsón",
+      "phone": "123456789",
+      "user": "FrodoBolson",
+      "id": 18
     }
   ],
   "images": [
@@ -125,11 +152,11 @@
     {
       "url": "https://previews.dropbox.com/p/thumb/AAzwNLQ8UUBq898-c6xRR6TDXABCCJGtpvfK6AOSfIJRnURGNIeblt1SCyp6f6-QrOQzs9L_aYlTKDs6ourxs3ILnQgDUO0FUqoiVYlZjdRKcU4VwV_uFVcEOrdjif1kvdaV7TMVyD3e6q08NyU1wpaaZI7wkbjEgkpjHOjtF24d2fyT0oWk1-LetJisbvzgKHKUZZVPjwC68mfOfB_hitB5KMrPJfqxYvUmDuN1ghhZplE1zUUV2muCpQyfOqKGGUFLnGFSNPjW0yGRGep_RXWcpUZp_OLvu2_mc9VFyEhPVLTYsWwfb2m8n46wjJQw7tmgrtABHBm3RBHIOxNp2_W_QNDslZnYMS7MyNyxg8AHXw/p.jpeg",
       "title": "Conejo y tortuga",
-      "description": "Pareja inseparable",
+      "description": "Esta es la pareja del año. Son inseparables!",
       "tags": [
         7
       ],
-      "date": "2020-05-30T14:54:35.813Z",
+      "date": "2020-05-30T17:01:53.172Z",
       "private": false,
       "userId": 14,
       "id": 23
@@ -263,6 +290,59 @@
       "private": false,
       "userId": 12,
       "id": 34
+    },
+    {
+      "url": "https://www.anipedia.net/imagenes/como-es-el-comportamiento-de-los-conejos.jpg",
+      "title": "Conejo público",
+      "description": "",
+      "tags": [],
+      "date": "2020-05-30T16:49:18.016Z",
+      "private": false,
+      "userId": 17,
+      "id": 35
+    },
+    {
+      "url": "https://www.anipedia.net/imagenes/como-es-el-comportamiento-de-los-conejos.jpg",
+      "title": "Conejo privado 2",
+      "description": "",
+      "tags": [],
+      "date": "2020-05-30T16:50:58.951Z",
+      "private": true,
+      "userId": 17,
+      "id": 36
+    },
+    {
+      "url": "https://media.giphy.com/media/1xlGfZ07Dq62jqKT9t/giphy.gif",
+      "title": "Nutria",
+      "description": "",
+      "tags": [
+        7,
+        8
+      ],
+      "date": "2020-05-30T17:21:18.690Z",
+      "private": false,
+      "userId": 14,
+      "id": 37
+    },
+    {
+      "url": "https://i.pinimg.com/originals/85/18/c0/8518c08e1802f67def83dbf6378a88e5.gif",
+      "title": "Nutria priv",
+      "description": "",
+      "tags": [],
+      "date": "2020-05-30T17:48:09.224Z",
+      "private": true,
+      "userId": 14,
+      "id": 38
+    },
+    {
+      "url": "https://i.pinimg.com/originals/85/18/c0/8518c08e1802f67def83dbf6378a88e5.gif",
+      "title": "Nutria pub",
+      "description": "",
+      "tags": [],
+      "date": "2020-04-30T17:48:20.748Z",
+      "private": false,
+      "userId": 14,
+      "id": 39
     }
   ],
   "votes": [
@@ -274,25 +354,11 @@
       "id": 2
     },
     {
-      "like": true,
-      "date": "2020-05-25T19:16:51.375Z",
-      "userId": 14,
-      "imageId": 23,
-      "id": 3
-    },
-    {
       "like": false,
       "date": "2020-05-25T17:08:35.333Z",
       "userId": 12,
       "imageId": 23,
       "id": 4
-    },
-    {
-      "like": true,
-      "date": "2020-05-25T18:47:28.600Z",
-      "userId": 14,
-      "imageId": 25,
-      "id": 5
     },
     {
       "like": false,
@@ -335,6 +401,41 @@
       "userId": 14,
       "imageId": 15,
       "id": 11
+    },
+    {
+      "like": false,
+      "date": "2020-05-30T18:11:17.141Z",
+      "userId": 14,
+      "imageId": 35,
+      "id": 12
+    },
+    {
+      "like": true,
+      "date": "2020-05-30T17:00:58.744Z",
+      "userId": 14,
+      "imageId": 25,
+      "id": 13
+    },
+    {
+      "like": true,
+      "date": "2020-05-30T17:12:17.858Z",
+      "userId": 14,
+      "imageId": 23,
+      "id": 14
+    },
+    {
+      "like": true,
+      "date": "2020-05-30T18:24:40.345Z",
+      "userId": 15,
+      "imageId": 34,
+      "id": 15
+    },
+    {
+      "like": false,
+      "date": "2020-05-30T18:25:03.851Z",
+      "userId": 15,
+      "imageId": 37,
+      "id": 16
     }
   ],
   "comments": [
@@ -407,6 +508,20 @@
       "text": "Esto es un comentario",
       "date": "2020-05-26T11:43:56.681Z",
       "id": 18
+    },
+    {
+      "imageId": 39,
+      "userId": 12,
+      "text": "Que mona!",
+      "date": "2020-05-30T17:49:27.643Z",
+      "id": 19
+    },
+    {
+      "imageId": 39,
+      "userId": 14,
+      "text": "Me encanta ^-^",
+      "date": "2020-05-30T17:50:35.783Z",
+      "id": 20
     }
   ],
   "follows": [
@@ -419,11 +534,6 @@
       "followerId": 12,
       "targetId": 14,
       "id": 3
-    },
-    {
-      "followerId": 15,
-      "targetId": 12,
-      "id": 6
     },
     {
       "followerId": 13,
@@ -442,18 +552,28 @@
     },
     {
       "followerId": 14,
-      "targetId": 12,
-      "id": 22
-    },
-    {
-      "followerId": 14,
       "targetId": 15,
       "id": 23
     },
     {
+      "followerId": 18,
+      "targetId": 12,
+      "id": 26
+    },
+    {
+      "followerId": 13,
+      "targetId": 12,
+      "id": 27
+    },
+    {
       "followerId": 15,
       "targetId": 14,
-      "id": 24
+      "id": 29
+    },
+    {
+      "followerId": 15,
+      "targetId": 12,
+      "id": 30
     }
   ],
   "tags": [
@@ -484,6 +604,10 @@
     {
       "name": "animales",
       "id": 7
+    },
+    {
+      "name": "agua",
+      "id": 8
     }
   ],
   "swearwords": [
