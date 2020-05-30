@@ -26,12 +26,17 @@ function main() {
     else {
 	$("#back").attr("href", `image_detail.php?id=${id}`);
     }
-    $("#delete").click(deleteImage);
     $.ajax({
 	method: "GET",
 	url: `http://localhost:3000/comments?imageId=${id}`,
 	success: function(data) {
-	    if(data.length == 0) $("#private").attr("disabled", false);
+	    if(data.length == 0) {
+		$("#delete").click(deleteImage);
+		$("#private").attr("disabled", false);
+	    }
+	    else {
+		$("#delete").remove();
+	    }
 	},
 	error: function(error) {
 	    console.log("Error: No se ha podido comprobar que la foto no tenga comentarios, por lo que no se podrá modificar su privacidad.");
@@ -46,7 +51,14 @@ function main() {
 	isNew = true;
 	updateTagOptions();	
     }
-    else loadSinglePhoto(id, true);
+    else{
+	loadSinglePhoto(id, true);
+	let del_str = `
+	  <div id="delete" class="btn btn-danger">
+	    Borrar foto
+	  </div>`;
+	$("#actions").append($.parseHTML(del_str));
+    }
 
     // Actualizar imagen al cambiar la URL
     let url_input = $("#url");
@@ -77,8 +89,8 @@ function moreThanFifty(userId) {
 	url: `http://localhost:3000/images?userId=${userId}`,
 	success: function(data) {
 	    if(data.length >= lim) {
-		console.log("Error: Ya ha alcanzado el límite de 50 imágenes");
-		$("#errors-container").append(getError("Ya ha alcanzado el límite de 50 imágenes."));
+		console.log(`Error: Ya ha alcanzado el límite de ${lim} imágenes`);
+		$("#errors-container").append(getError(`Ya ha alcanzado el límite de ${lim} imágenes.`));
 	    }
 	    else {
 		let save_html = `

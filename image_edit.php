@@ -89,9 +89,6 @@
 		<!-- Acciones (botones) -->
 		<label for="save">Acciones</label>
 		<div id="actions">
-		  <div id="delete" class="btn btn-danger">
-		    Borrar foto
-		  </div>
 		</div>
 	      </div>
 	      

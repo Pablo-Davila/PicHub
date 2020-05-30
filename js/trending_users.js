@@ -52,7 +52,7 @@ function loadTrendingUsers(data) {
 	    let elem_str = `
 	  <li class="list-group-item bg-dark rounded flex-space mb-3">
 	    <a href="profile.php?id=${u.id}" class="w-25 text-center">
-              #${c} (<span name="followersN-${u.id}">${map.get(u.id)}</span>) ${u.user}
+              #${c} (<span name="followersN-${u.id}">${map.get(u.id)}</span> seg.) ${u.user}
             </a>
 	    <span>Media: <span name="userScore-${u.id}"></span></span>
             <div id="f-btn-${u.id}" class="w-25"></div>
@@ -102,8 +102,8 @@ function updateUserScores(users) {
 	    let imagesScoresPromises = getImagesScoresPromises(map.get(u.id));
 	    Promise.all(imagesScoresPromises).then( function(scores) {
 		scores = scores.map(x => x[1]);
-		/**/console.log(scores);
-		let userScore = (scores.reduce(sumi, 0) / scores.length).toFixed(2);
+		let userScore = (0).toFixed(2);
+		if(scores.length != 0) userScore = (scores.reduce(sumi, 0) / scores.length).toFixed(2);
 		$(`[name="userScore-${u.id}"]`).text(userScore);
 	    });
 	}

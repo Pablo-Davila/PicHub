@@ -16,12 +16,12 @@ function createUser(data) {
 	dataType: "json",
 	contentType: "application/json; charset=UTF-8",
 	processData: false,
-	success: function(data) {
-	    storeToken(data.accessToken);
+	success: function(regData) {
+	    storeToken(regData.accessToken);
 	    window.location.href = "index.php";
 	},
 	error: function(error) {
-	    console.log("Error al registrar al usuario.");
+	    console.log("Error al registrar al usuario.", error);
 	    $("#errors-container").empty();
 	    $("#errors-container").append(getError("Ya existe un usuario con ese email."));
 	}
@@ -76,7 +76,7 @@ function validateForm(event) {
     }
 
     if(!errores) {
-	let data = {
+	let userData = {
 	    "email": email,
 	    "password": password,
 	    "name": nombre,
@@ -89,7 +89,7 @@ function validateForm(event) {
 	    method: "GET",
 	    url: `http://localhost:3000/users?user=${usuario}`,
 	    success: function(data) {
-		if(data.length == 0) createUser(data);
+		if(data.length == 0) createUser(userData);
 		else {
 		    console.log("Error: Ya existe una cuenta con ese nombre de usuario.");
 		    $("#errors-container").empty();
@@ -99,7 +99,7 @@ function validateForm(event) {
 		}
 	    },
 	    error: function(error) {
-		console.log("Error al acceder a la base de datos de usuarios.");
+		console.log("Error al acceder a la base de datos de usuarios.",error);
 		$("#errors-container").empty();
 		$("#errors-container").append(
 		    getError("No se puedo acceder a la base de datos de usuarios.")

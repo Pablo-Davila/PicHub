@@ -44,10 +44,6 @@ function main() {
 		$("#errors-container").append(getError("No se pudo acceder a los votos del sistema."));
 	    }
 	});
-
-	// Actualizar puntuación
-	$("#score").attr("name", `score-${id}`);
-	updateScore(id);
 	
 	// Permitir nuevos comentarios
 	$("#newComment").attr("disabled", false);

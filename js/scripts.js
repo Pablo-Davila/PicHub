@@ -170,6 +170,10 @@ function loadSinglePhoto(id, edit) {
 		}
 	    }
 
+	    // Actualizar puntuación
+	    $("#score").attr("name", `score-${id}`);
+	    updateScore(id);
+
 	    // Etiquetas
 	    if(data.tags != undefined){	
 		for(let tag of data.tags) {
