@@ -128,7 +128,7 @@ function toggleLike() {
 	    error: reject
 	});
     }).then( function(data) {
-	if(data.length == 0) newVote(true);
+	if(data.length == 0) newVote(true, id);
 	else if(data[0].like == true) {
 	    removeVote(data[0].id);
 	}
@@ -157,7 +157,7 @@ function toggleDislike() {
 	    error: reject
 	});
     }).then( function(data) {
-	if(data.length == 0) newVote(false);
+	if(data.length == 0) newVote(false, id);
 	else if(data[0].like == true) {
 	    updateVote(data[0].id, false);
 	}
@@ -175,36 +175,6 @@ function toggleDislike() {
     $("#dislike").toggleClass("txt-dark");
     $("#like").removeClass("text-success");
     $("#like").addClass("txt-dark");
-}
-
-function newVote(like) {
-    let data = {
-	"like": like,
-	"date": (new Date()).toISOString(),
-	"userId": getUserId(),
-	"imageId": id
-    };
-    
-    $.ajax({
-	method: "POST",
-	url: "http://localhost:3000/votes",
-	data: JSON.stringify(data),
-	dataType: "json",
-	contentType: "application/json; charset=UTF-8",
-	processData: false,
-	headers: {
-	    "Authorization": "Bearer " + getToken()
-	},
-	success: function() {
-	    updateScore(id);
-	    console.log(`Nuevo voto:  ${(like)? "like" : "dislike"}`);
-	},
-	error: function(error) {
-	    console.log("Error al crear la imagen.");
-	    $("#errors-container").empty();
-	    $("#errors-container").append(getError("No se ha podido crear la imagen."));
-	}
-    });
 }
 
 function removeVote(voteId) {

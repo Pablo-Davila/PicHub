@@ -535,4 +535,37 @@ function getImagesScoresPromises(images) {
     return promises;
 }
 
+function newVote(like, imageId) {
+    let data = {
+	"like": like,
+	"date": (new Date()).toISOString(),
+	"userId": getUserId(),
+	"imageId": imageId
+    };
+    
+    $.ajax({
+	method: "POST",
+	url: "http://localhost:3000/votes",
+	data: JSON.stringify(data),
+	dataType: "json",
+	contentType: "application/json; charset=UTF-8",
+	processData: false,
+	headers: {
+	    "Authorization": "Bearer " + getToken()
+	},
+	success: function() {
+	    let page = window.location.pathname;
+	    if(page == "/PicHub/image_detail.php") {
+		updateScore(imageId);
+	    }
+	    console.log(`Nuevo voto:  ${(like)? "like" : "dislike"}`);
+	},
+	error: function(error) {
+	    console.log("Error al crear la imagen.");
+	    $("#errors-container").empty();
+	    $("#errors-container").append(getError("No se ha podido crear la imagen."));
+	}
+    });
+}
+
 
