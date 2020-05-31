@@ -32,6 +32,9 @@
 	</div>
       </div>
       <hr>
+
+      <p class="text-center">Vota rápida y cómodamente las imágenes en las que aún no lo
+      has hecho!</p>
       
       <div class="wrap w-75 mx-auto">
 	
