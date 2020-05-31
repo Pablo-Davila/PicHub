@@ -3,12 +3,16 @@
 $(main);
 
 function main() {
+
+    // Expulsar usuarios no autenticados
+    kickNonAuthenticated();
+
+    // Comprobar las imágenes ya votadas por el usuario
     $.ajax({
 	method: "GET",
 	url: `http://localhost:3000/votes?userId=${getUserId()}`,
 	success: function(votes) {
 	    votes = votes.map(v => v.imageId);
-	    /**/console.log(votes);
 	    loadAllImages(votes);
 	},
 	error: function (error) {
