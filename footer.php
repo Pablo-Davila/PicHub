@@ -13,6 +13,11 @@
   Página diseñada por Pablo Dávila Herrero
 </p>
 
+<!-- Botón quick-rate -->
+<a href="quickRate.php" class="display-4">
+  <i id="quick-rate" class="fa fa-bolt"></i>
+</a>
+
 <!-- Botón lista to-do -->
 <a href="to-do.html" class="display-4" target="_blank">
   <i id="to-do" class="fa fa-list"></i>

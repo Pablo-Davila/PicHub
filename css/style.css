@@ -230,6 +230,15 @@ div.embed-responsive img {
     height: 65px;
 }
 
+#quick-rate {
+    height: 30px;
+    position: fixed;
+    bottom: 170px;
+    right: 50px;
+    height: 65px;
+    transform: rotate(20deg);
+}
+
 #logo {
     width: 3em;
     height: auto;
@@ -256,7 +265,7 @@ div.embed-responsive img {
     display: none;
 }
 
-#followed-list,#followers-list {
+#followed-list, #followers-list {
     min-width: 18em;
 }
 
