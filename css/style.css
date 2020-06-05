@@ -38,11 +38,6 @@ a.dropdown-item:hover {
     background-color: var(--dark);
 }
 
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
 /* ========== < CLASS > ========== */
 .txt-light, input, textarea {
@@ -288,4 +283,20 @@ div.embed-responsive img {
     [name="tarjeta-2"] {
         max-width: 50% !important;
     }
+}
+
+#chart_div {
+    padding-top: 40px;
+    height: 230px;
+}
+
+#chart_div > table {
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+}
+
+#donutchart > div{
+    margin-left: auto;
+    margin-right: auto;
 }

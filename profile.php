@@ -81,13 +81,19 @@
 	      </div>
 	    </div>
 	  </div>
+	  </br>
 
-	  </br></br>
-	    
-	  <!-- Gauge chart -->
-	    <div id="chart_div" class="mx-auto d-flex"
-		 style="width: 400px; height: 120px; justify-content: center;">
+	  <!-- Actividad reciente -->
+	  <div class="row pt-4">
+	    <h5 class="position-absolute w-100 text-center">
+	      Actividad reciente
+	    </h5>
+	    </br></br>
+	    <div id="chart_div" class="d-flex col-md"
+		 style="justify-content: center;">
 	    </div>
+	    <div id="donutchart" class="d-flex col-md"></div>
+	  </div>
 	  
 	</div>
 
