@@ -43,15 +43,19 @@ function main() {
 	}
     });
 
-    // Comprobar límite de fotos y habilitar submit
-    moreThanFifty(getUserId());
-    
-    // Cargar imagen
+    // Obtener isNew
     if(id == undefined) {
 	isNew = true;
 	updateTagOptions();	
     }
-    else{
+
+    if(isNew) {
+	// Comprobar límite de fotos y habilitar submit
+	moreThanFifty(getUserId());
+    }
+    else {
+	// Cargar imagen
+	allowSubmit();
 	loadSinglePhoto(id, true);
 	let del_str = `
 	  <div id="delete" class="btn btn-danger">
@@ -92,19 +96,21 @@ function moreThanFifty(userId) {
 		console.log(`Error: Ya ha alcanzado el límite de ${lim} imágenes`);
 		$("#errors-container").append(getError(`Ya ha alcanzado el límite de ${lim} imágenes.`));
 	    }
-	    else {
-		let save_html = `
-		  <button id="save" type="submit" class="btn btn-success">
-		    Guardar
-		  </button>`;
-		$("#actions").append($.parseHTML(save_html));
-		$("form").submit(validateForm);
-	    }
+	    else allowSubmit();
 	},
 	error: function(error) {
 	    console.log(error);
 	}
     });
+}
+
+function allowSubmit() {
+    let save_html = `
+		  <button id="save" type="submit" class="btn btn-success">
+		    Guardar
+		  </button>`;
+    $("#actions").append($.parseHTML(save_html));
+    $("form").submit(validateForm);
 }
 
 function validateForm(event) {
@@ -195,7 +201,6 @@ function updateTagOptions() {
 	method: "GET",
 	url: "http://localhost:3000/tags",
 	success: function(data) {
-	    /**/console.log(data);
 	    $("#tagSelect").empty();
 	    dic = new Map();
 	    for(let t of data){
