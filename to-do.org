@@ -16,7 +16,6 @@
   - [X] Cambiar estilo like-dislike.
   - [X] Enlace a GitHub.
   - [X] Enlace a to-do.html
-  - [ ] Imagen de fondo. (?)
 
 * [13/13] Implementación JavaScript
   - [X] Registro: Validación de formulario.
