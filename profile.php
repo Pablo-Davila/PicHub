@@ -3,6 +3,7 @@
 
   <head>
     <?php include 'imports.php' ?>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title>PicHub - Perfil de usuario</title>
     <script type="text/javascript" src="js/profile.js"></script>
   </head>
@@ -52,7 +53,8 @@
 	    </div>
 
 	    </br></br>
-	    
+
+	    <!-- Botones siguiendo-seguido -->
 	    <div class="row">
 	      <div class="col-md">
 		<a id="link-ff1"
@@ -78,8 +80,14 @@
 		</a>
 	      </div>
 	    </div>
-	    
 	  </div>
+
+	  </br></br>
+	    
+	  <!-- Gauge chart -->
+	    <div id="chart_div" class="mx-auto d-flex"
+		 style="width: 400px; height: 120px; justify-content: center;">
+	    </div>
 	  
 	</div>
 

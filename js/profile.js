@@ -41,7 +41,6 @@ function main() {
 	},
 	error: function(error) {
             console.log("Error al acceder a los datos del usuario.");
-	    $("#errors-container").empty();
 	    $("#errors-container").append(getError("Error al acceder a los datos del usuario."));
 	}
     });
@@ -118,8 +117,34 @@ function displayPersonalPhotos(data) {
     
     // Actualizar nombres de autores y etiquetas
     for(let t of etiquetas) updateTagName(t);
+    // Gauge chart
+    google.charts.load('current', {'packages':['gauge']});
+    google.charts.setOnLoadCallback(
+	function() { drawChart(data.length); }
+    );
     
     console.log(`Mostradas ${count} imágenes`);
+}
+
+function drawChart(value) {
+
+    var data = google.visualization.arrayToDataTable([
+	['Label', 'Value'],
+	['Images', parseInt(value)] // TEMPORAL
+    ]);
+
+    var options = {
+	width: 600, height: 180,
+	redFrom: 45, redTo: 50,
+	yellowFrom: 37.5, yellowTo: 45,
+	majorTicks: ['0','10','20','30','40','50'],
+	minorTicks: 5,
+	max: 50
+    };
+
+    var chart = new google.visualization.Gauge(document.getElementById('chart_div')); // CAMBIAR
+
+    chart.draw(data, options);
 }
 
 

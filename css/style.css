@@ -38,6 +38,11 @@ a.dropdown-item:hover {
     background-color: var(--dark);
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* ========== < CLASS > ========== */
 .txt-light, input, textarea {
