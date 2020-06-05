@@ -151,6 +151,11 @@ function drawGaugeChart(value) {
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
     chart.draw(data, options);
+
+    if(value > 38) {
+	$("g > circle").eq(0).attr("fill", "red");
+	$("g > circle").eq(1).attr("fill", "#f95e4a");
+    }
 }
 
 function drawDonutChart(images) {

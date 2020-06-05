@@ -85,8 +85,8 @@
 
 	  <!-- Actividad reciente -->
 	  <div class="row pt-4">
-	    <h5 class="position-absolute w-100 text-center">
-	      Actividad reciente
+	    <h3 class="position-absolute w-100 text-center">
+	      Actividad del usuario
 	    </h5>
 	    </br></br>
 	    <div id="chart_div" class="d-flex col-md"
