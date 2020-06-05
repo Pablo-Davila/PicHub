@@ -813,6 +813,18 @@
       "private": false,
       "userId": 15,
       "id": 91
+    },
+    {
+      "url": "https://www.definicionabc.com/wp-content/uploads/2012/10/Impresionante.jpg",
+      "title": "El muuuuundo",
+      "description": "",
+      "tags": [
+        1
+      ],
+      "date": "2020-06-05T20:44:52.183Z",
+      "private": false,
+      "userId": 14,
+      "id": 92
     }
   ],
   "votes": [
@@ -1193,6 +1205,41 @@
       "userId": 15,
       "imageId": 32,
       "id": 62
+    },
+    {
+      "like": true,
+      "date": "2020-06-05T20:46:54.052Z",
+      "userId": 14,
+      "imageId": 92,
+      "id": 63
+    },
+    {
+      "like": false,
+      "date": "2020-06-05T20:46:56.644Z",
+      "userId": 14,
+      "imageId": 29,
+      "id": 64
+    },
+    {
+      "like": false,
+      "date": "2020-06-05T20:48:12.015Z",
+      "userId": 14,
+      "imageId": 30,
+      "id": 65
+    },
+    {
+      "like": false,
+      "date": "2020-06-05T20:48:13.172Z",
+      "userId": 14,
+      "imageId": 32,
+      "id": 66
+    },
+    {
+      "like": true,
+      "date": "2020-06-05T20:48:14.574Z",
+      "userId": 14,
+      "imageId": 31,
+      "id": 67
     }
   ],
   "comments": [
