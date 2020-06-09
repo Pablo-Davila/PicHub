@@ -89,7 +89,7 @@
       "url": "https://static1.abc.es/media/sociedad/2020/05/08/mapafases-kEtH--1200x630@abc.jpg",
       "title": "Fases del confinamiento",
       "description": "Acaban de anunciar qué provincias pasan a la fase 1.",
-      "date": "2020-05-30T14:54:09.304Z",
+      "date": "2020-06-09T11:21:42.299Z",
       "id": 14,
       "tags": [
         5,
@@ -144,7 +144,7 @@
       "tags": [
         1
       ],
-      "date": "2020-05-30T14:54:02.899Z",
+      "date": "2020-06-09T11:21:55.866Z",
       "private": false,
       "userId": 13,
       "id": 18
@@ -263,8 +263,10 @@
       "url": "https://images.unsplash.com/photo-1567758611957-73e666678347",
       "title": "El coco",
       "description": "",
-      "tags": [],
-      "date": "2020-05-30T15:11:35.693Z",
+      "tags": [
+        4
+      ],
+      "date": "2020-06-09T11:22:19.123Z",
       "private": false,
       "userId": 13,
       "id": 32
@@ -317,9 +319,10 @@
       "description": "",
       "tags": [
         7,
-        8
+        8,
+        9
       ],
-      "date": "2020-05-30T17:21:18.690Z",
+      "date": "2020-06-09T11:09:06.909Z",
       "private": false,
       "userId": 14,
       "id": 37
@@ -819,9 +822,10 @@
       "title": "El muuuuundo",
       "description": "",
       "tags": [
-        1
+        1,
+        9
       ],
-      "date": "2020-06-05T20:44:52.183Z",
+      "date": "2020-06-09T11:08:35.763Z",
       "private": false,
       "userId": 14,
       "id": 92
@@ -1326,6 +1330,13 @@
       "text": "Me encanta ^-^",
       "date": "2020-05-30T17:50:35.783Z",
       "id": 20
+    },
+    {
+      "imageId": 29,
+      "userId": 14,
+      "text": "Esto es un comentario.",
+      "date": "2020-06-09T10:50:55.116Z",
+      "id": 21
     }
   ],
   "follows": [
@@ -1412,6 +1423,10 @@
     {
       "name": "agua",
       "id": 8
+    },
+    {
+      "name": "prueba",
+      "id": 9
     }
   ],
   "swearwords": [

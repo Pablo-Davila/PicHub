@@ -100,10 +100,14 @@ function loadComments() {
 	url: `http://localhost:3000/comments?imageId=${id}&_sort=date&_order=desc`,
 	success: function(data) {
 	    for(let c of data) {
+		let imgDate = new Date(c.date);
+		let fecha = `${imgDate.getDay()}/${imgDate.getMonth()+1}/${imgDate.getFullYear()}`
+		    + `, ${imgDate.getHours()}:${imgDate.getMinutes()}`;
 		let comment_str = `
 	  <div class="col-row mb-2">
 	    <div class="bg-dark rounded p-3">
-	      <h5><a name="auth-${c.userId}" href="profile.php?id=${c.userId}"></a></h5>
+	      <h5 class="w-50 d-inline"><a name="auth-${c.userId}" href="profile.php?id=${c.userId}"></a></h5>
+              <p class="w-50 d-inline pl-3">${fecha}</p>
 	      <p class="mb-0">${c.text}</p>
 	    </div>
 	  </div>`;

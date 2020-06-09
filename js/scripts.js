@@ -380,14 +380,27 @@ function updateAuthorName(authorId) {
     });
 }
 
+function cambiarNombreEtiqueta(i, elemento, tag) {
+    $.ajax({
+	method: "GET",
+	url: `http://localhost:3000/images`,
+	success: function(images) {
+	    let count = 0;
+	    for(let img of images) {
+		if(img.tags.includes(tag.id)) count++;
+	    }
+	    $(elemento).text(`${tag.name} (${count})`);
+	}
+    });
+}
+
 function updateTagName(tagId) {
     $.ajax({
 	method: "GET",
 	url: `http://localhost:3000/tags/${tagId}`,
 	success: function(tag) {
 	    $(`[name="tag-${tagId}"]`).each(function(i, elemento) {
-		$(elemento).text(tag.name);
-		//TO-DO$(elemento).attr("href",`profile.php?id=${authorId}`);
+		cambiarNombreEtiqueta(i, elemento, tag);
 	    });
 	},
 	error: function(error) {
@@ -414,11 +427,11 @@ function updateScore(imageId) {
 	    for(let v of data) {
 		denominador++;
 		if(v.like) numerador++;
-		else numerador--;
+		//else numerador--;
 	    }
 	    $(`[name="score-${imageId}"]`).each(function(i, elemento) {
-		let puntuacion = (denominador==0)? 0 : (numerador/denominador).toFixed(2);
-	    	$(elemento).text(puntuacion);
+		let puntuacion = (denominador==0)? 0 : (numerador/denominador*100).toFixed(2);
+	    	$(elemento).text(`${puntuacion}%`);
 	    });
 	},
 	error: function(error) {
@@ -520,10 +533,10 @@ function getImagesScoresPromises(images) {
 			    if(new Date(v.date) > aWeekAgo) {
 				denominador++;
 				if(v.like) numerador++;
-				else numerador--;
+				//else numerador--;
 			    }
 			}
-			let score = (denominador==0)? 0 : (numerador/denominador).toFixed(2);
+			let score = (denominador==0)? 0 : (numerador/denominador*100).toFixed(2);
 			resolve(new Array(images[i].id, score));
 		    },
 		    error: reject

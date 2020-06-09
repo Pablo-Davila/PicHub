@@ -44,7 +44,7 @@ function displayPhotos(data) {
               <h5 class="card-title">${photo.title}</h5>
               <a name="auth-${photo.userId}" href="profile.php?id=${photo.userId}" class="card-text"></a>
               <hr>
-	      <p class="card-text">Puntuación: ${map.get(photo.id)}</p>
+	      <p class="card-text">Puntuación: ${map.get(photo.id)}%</p>
               <p class="card-text">
 		Etiquetas:
               </p>
