@@ -1,16 +1,18 @@
 # PicHub
-PicHub es mi proyecto personal para la asignatura IISSI2.
+Pichub was my personal project for the subject IISSI2 in my second University Year.
 
-## Tecnologías utilizadas
+## Used technology
  - HTML5
  - CSS3
    - Bootstrap
  - JavaScript
    - JQuery
    - AJAX
+ - JTinder library
+ - Json-server
 
-## Tareas
-El documento `to-do.html` es una lista de tareas hechas y por hacer en formato HTML. La genero automáticamente a partir de `to-do.org` haciendo uso de `org-mode` en Emacs.
+## Tasks
+The file `to-do.html` is a list of to-do and already-done tasks in HTML format. I generate it automatically from `to-do.org` making use of Emacs' `org-mode`.
 
-## Desplegar el backend
-El script `JSON-server.bat` ejecuta de forma automática json-server con la configuración de autenticación de usuario del proyecto.
+## Deploying the backend
+The script `JSON-server.bat` automatically launches json-server with the user authentication configuration established by the project's manager.
